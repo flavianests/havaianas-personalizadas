@@ -1,0 +1,143 @@
+---
+/**
+ * Layout base — sem CSS Orbia; apenas Tailwind + global
+ */
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig } from '../config';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  ogImageAlt?: string;
+  noIndex?: boolean;
+  /** Objetos JSON-LD adicionais (fundidos no @graph da página) */
+  jsonLdExtra?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  description = siteConfig.description,
+  image = siteConfig.images.destaqueHavaianas,
+  ogImageAlt,
+  noIndex = false,
+  jsonLdExtra = [],
+} = Astro.props;
+
+const baseUrl = siteConfig.url.replace(/\/$/, '');
+const canonical =
+  Astro.url.pathname === '/'
+    ? `${baseUrl}/`
+    : `${baseUrl}${Astro.url.pathname.replace(/\/$/, '') || ''}/`;
+const ogPath = image.startsWith('http') ? image : `${baseUrl}${image}`;
+const fullTitle = title.includes(siteConfig.name) ? title : `${title} | ${siteConfig.name}`;
+const resolvedOgImageAlt =
+  ogImageAlt ?? `${siteConfig.name} — ${description.slice(0, 110)}${description.length > 110 ? '…' : ''}`;
+
+const postalAddress = {
+  '@type': 'PostalAddress',
+  streetAddress: 'Av. Pirajussara, 4869 — Jd. Celeste',
+  addressLocality: 'São Paulo',
+  addressRegion: 'SP',
+  addressCountry: 'BR',
+} as const;
+
+const jsonLdGraph = [
+  {
+    '@type': 'Organization',
+    '@id': `${baseUrl}/#organization`,
+    name: siteConfig.legalName,
+    url: baseUrl,
+    logo: `${baseUrl}${siteConfig.images.logoPrimary}`,
+    description: siteConfig.description,
+    email: siteConfig.email,
+    address: postalAddress,
+  },
+  {
+    '@type': 'WebSite',
+    '@id': `${baseUrl}/#website`,
+    name: siteConfig.name,
+    url: baseUrl,
+    description: siteConfig.description,
+    publisher: { '@id': `${baseUrl}/#organization` },
+    inLanguage: 'pt-BR',
+  },
+  {
+    '@type': 'LocalBusiness',
+    '@id': `${baseUrl}/#localbusiness`,
+    name: siteConfig.legalName,
+    image: ogPath,
+    url: baseUrl,
+    email: siteConfig.email,
+    description: siteConfig.description,
+    address: postalAddress,
+    priceRange: '$$',
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: 'São Paulo',
+    },
+  },
+  ...jsonLdExtra,
+];
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111116" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogPath} />
+    <meta property="og:image:alt" content={resolvedOgImageAlt} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content={siteConfig.name} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogPath} />
+    <meta name="twitter:image:alt" content={resolvedOgImageAlt} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': jsonLdGraph,
+      })}
+    />
+  </head>
+  <body class="bela-body min-h-screen flex flex-col text-zinc-100 antialiased font-sans">
+    <Header />
+    <div class="bela-main relative z-[1] flex-1 pt-20 md:pt-24">
+      <main id="conteudo-principal">
+        <slot />
+      </main>
+    </div>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { blogArticles, postImageUrl } from '../data/blog-articles';
+import { siteConfig, whatsappHref } from '../config';
+
+const img = siteConfig.images;
+
+const baseUrl = siteConfig.url.replace(/\/$/, '');
+const metaDescription =
+  'Blog da Bela — artigos sobre havaianas personalizadas: casamento, formatura, festa de 15 anos, estampa no solado e brindes corporativos. Guias práticos e orçamento com a Chinelos da Bela.';
+
+const blogJsonLd: Record<string, unknown>[] = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog da Bela', item: `${baseUrl}/blog/` },
+    ],
+  },
+  {
+    '@type': 'Blog',
+    '@id': `${baseUrl}/blog/#blog`,
+    url: `${baseUrl}/blog/`,
+    name: 'Blog da Bela — Chinelos da Bela',
+    description: metaDescription,
+    publisher: { '@id': `${baseUrl}/#organization` },
+    blogPost: blogArticles.map((post) => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt,
+      image: postImageUrl(baseUrl, post.image),
+      url: `${baseUrl}/blog/${post.slug}/`,
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Blog da Bela — Chinelos da Bela"
+  description={metaDescription}
+  image={`${baseUrl}${img.destaqueHavaianas}`}
+  ogImageAlt="Blog da Bela — havaianas e chinelos personalizados Chinelos da Bela"
+  jsonLdExtra={blogJsonLd}
+>
+  <section class="bela-section bela-section-muted py-16 md:py-20" aria-labelledby="titulo-blog">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <h1 id="titulo-blog" class="text-3xl md:text-5xl font-bold text-white text-center mb-10 md:mb-12">
+        Blog da Bela
+      </h1>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          blogArticles.map((post) => (
+            <article class="flex flex-col overflow-hidden rounded-[10px] border border-white/[0.06] bg-[#1a1a1a] shadow-[0_12px_40px_-12px_rgba(0,0,0,0.65)] transition-[border-color,box-shadow] duration-300 hover:border-rose-500/25 hover:shadow-[0_16px_44px_-10px_rgba(225,29,72,0.12)]">
+              <a
+                href={`/blog/${post.slug}/`}
+                class="aspect-[16/10] overflow-hidden block shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 focus-visible:ring-inset"
+              >
+                <img
+                  src={postImageUrl(baseUrl, post.image)}
+                  alt={post.imageAlt}
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  width="960"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                />
+              </a>
+              <div class="p-6 flex flex-col flex-1">
+                <span class="text-xs font-medium text-rose-300 uppercase tracking-wide">{post.tag}</span>
+                <h2 class="text-lg font-bold text-white mt-2 mb-3 leading-snug">
+                  <a href={`/blog/${post.slug}/`} class="hover:text-rose-200 transition-colors">
+                    {post.title}
+                  </a>
+                </h2>
+                <p class="text-sm text-zinc-400 leading-relaxed flex-1">{post.excerpt}</p>
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+                  <a
+                    href={`/blog/${post.slug}/`}
+                    class="inline-flex items-center gap-2 text-rose-300 text-sm font-medium min-h-[44px] hover:text-rose-200"
+                  >
+                    Ler artigo
+                  </a>
+                  <a
+                    href={whatsappHref(siteConfig.whatsappPhone, `Olá! Vi "${post.title}" no blog e quero um orçamento.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-zinc-300 text-sm font-medium min-h-[44px] hover:text-white"
+                    aria-label={`Pedir orçamento no WhatsApp: ${post.title}`}
+                  >
+                    Quero orçamento <i class="fab fa-whatsapp text-rose-300" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <p class="text-center text-zinc-500 text-sm mt-12">
+        Temas alinhados ao conteúdo de{' '}
+        <a href="https://chinelosdabela.com.br/blog/" class="text-rose-300 hover:underline" target="_blank" rel="noopener noreferrer">
+          chinelosdabela.com.br
+        </a>
+        .
+      </p>
+    </div>
+  </section>
+</BaseLayout>

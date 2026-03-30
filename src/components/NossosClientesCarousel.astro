@@ -1,0 +1,252 @@
+---
+import { siteConfig } from '../config';
+import { depoimentosClientesBela } from '../data/depoimentos-clientes-bela';
+
+const slides = depoimentosClientesBela;
+const img = siteConfig.images;
+const carouselId = 'bela-depoimentos-carousel';
+---
+
+<div class="bela-clientes-carousel" data-bela-carousel={carouselId}>
+  <div class="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-4 md:gap-6">
+    {
+      slides.map((s, i) => (
+        <button
+          type="button"
+          class:list={[
+            'bela-carousel-thumb group relative aspect-[2/3] w-full overflow-hidden rounded-xl bg-zinc-950 text-left transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e88484] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111116]',
+            'border-2 border-[#cfcfcf]',
+            i === 0 && 'bela-carousel-thumb--active',
+          ]}
+          data-bela-thumb={i}
+          aria-label={`Mostrar depoimento ${i + 1} de ${slides.length}: ${s.author}`}
+          aria-pressed={i === 0 ? 'true' : 'false'}
+        >
+          <img
+            src={s.photo}
+            alt=""
+            class="h-full w-full object-contain object-center p-0.5 transition-transform duration-300 group-hover:scale-[1.03]"
+            loading="lazy"
+            decoding="async"
+          />
+        </button>
+      ))
+    }
+  </div>
+
+  <div
+    class="mt-12 grid gap-10 md:mt-16 md:grid-cols-5 md:items-center md:gap-8 lg:gap-12"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    <div class="flex justify-center md:col-span-2 md:justify-start">
+      <div class="relative w-full max-w-[280px] md:max-w-none">
+        <img
+          src={img.coracao3dChinelosBela}
+          alt="Coração 3D — Chinelos da Bela"
+          class="mx-auto h-auto w-full max-w-[320px] object-contain md:mx-0"
+          loading="lazy"
+          decoding="async"
+          width={600}
+          height={600}
+        />
+      </div>
+    </div>
+
+    <div class="md:col-span-3">
+      <div class="bela-carousel-slides relative min-h-[12rem] sm:min-h-[11rem] md:min-h-[10rem]">
+        {
+          slides.map((s, i) => (
+            <div
+              class:list={[
+                'bela-carousel-slide col-start-1 row-start-1 w-full transition-opacity duration-500 ease-out',
+                i === 0 ? 'relative z-10 opacity-100' : 'pointer-events-none absolute inset-0 z-0 opacity-0',
+              ]}
+              data-bela-slide={i}
+              hidden={i !== 0}
+            >
+              <div class="mb-4 flex flex-wrap gap-1" aria-hidden="true">
+                {[0, 1, 2, 3].map(() => (
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-sm bg-[#96d9c9] text-lg text-zinc-800">
+                    ★
+                  </span>
+                ))}
+                <span class="inline-flex h-8 w-8 items-center justify-center rounded-sm border border-zinc-500 text-lg text-zinc-500">
+                  ☆
+                </span>
+              </div>
+              <p class="text-lg font-medium leading-relaxed text-white sm:text-xl md:text-2xl">{s.text}</p>
+              <div
+                class="mt-6 min-h-[3rem] bg-contain bg-left-top bg-no-repeat pt-4 pl-12 sm:pl-20"
+                style={`background-image: url('${img.sobreEquipe}');`}
+              >
+                <p class="text-base font-bold text-[#e88484] md:text-lg">{s.author}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+        <button
+          type="button"
+          class="bela-carousel-prev inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-[#e88484]/60 hover:text-[#e88484]"
+          aria-label="Depoimento anterior"
+        >
+          <span class="text-lg" aria-hidden="true">‹</span>
+        </button>
+        <div class="flex gap-2" role="tablist" aria-label="Selecionar depoimento">
+          {
+            slides.map((_, i) => (
+              <button
+                type="button"
+                role="tab"
+                class:list={['bela-carousel-dot h-2.5 w-2.5 rounded-full transition-colors', i === 0 && 'is-active']}
+                data-bela-dot={i}
+                aria-label={`Depoimento ${i + 1}`}
+                aria-selected={i === 0 ? 'true' : 'false'}
+              />
+            ))
+          }
+        </div>
+        <button
+          type="button"
+          class="bela-carousel-next inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-[#e88484]/60 hover:text-[#e88484]"
+          aria-label="Próximo depoimento"
+        >
+          <span class="text-lg" aria-hidden="true">›</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bela-carousel-slides {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: start;
+    justify-items: stretch;
+  }
+
+  .bela-carousel-thumb--active {
+    box-shadow: 0 0 0 2px #e88484;
+  }
+
+  .bela-carousel-dot {
+    background-color: rgba(255, 255, 255, 0.28);
+  }
+
+  .bela-carousel-dot:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .bela-carousel-dot.is-active {
+    background-color: #e88484;
+  }
+
+  .bela-carousel-dot.is-active:hover {
+    background-color: #f0a0a0;
+  }
+</style>
+
+<script define:vars={{ total: slides.length, carouselId }}>
+  function initCarousel(root) {
+    const thumbs = [...root.querySelectorAll('[data-bela-thumb]')];
+    const slideEls = [...root.querySelectorAll('[data-bela-slide]')];
+    const dots = [...root.querySelectorAll('[data-bela-dot]')];
+    const prev = root.querySelector('.bela-carousel-prev');
+    const next = root.querySelector('.bela-carousel-next');
+
+    let active = 0;
+    let timer = null;
+    const intervalMs = 6000;
+
+    function apply(i) {
+      active = ((i % total) + total) % total;
+      slideEls.forEach((el, j) => {
+        const on = j === active;
+        el.hidden = !on;
+        el.classList.toggle('relative', on);
+        el.classList.toggle('z-10', on);
+        el.classList.toggle('opacity-100', on);
+        el.classList.toggle('absolute', !on);
+        el.classList.toggle('inset-0', !on);
+        el.classList.toggle('z-0', !on);
+        el.classList.toggle('opacity-0', !on);
+        el.classList.toggle('pointer-events-none', !on);
+      });
+      thumbs.forEach((btn, j) => {
+        const on = j === active;
+        btn.classList.toggle('bela-carousel-thumb--active', on);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      dots.forEach((dot, j) => {
+        const on = j === active;
+        dot.classList.toggle('is-active', on);
+        dot.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+    }
+
+    function go(delta) {
+      apply(active + delta);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      timer = window.setInterval(() => go(1), intervalMs);
+    }
+
+    function stopAutoplay() {
+      if (timer != null) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    thumbs.forEach((btn, j) => {
+      btn.addEventListener('click', () => {
+        apply(j);
+        startAutoplay();
+      });
+    });
+
+    dots.forEach((dot, j) => {
+      dot.addEventListener('click', () => {
+        apply(j);
+        startAutoplay();
+      });
+    });
+
+    prev?.addEventListener('click', () => {
+      go(-1);
+      startAutoplay();
+    });
+
+    next?.addEventListener('click', () => {
+      go(1);
+      startAutoplay();
+    });
+
+    root.addEventListener('mouseenter', stopAutoplay);
+    root.addEventListener('mouseleave', startAutoplay);
+    root.addEventListener('focusin', stopAutoplay);
+    root.addEventListener('focusout', (e) => {
+      const rt = e.relatedTarget;
+      if (rt instanceof Node && root.contains(rt)) return;
+      startAutoplay();
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopAutoplay();
+      else startAutoplay();
+    });
+
+    startAutoplay();
+  }
+
+  document.querySelectorAll(`[data-bela-carousel="${carouselId}"]`).forEach((el) => {
+    if (el instanceof HTMLElement) initCarousel(el);
+  });
+</script>

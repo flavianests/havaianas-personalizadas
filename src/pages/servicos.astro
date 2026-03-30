@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig, whatsappHref } from '../config';
+
+const img = siteConfig.images;
+const baseUrl = siteConfig.url.replace(/\/$/, '');
+const metaDescription =
+  'Produtos de havaianas personalizadas: casamento, formatura, festa de 15 anos e brindes corporativos. Chinelos da Bela, São Paulo — Havaianas originais e estampa no solado.';
+const servicosJsonLd: Record<string, unknown>[] = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Havaianas personalizadas — produtos', item: `${baseUrl}/servicos/` },
+    ],
+  },
+  {
+    '@type': 'WebPage',
+    '@id': `${baseUrl}/servicos/#webpage`,
+    url: `${baseUrl}/servicos/`,
+    name: 'Havaianas personalizadas — produtos Chinelos da Bela',
+    description: metaDescription,
+    isPartOf: { '@id': `${baseUrl}/#website` },
+    inLanguage: 'pt-BR',
+  },
+];
+const pageHrefById: Record<string, string> = {
+  casamento: '/produtos/casamento',
+  formatura: '/produtos/formatura',
+  '15-anos': '/produtos/festa-15-anos',
+  corporativo: '/produtos/eventos-corporativos',
+};
+
+const blocks = [
+  {
+    id: 'casamento',
+    title: 'Havaianas personalizadas para casamento',
+    img: img.prodCasamento,
+    alt: 'Noiva com Havaianas personalizadas nas mãos, vestido branco e véu, decoração de casamento ao fundo — Chinelos da Bela, São Paulo',
+    imgObjectFit: 'contain' as const,
+    body: `Personalize o grande dia com havaianas únicas e confortáveis. Os convidados agradecem ao trocar o salto pela pista — e levam uma lembrança afetiva da celebração. Cores, iniciais e data podem seguir a paleta do casamento.`,
+  },
+  {
+    id: 'formatura',
+    title: 'Havaianas personalizadas para formatura',
+    img: img.prodFormatura,
+    alt: 'Formanda com beca segurando Havaianas personalizadas com estampa, colação de formatura — Chinelos da Bela, São Paulo',
+    imgObjectFit: 'contain' as const,
+    body: `Celebre a conquista com estilo: personalização exclusiva para turma e convidados, com a mesma dedicação descrita no site da Chinelos da Bela para eventos memoráveis.`,
+  },
+  {
+    id: '15-anos',
+    title: 'Havaianas personalizadas para festa de 15 anos',
+    img: img.prodFesta15,
+    alt: 'Debutante com vestido rosa segurando Havaianas personalizadas rosa, mesa de lembrancinhas ao lado — Chinelos da Bela, São Paulo',
+    imgObjectFit: 'contain' as const,
+    body: `Desenhos elegantes e modelos confortáveis para a debutante e os convidados curtirem com estilo durante toda a festa.`,
+  },
+  {
+    id: 'corporativo',
+    title: 'Brindes corporativos com havaianas personalizadas',
+    img: img.prodCorporativo,
+    alt: 'Stand corporativo com Havaianas personalizadas, participante apresentando chinelos da marca em feira ou convenção — Chinelos da Bela, São Paulo',
+    imgObjectFit: 'contain' as const,
+    body: `Ações, confraternizações e eventos de marca: combine estilo, conforto e visibilidade da empresa em um só brinde.`,
+  },
+];
+---
+
+<BaseLayout
+  title="Havaianas personalizadas — produtos (casamento, formatura, 15 anos, corporativo)"
+  description={metaDescription}
+  image={`${baseUrl}${img.destaqueHavaianas}`}
+  ogImageAlt="Havaianas personalizadas com estampa no solado — produtos Chinelos da Bela"
+  jsonLdExtra={servicosJsonLd}
+>
+  <section class="bela-section bela-section-muted py-16 md:py-20" aria-labelledby="titulo-produtos">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h1 id="titulo-produtos" class="text-3xl md:text-5xl font-bold text-white text-center mb-4">
+      Havaianas personalizadas — produtos em São Paulo
+    </h1>
+    <p class="text-zinc-400 text-center max-w-2xl mx-auto mb-6 leading-relaxed">
+      Na Chinelos da Bela você personaliza havaianas para cada tipo de evento: liberdade de criação para combinar com a decoração — do clássico ao despojado — com o
+      conforto da sola Havaianas original e <strong class="font-semibold text-zinc-300">estampa aplicada direto no solado</strong>.
+    </p>
+    <p class="text-center mb-14">
+      <a
+        href={whatsappHref(siteConfig.whatsappPhone)}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bela-cta-pulse-whatsapp inline-flex items-center gap-2 min-h-[48px] px-8 rounded-full bg-[#25D366] text-white font-semibold hover:bg-[#20bd5a] transition-colors"
+        aria-label="Solicitar orçamento de havaianas personalizadas pelo WhatsApp"
+      >
+        <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i>
+        Solicitar orçamento
+      </a>
+    </p>
+
+    <div class="space-y-24">
+      {
+        blocks.map((b) => (
+          <section id={b.id} class="scroll-mt-28 grid lg:grid-cols-2 gap-10 items-center">
+            <div class="bela-surface-card group order-2 overflow-hidden !rounded-2xl !p-0 shadow-bela lg:order-1">
+              <div class="relative aspect-[4/3] w-full overflow-hidden bg-zinc-950">
+                <img
+                  src={b.img}
+                  alt={b.alt}
+                  class:list={[
+                    'absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.03]',
+                    b.imgObjectFit === 'contain'
+                      ? 'object-contain object-center'
+                      : [
+                          'object-cover',
+                          b.imgObjectPosition === 'top' ? 'object-top' : 'object-center',
+                        ],
+                  ]}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="order-1 lg:order-2">
+              <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">{b.title}</h2>
+              <p class="text-zinc-400 leading-relaxed mb-6">{b.body}</p>
+              <p class="mb-4">
+                <a
+                  href={pageHrefById[b.id]}
+                  class="text-rose-300/90 font-medium hover:text-rose-200 min-h-[44px] inline-flex items-center underline-offset-4 hover:underline"
+                >
+                  Ver página dedicada com mais detalhes
+                </a>
+              </p>
+              <a
+                href={whatsappHref(siteConfig.whatsappPhone, `Olá! Tenho interesse em ${b.title}.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-rose-300 font-medium hover:text-rose-200 min-h-[44px] inline-flex items-center gap-2"
+                aria-label={`Falar no WhatsApp sobre ${b.title}`}
+              >
+                Falar no WhatsApp <i class="fab fa-whatsapp" aria-hidden="true" />
+              </a>
+            </div>
+          </section>
+        ))
+      }
+    </div>
+
+    <div class="bela-surface-card mt-20 p-8 text-center md:p-12">
+      <h2 class="text-xl font-bold text-white mb-2">Escolha os melhores produtos para seu evento</h2>
+      <p class="text-zinc-400 mb-6 max-w-xl mx-auto">
+        Garanta a melhor experiência para seus convidados com produtos personalizados da Chinelos da Bela.
+      </p>
+      <a
+        href={whatsappHref(siteConfig.whatsappPhone)}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 min-h-[48px] px-8 rounded-full bg-rose-500 text-white font-semibold hover:bg-rose-600 transition-colors"
+        aria-label="Pedir orçamento de havaianas personalizadas agora pelo WhatsApp"
+      >
+        Pedir orçamento agora
+      </a>
+    </div>
+    </div>
+  </section>
+</BaseLayout>

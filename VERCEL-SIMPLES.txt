@@ -1,0 +1,63 @@
+========================================
+  PUBLICAR NA VERCEL (sem Git)
+========================================
+
+Na Vercel o build usa "npm run build:vercel" (só Astro).
+No teu PC podes usar "npm run build" para tambem verificar links.
+
+========================================
+
+Antes de tudo: Node.js instalado e terminal a aceitar npm
+(npx vercel tem de funcionar).
+
+----------------------------------------
+PASSO 1 — Abrir terminal nesta pasta
+----------------------------------------
+No Cursor: Terminal → New Terminal (ou Ctrl + `)
+
+Escreve e Enter:
+
+  cd c:\Users\Flaviane\Documents\f8-main\sites\havaianas-personalizadas
+
+----------------------------------------
+PASSO 2 — Entrar na tua conta Vercel
+----------------------------------------
+Só na primeira vez:
+
+  npx vercel login
+
+Abre o browser, faz login e volta ao terminal quando disser OK.
+
+----------------------------------------
+PASSO 3 — Primeiro deploy (ligar o projeto)
+----------------------------------------
+
+  npx vercel
+
+Responde assim (se perguntar):
+  • Set up and deploy?  →  Y (Sim)
+  • Which scope?       →  escolhe a tua conta
+  • Link to existing?  →  N (Não) se for projeto novo
+  • Project name?      →  havaianas-personalizadas  (ou o nome que quiseres)
+  • Directory?         →  ./  (Enter)
+  • Override settings? →  N (Não)
+
+No fim aparece um link .vercel.app (pré-visualização).
+
+----------------------------------------
+PASSO 4 — Site em produção (URL final)
+----------------------------------------
+
+  npx vercel --prod
+
+Ou faz duplo clique em:  deploy-vercel.cmd
+
+----------------------------------------
+Se der erro
+----------------------------------------
+Copia TODA a mensagem vermelha e pede ajuda.
+
+Ou usa o site: vercel.com → Add New → Project
+e liga o repositório GitHub (se tiveres código no GitHub).
+
+========================================

@@ -1,0 +1,293 @@
+---
+import { siteConfig, whatsappHref } from '../config';
+import SocialIcons from './SocialIcons.astro';
+
+type NavLink = { href: string; label: string };
+type NavDropdown = { label: string; children: readonly NavLink[] };
+
+function isNavLink(item: NavLink | NavDropdown): item is NavLink {
+  return 'href' in item;
+}
+
+function isNavDropdown(item: NavLink | NavDropdown): item is NavDropdown {
+  return 'children' in item && Array.isArray(item.children);
+}
+
+const navItems = siteConfig.nav as readonly (NavLink | NavDropdown)[];
+---
+
+<header
+  class="bela-header fixed top-0 left-0 right-0 z-[100] border-b border-white/[0.06] bg-[#111116]"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 md:h-[4.5rem]">
+      <a
+        href="/"
+        class="flex items-center shrink-0 min-h-[44px] min-w-[44px] py-1"
+        aria-label={`${siteConfig.name} — Início`}
+      >
+        <img
+          src={siteConfig.images.logoWhite}
+          alt={siteConfig.name}
+          class="h-11 w-auto max-h-[60px] max-w-[220px] object-contain object-left md:h-[52px]"
+          width="200"
+          height="60"
+          loading="eager"
+        />
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Navegação principal">
+        {
+          navItems.map((item) =>
+            isNavLink(item) ? (
+              <a
+                href={item.href}
+                class="text-sm font-medium text-white/90 hover:text-rose-300 transition-colors px-3 py-2 rounded-lg min-h-[44px] inline-flex items-center"
+              >
+                {item.label}
+              </a>
+            ) : isNavDropdown(item) ? (
+              <div class="relative" data-nav-dropdown>
+                <button
+                  type="button"
+                  class="text-sm font-medium text-white/90 hover:text-rose-300 transition-colors px-3 py-2 rounded-lg min-h-[44px] inline-flex items-center gap-2"
+                  data-nav-dropdown-trigger
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-controls="nav-dropdown-produtos"
+                >
+                  <i class="fa-solid fa-box-open text-base opacity-90" aria-hidden="true"></i>
+                  {item.label}
+                  <svg
+                    class="w-4 h-4 opacity-80 transition-transform duration-200 data-[open]:rotate-180"
+                    data-nav-dropdown-chevron
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  id="nav-dropdown-produtos"
+                  class="absolute left-0 top-full z-[110] hidden min-w-[240px] pt-1"
+                  data-nav-dropdown-panel
+                  role="menu"
+                  aria-label="Submenu Produtos"
+                >
+                  <div class="rounded-xl border border-white/[0.08] bg-[#16161c] py-1 shadow-xl shadow-black/40">
+                    {
+                      item.children.map((child) => (
+                        <a
+                          href={child.href}
+                          role="menuitem"
+                          class="block px-4 py-2.5 text-sm text-white/90 hover:bg-rose-500/15 hover:text-rose-200 first:rounded-t-lg last:rounded-b-lg"
+                        >
+                          {child.label}
+                        </a>
+                      ))
+                    }
+                  </div>
+                </div>
+              </div>
+            ) : null
+          )
+        }
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <div class="hidden xl:flex xl:items-center xl:pr-1">
+          <SocialIcons compact class="gap-1" />
+        </div>
+        <a
+          href={whatsappHref(siteConfig.whatsappPhone)}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bela-cta-pulse-whatsapp hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#20bd5a] transition-colors min-h-[44px]"
+        >
+          <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i>
+          Fale conosco
+        </a>
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="lg:hidden p-2 rounded-lg text-white/90 hover:bg-white/10 min-h-[44px] min-w-[44px] flex items-center justify-center"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden fixed inset-0 top-16 z-[90] overflow-y-auto border-t border-white/[0.06] bg-[#111116] pb-10"
+    role="dialog"
+    aria-label="Menu mobile"
+  >
+    <nav class="px-4 py-3 space-y-0.5" aria-label="Navegação mobile">
+      {
+        navItems.map((item) =>
+          isNavLink(item) ? (
+            <a
+              href={item.href}
+              class="mobile-nav-link block py-2 px-3 text-base font-medium leading-snug text-white/90 hover:bg-white/5 hover:text-rose-300 rounded-lg min-h-[44px] flex items-center"
+            >
+              {item.label}
+            </a>
+          ) : isNavDropdown(item) ? (
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.03] overflow-hidden">
+              <button
+                type="button"
+                class="mobile-produtos-toggle flex w-full items-center justify-between gap-2 py-2 px-3 text-left text-base font-medium leading-snug text-white/90 min-h-[44px]"
+                aria-expanded="false"
+                aria-controls="mobile-produtos-panel"
+              >
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-box-open text-base opacity-90" aria-hidden="true"></i>
+                  {item.label}
+                </span>
+                <svg class="mobile-produtos-chevron w-5 h-5 shrink-0 opacity-70 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="mobile-produtos-panel" class="hidden divide-y divide-white/[0.06] border-t border-white/[0.06]">
+                {
+                  item.children.map((child) => (
+                    <a
+                      href={child.href}
+                      class="mobile-nav-link mobile-produtos-sublink block py-2 pl-10 pr-3 text-[0.9375rem] leading-snug text-white/85 hover:bg-white/5 hover:text-rose-300 min-h-[44px] flex items-center"
+                    >
+                      {child.label}
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+          ) : null
+        )
+      }
+      <a
+        href={whatsappHref(siteConfig.whatsappPhone)}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bela-cta-pulse-whatsapp mobile-nav-link flex items-center justify-center gap-2 mt-4 mx-2 py-2.5 rounded-full bg-[#25D366] text-white text-[0.9375rem] font-semibold min-h-[44px] hover:bg-[#20bd5a] transition-colors"
+      >
+        <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i>
+        WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function setupDesktopDropdowns() {
+    document.querySelectorAll('[data-nav-dropdown]').forEach((wrap) => {
+      const trigger = wrap.querySelector('[data-nav-dropdown-trigger]');
+      const panel = wrap.querySelector('[data-nav-dropdown-panel]');
+      const chevron = wrap.querySelector('[data-nav-dropdown-chevron]');
+      if (!trigger || !panel) return;
+
+      function close() {
+        panel.classList.add('hidden');
+        trigger.setAttribute('aria-expanded', 'false');
+        chevron?.removeAttribute('data-open');
+      }
+
+      function open() {
+        document.querySelectorAll('[data-nav-dropdown]').forEach((w) => {
+          if (w === wrap) return;
+          const p = w.querySelector('[data-nav-dropdown-panel]');
+          const t = w.querySelector('[data-nav-dropdown-trigger]');
+          const c = w.querySelector('[data-nav-dropdown-chevron]');
+          p?.classList.add('hidden');
+          t?.setAttribute('aria-expanded', 'false');
+          c?.removeAttribute('data-open');
+        });
+        panel.classList.remove('hidden');
+        trigger.setAttribute('aria-expanded', 'true');
+        chevron?.setAttribute('data-open', '');
+      }
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = panel.classList.contains('hidden');
+        if (isHidden) open();
+        else close();
+      });
+    });
+
+    document.addEventListener('click', () => {
+      document.querySelectorAll('[data-nav-dropdown]').forEach((wrap) => {
+        const panel = wrap.querySelector('[data-nav-dropdown-panel]');
+        const trigger = wrap.querySelector('[data-nav-dropdown-trigger]');
+        const chevron = wrap.querySelector('[data-nav-dropdown-chevron]');
+        panel?.classList.add('hidden');
+        trigger?.setAttribute('aria-expanded', 'false');
+        chevron?.removeAttribute('data-open');
+      });
+    });
+
+    document.querySelectorAll('[data-nav-dropdown-panel]').forEach((panel) => {
+      panel.addEventListener('click', (e) => e.stopPropagation());
+    });
+  }
+
+  function setupMobileProdutos() {
+    const btn = document.querySelector('.mobile-produtos-toggle');
+    const subPanel = document.getElementById('mobile-produtos-panel');
+    const chevron = document.querySelector('.mobile-produtos-chevron');
+    btn?.addEventListener('click', () => {
+      const open = subPanel?.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (chevron instanceof SVGElement) {
+        chevron.style.transform = open ? 'rotate(180deg)' : '';
+      }
+    });
+  }
+
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+  const links = document.querySelectorAll('.mobile-nav-link');
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    openIcon?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+    btn?.setAttribute('aria-expanded', 'true');
+    btn?.setAttribute('aria-label', 'Fechar menu');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    openIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+    btn?.setAttribute('aria-expanded', 'false');
+    btn?.setAttribute('aria-label', 'Abrir menu');
+    document.body.style.overflow = '';
+  }
+  btn?.addEventListener('click', () => {
+    if (menu?.classList.contains('hidden')) openMenu();
+    else closeMenu();
+  });
+  links.forEach((link) => link.addEventListener('click', closeMenu));
+
+  setupDesktopDropdowns();
+  setupMobileProdutos();
+</script>
+
+<style>
+  [data-nav-dropdown-chevron][data-open] {
+    transform: rotate(180deg);
+  }
+</style>

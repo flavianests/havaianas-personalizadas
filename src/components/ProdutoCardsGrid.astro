@@ -1,0 +1,83 @@
+---
+import { productCards } from '../data/produto-cards';
+
+interface Props {
+  /** Ex.: `/produtos/casamento` — card atual recebe destaque */
+  currentHref?: string;
+  id?: string;
+  heading?: string;
+  intro?: string;
+}
+
+const {
+  currentHref,
+  id = 'outros-produtos-bela',
+  heading = 'Havaianas personalizadas por tipo de evento',
+  intro = 'Explore todas as linhas com o mesmo padrão de qualidade: Havaianas originais e estampa no solado.',
+} = Astro.props;
+---
+
+<section class="mt-14 md:mt-16" aria-labelledby={id}>
+  <h2 id={id} class="mb-3 text-center text-2xl font-bold text-white md:text-3xl">
+    {heading}
+  </h2>
+  <p class="mx-auto mb-10 max-w-2xl text-center text-sm text-zinc-400 md:text-base">
+    {intro}
+  </p>
+  <div class="mx-auto grid max-w-4xl gap-8 md:grid-cols-2 md:items-stretch">
+    {
+      productCards.map((c) => {
+        const isCurrent = currentHref === c.href;
+        return (
+          <article
+            class:list={[
+              'bela-surface-card group flex h-full flex-col overflow-hidden rounded-xl !border-white/10 !p-0',
+              isCurrent && 'ring-2 ring-rose-500/50 ring-offset-2 ring-offset-[#111116]',
+            ]}
+            aria-current={isCurrent ? 'page' : undefined}
+          >
+            <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-950">
+              <img
+                src={c.img}
+                alt={c.alt}
+                class:list={[
+                  'absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.03]',
+                  'imgObjectFit' in c && c.imgObjectFit === 'contain'
+                    ? 'object-contain object-center'
+                    : [
+                        'object-cover',
+                        'imgObjectPosition' in c && c.imgObjectPosition === 'top' ? 'object-top' : 'object-center',
+                      ],
+                ]}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="mb-1.5 text-lg font-bold text-white">{c.title}</h3>
+              <p class="mb-4 flex-1 text-sm leading-relaxed text-zinc-400">{c.blurb}</p>
+              {isCurrent ? (
+                <p class="text-sm font-medium text-rose-300/90">Você está nesta página</p>
+              ) : (
+                <a
+                  href={c.href}
+                  class="inline-flex min-h-[44px] items-center text-sm font-medium text-rose-300 hover:text-rose-200"
+                >
+                  {c.linkLabel}
+                </a>
+              )}
+            </div>
+          </article>
+        );
+      })
+    }
+  </div>
+  <p class="mt-10 text-center">
+    <a
+      href="/servicos"
+      class="inline-flex min-h-[44px] items-center text-sm font-medium text-zinc-400 underline-offset-4 transition-colors hover:text-rose-300 hover:underline"
+    >
+      Ver todos os produtos na página Produtos
+    </a>
+  </p>
+</section>

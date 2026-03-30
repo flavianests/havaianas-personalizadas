@@ -1,0 +1,485 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Fundo único do site (carvão azulado ~ #111116) */
+  --bela-bg-deep: #111116;
+  --bela-surface: rgba(255, 255, 255, 0.04);
+  --bela-border: rgba(255, 255, 255, 0.09);
+  --bela-rose: #e11d48;
+  --bela-violet: #818cf8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(225, 29, 72, 0.35);
+  color: #fafafa;
+}
+
+/* Fundo global: cor única #111116 (sem gradiente / malha) */
+.bela-body {
+  overflow-x: clip;
+  min-height: 100vh;
+  background: var(--bela-bg-deep);
+}
+
+/* Títulos: tom mais “produto tech” */
+h1,
+h2,
+h3,
+.font-display {
+  font-family: 'Space Grotesk', 'DM Sans', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Cartões / superfícies reutilizáveis */
+.bela-surface-card {
+  border-radius: 1rem;
+  border: 1px solid var(--bela-border);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 55%, rgba(0, 0, 0, 0.12) 100%);
+  box-shadow:
+    0 0 0 1px rgba(225, 29, 72, 0.04),
+    0 20px 45px -18px rgba(0, 0, 0, 0.55);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bela-surface-card:hover {
+  border-color: rgba(244, 63, 94, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(244, 63, 94, 0.1),
+    0 26px 50px -14px rgba(225, 29, 72, 0.14);
+}
+
+/* Blocos de seção alternados */
+.bela-section {
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bela-section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(72rem, 100%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(244, 63, 94, 0.35) 25%,
+    rgba(129, 140, 248, 0.25) 75%,
+    transparent
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.bela-section-muted {
+  background: var(--bela-bg-deep);
+}
+
+.bela-section-deep {
+  background: var(--bela-bg-deep);
+}
+
+/* Prose / imagens em conteúdo editorial */
+.bela-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+/* Hero estilo “tech showcase”: gradiente + grade + bokeh */
+.bela-hero-showcase {
+  background: var(--bela-bg-deep);
+}
+
+/* H1 hero: brilho deslizante (gradiente + background-clip) */
+.bela-hero-title-shine {
+  background-image: linear-gradient(
+    100deg,
+    #e11d48 0%,
+    #e11d48 28%,
+    #fb7185 40%,
+    #fff5f5 50%,
+    #fb7185 60%,
+    #e11d48 72%,
+    #e11d48 100%
+  );
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: bela-hero-title-shine-sweep 3.8s ease-in-out infinite;
+}
+
+/* Título principal do hero: brilho em “Havaianas Personalizadas para Eventos” (rosa marca + reflexo claro) */
+.bela-hero-h1-shine {
+  background-image: linear-gradient(
+    105deg,
+    #f472b6 0%,
+    #f8969c 18%,
+    #fda4af 32%,
+    #fff7f7 48%,
+    #fda4af 58%,
+    #f8969c 72%,
+    #e11d48 100%
+  );
+  background-size: 240% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: bela-hero-title-shine-sweep 4s ease-in-out infinite;
+}
+
+@keyframes bela-hero-title-shine-sweep {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: -100% 50%;
+  }
+}
+
+.bela-hero-collage-img {
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Cards “diferenciais”: hover chamativo */
+.bela-diff-card {
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.bela-diff-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(244, 63, 94, 0.4);
+  box-shadow:
+    0 28px 50px -12px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(244, 63, 94, 0.12),
+    0 20px 40px -16px rgba(225, 29, 72, 0.25);
+}
+
+.bela-diff-card .bela-diff-icon {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bela-diff-card:hover .bela-diff-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bela-surface-card {
+    transition: none;
+  }
+
+  .bela-diff-card,
+  .bela-diff-card:hover,
+  .bela-diff-card .bela-diff-icon,
+  .bela-diff-card:hover .bela-diff-icon {
+    transition: none;
+    transform: none;
+  }
+
+  .bela-diff-card:hover {
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Header tech: linha de acento inferior (não usar position aqui — o header é fixed) */
+.bela-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(244, 63, 94, 0.45) 22%,
+    rgba(129, 140, 248, 0.35) 78%,
+    transparent 100%
+  );
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* Hero colagem: entrada + “flutuar” + Ken Burns dentro do recorte */
+.bela-hero-slot {
+  opacity: 0;
+  animation: bela-hero-slot-enter 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--enter-delay, 0s);
+}
+
+@keyframes bela-hero-slot-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem) scale(0.88) rotate(calc(var(--drift-rot, 0deg) * 0.35));
+    filter: blur(10px);
+  }
+  70% {
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+.bela-hero-float {
+  transform-origin: center center;
+  will-change: transform;
+  animation: bela-hero-drift var(--drift-dur, 6s) ease-in-out infinite;
+  animation-delay: var(--drift-delay, 0s);
+}
+
+/* Trajetória mais orgânica + micro escala (cada cartão usa --drift-rot) */
+@keyframes bela-hero-drift {
+  0%,
+  100% {
+    transform: rotate(var(--drift-rot, 0deg)) translate(0, 0) scale(1);
+  }
+  20% {
+    transform: rotate(calc(var(--drift-rot, 0deg) + 2.2deg)) translate(9px, -16px) scale(1.018);
+  }
+  40% {
+    transform: rotate(calc(var(--drift-rot, 0deg) - 1.4deg)) translate(-7px, -6px) scale(1.024);
+  }
+  60% {
+    transform: rotate(calc(var(--drift-rot, 0deg) + 1deg)) translate(5px, 10px) scale(1.01);
+  }
+  80% {
+    transform: rotate(calc(var(--drift-rot, 0deg) - 1.8deg)) translate(-4px, -12px) scale(1.016);
+  }
+}
+
+.bela-hero-float-clip {
+  overflow: hidden;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Moldura gradiente + brilho — cartões do hero mais expressivos */
+.bela-hero-card-frame {
+  position: relative;
+  padding: 2px;
+  background: linear-gradient(
+    145deg,
+    rgba(244, 63, 94, 0.65) 0%,
+    rgba(251, 113, 133, 0.25) 38%,
+    rgba(168, 85, 247, 0.35) 72%,
+    rgba(59, 130, 246, 0.3) 100%
+  );
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.35),
+    0 20px 40px -12px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.07),
+    0 0 60px -10px rgba(244, 63, 94, 0.35);
+  transition:
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.55s ease;
+}
+
+.bela-hero-card-frame--rio {
+  background: linear-gradient(
+    155deg,
+    rgba(244, 63, 94, 0.75) 0%,
+    rgba(251, 113, 133, 0.35) 45%,
+    rgba(190, 24, 93, 0.4) 100%
+  );
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.35),
+    0 22px 44px -14px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 70px -12px rgba(244, 63, 94, 0.45);
+}
+
+.bela-hero-card-frame--arbit {
+  background: linear-gradient(
+    165deg,
+    rgba(34, 211, 238, 0.45) 0%,
+    rgba(59, 130, 246, 0.4) 50%,
+    rgba(99, 102, 241, 0.35) 100%
+  );
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.35),
+    0 20px 40px -12px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.07),
+    0 0 55px -10px rgba(34, 211, 238, 0.35);
+}
+
+.bela-hero-card-frame--sem-parar {
+  background: linear-gradient(
+    135deg,
+    rgba(217, 70, 239, 0.55) 0%,
+    rgba(244, 63, 94, 0.45) 55%,
+    rgba(251, 191, 36, 0.25) 100%
+  );
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.35),
+    0 20px 40px -12px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.07),
+    0 0 60px -12px rgba(217, 70, 239, 0.38);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bela-hero-card-frame:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow:
+      0 8px 12px -2px rgba(0, 0, 0, 0.4),
+      0 28px 56px -16px rgba(0, 0, 0, 0.65),
+      0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 0 80px -8px rgba(244, 63, 94, 0.5);
+  }
+
+  .bela-hero-card-frame--arbit:hover {
+    box-shadow:
+      0 8px 12px -2px rgba(0, 0, 0, 0.4),
+      0 28px 56px -16px rgba(0, 0, 0, 0.65),
+      0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 0 80px -8px rgba(34, 211, 238, 0.45);
+  }
+
+  .bela-hero-card-frame--sem-parar:hover {
+    box-shadow:
+      0 8px 12px -2px rgba(0, 0, 0, 0.4),
+      0 28px 56px -16px rgba(0, 0, 0, 0.65),
+      0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 0 80px -8px rgba(217, 70, 239, 0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bela-hero-card-frame:hover {
+    transform: none;
+  }
+}
+
+.bela-hero-card-frame .bela-hero-float-clip {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 12px 24px -8px rgba(0, 0, 0, 0.45);
+}
+
+.bela-hero-float-clip .bela-hero-collage-img {
+  box-shadow: none;
+}
+
+.bela-hero-float-media {
+  transform-origin: center center;
+  will-change: transform;
+  animation: bela-hero-ken var(--ken-dur, 14s) ease-in-out infinite alternate;
+  animation-delay: var(--ken-delay, 0s);
+}
+
+/* Com object-contain o zoom Ken Burns recorta bordas; mantém só o movimento de flutuação do cartão */
+.bela-hero-float-media--contain {
+  animation: none;
+}
+
+@keyframes bela-hero-ken {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.11) translate(var(--ken-tx, 2%), var(--ken-ty, -1.5%));
+  }
+}
+
+/* CTAs principais: pulso suave (anel + leve escala) */
+@keyframes bela-cta-pulse-rose {
+  0%,
+  100% {
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.28),
+      0 4px 6px -4px rgba(0, 0, 0, 0.18),
+      0 0 0 0 rgba(244, 63, 94, 0.5);
+    transform: scale(1);
+  }
+  55% {
+    box-shadow:
+      0 12px 20px -5px rgba(0, 0, 0, 0.3),
+      0 4px 8px -4px rgba(0, 0, 0, 0.2),
+      0 0 0 12px rgba(244, 63, 94, 0);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes bela-cta-pulse-whatsapp {
+  0%,
+  100% {
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.22),
+      0 4px 6px -4px rgba(0, 0, 0, 0.12),
+      0 0 0 0 rgba(37, 211, 102, 0.45);
+    transform: scale(1);
+  }
+  55% {
+    box-shadow:
+      0 12px 20px -5px rgba(0, 0, 0, 0.25),
+      0 4px 8px -4px rgba(0, 0, 0, 0.14),
+      0 0 0 12px rgba(37, 211, 102, 0);
+    transform: scale(1.03);
+  }
+}
+
+.bela-cta-pulse-rose {
+  animation: bela-cta-pulse-rose 2.4s ease-in-out infinite;
+}
+
+.bela-cta-pulse-whatsapp {
+  animation: bela-cta-pulse-whatsapp 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bela-hero-slot {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  .bela-hero-float {
+    animation: none;
+    transform: rotate(var(--drift-rot, 0deg));
+  }
+
+  .bela-hero-float-media {
+    animation: none;
+  }
+
+  .bela-hero-title-shine,
+  .bela-hero-h1-shine {
+    animation: none;
+    background-image: none;
+    background-size: auto;
+    color: #f8969c;
+    -webkit-text-fill-color: #f8969c;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+  }
+
+  .bela-cta-pulse-rose,
+  .bela-cta-pulse-whatsapp {
+    animation: none;
+    transform: none;
+  }
+}

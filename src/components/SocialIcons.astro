@@ -1,0 +1,68 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  class?: string;
+  /** Botões menores (ex.: barra superior) */
+  compact?: boolean;
+}
+
+const { class: className = '', compact = false } = Astro.props;
+const btnClass = compact ? 'h-9 w-9 text-sm' : 'h-11 w-11 text-lg';
+const { instagram, facebook, tiktok, youtube } = siteConfig.social;
+
+const links = [
+  {
+    href: instagram,
+    icon: 'fab fa-instagram',
+    label: 'Instagram — Chinelos da Bela',
+    brandClass:
+      'border-0 bg-[linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)] text-white shadow-sm hover:brightness-110',
+  },
+  {
+    href: facebook,
+    icon: 'fab fa-facebook-f',
+    label: 'Facebook — Chinelos da Bela',
+    brandClass: 'border-0 bg-[#1877F2] text-white hover:brightness-110',
+  },
+  {
+    href: tiktok,
+    icon: 'fab fa-tiktok',
+    label: 'TikTok — Chinelos da Bela',
+    brandClass:
+      'border-0 bg-black text-white ring-1 ring-white/20 hover:bg-[#121212] hover:ring-[#25F4EE]/40',
+  },
+  {
+    href: youtube,
+    icon: 'fab fa-youtube',
+    label: 'YouTube — Chinelos da Bela',
+    brandClass: 'border-0 bg-[#FF0000] text-white hover:brightness-110',
+  },
+] as const;
+---
+
+<ul
+  class:list={['flex flex-wrap gap-2', className]}
+  role="list"
+  aria-label="Redes sociais da Chinelos da Bela"
+>
+  {
+    links.map(({ href, icon, label, brandClass }) => (
+      <li>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class:list={[
+            'inline-flex items-center justify-center rounded-lg transition duration-200 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-400',
+            btnClass,
+            brandClass,
+          ]}
+          aria-label={label}
+        >
+          <i class={icon} aria-hidden="true" />
+        </a>
+      </li>
+    ))
+  }
+</ul>

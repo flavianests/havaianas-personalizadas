@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialIcons from '../components/SocialIcons.astro';
+import { siteConfig, whatsappHref } from '../config';
+
+const img = siteConfig.images;
+const baseUrl = siteConfig.url.replace(/\/$/, '');
+const metaDescription =
+  'Contato Chinelos da Bela: WhatsApp, e-mail, redes sociais e endereço na Av. Pirajussara, 4869 — Jd. Celeste, São Paulo. Orçamento de Havaianas Personalizadas e CNPJ.';
+const contatoJsonLd: Record<string, unknown>[] = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Contato — Havaianas Personalizadas', item: `${baseUrl}/contato/` },
+    ],
+  },
+  {
+    '@type': 'ContactPage',
+    '@id': `${baseUrl}/contato/#webpage`,
+    url: `${baseUrl}/contato/`,
+    name: 'Contato — Chinelos da Bela, Havaianas Personalizadas São Paulo',
+    description: metaDescription,
+    isPartOf: { '@id': `${baseUrl}/#website` },
+    inLanguage: 'pt-BR',
+  },
+];
+---
+
+<BaseLayout
+  title="Contato — Chinelos da Bela (Havaianas Personalizadas, São Paulo)"
+  description={metaDescription}
+  image={`${baseUrl}${img.destaqueHavaianas}`}
+  ogImageAlt="Havaianas Personalizadas Chinelos da Bela — contato e orçamento"
+  jsonLdExtra={contatoJsonLd}
+>
+  <section class="bela-section bela-section-muted py-16 md:py-20" aria-labelledby="titulo-contato">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h1 id="titulo-contato" class="text-3xl md:text-5xl font-bold text-white text-center mb-4">
+      Contato — Havaianas Personalizadas Chinelos da Bela
+    </h1>
+    <p class="text-zinc-400 text-center max-w-xl mx-auto mb-12">
+      Dados conforme o site oficial para <strong class="text-zinc-300">Havaianas Personalizadas</strong> e demais produtos.
+    </p>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div class="bela-surface-card aspect-video overflow-hidden !rounded-2xl !p-0 shadow-bela-glow lg:aspect-auto lg:min-h-[320px]">
+        <img
+          src={img.destaqueHavaianas}
+          alt="Havaianas Personalizadas com estampa no solado — Chinelos da Bela, atendimento em São Paulo"
+          class="h-full w-full object-cover"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <div class="space-y-8">
+        <div>
+          <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-rose-300">WhatsApp</h2>
+          <p class="mb-4 text-zinc-400">
+            Orçamento e dúvidas pelo WhatsApp — resposta direta da equipe.
+          </p>
+          <a
+            href={whatsappHref(siteConfig.whatsappPhone)}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bela-cta-pulse-whatsapp inline-flex min-h-[48px] items-center gap-2 rounded-full bg-[#25D366] px-6 font-semibold text-white hover:bg-[#20bd5a] transition-colors"
+            aria-label="Abrir WhatsApp da Chinelos da Bela para orçamento de Havaianas Personalizadas"
+          >
+            <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i>
+            Falar no WhatsApp
+          </a>
+        </div>
+        <div>
+          <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-rose-300">Redes sociais</h2>
+          <SocialIcons />
+        </div>
+        <div>
+          <h2 class="text-sm font-semibold text-rose-300 uppercase tracking-wide mb-3">E-mail</h2>
+          <a href={`mailto:${siteConfig.email}`} class="text-lg text-white hover:text-rose-300 break-all">
+            {siteConfig.email}
+          </a>
+        </div>
+        <div>
+          <h2 class="text-sm font-semibold text-rose-300 uppercase tracking-wide mb-3">Endereço</h2>
+          <p class="text-zinc-300 leading-relaxed">{siteConfig.address}</p>
+          <a
+            href={siteConfig.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 mt-4 text-rose-300 font-medium min-h-[44px]"
+          >
+            Abrir no Google Maps
+          </a>
+        </div>
+        <div>
+          <h2 class="text-sm font-semibold text-rose-300 uppercase tracking-wide mb-3">CNPJ</h2>
+          <p class="text-zinc-300">{siteConfig.cnpj}</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</BaseLayout>

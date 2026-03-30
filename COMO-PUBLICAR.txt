@@ -1,0 +1,22 @@
+========================================
+  PUBLICAR O SITE (bem simples)
+========================================
+
+1) Faz duplo clique no ficheiro:
+      gerar-site-para-internet.cmd
+
+   Espera acabar. Tem de aparecer "PRONTO" e abrir uma pasta.
+
+2) Abre o site no telemóvel ou PC:
+      https://app.netlify.com/drop
+
+   Cria conta grátis (email) se pedir.
+
+3) Arrasta a pasta "dist" para a zona a dizer "drag and drop"
+   (a pasta "dist" fica dentro desta pasta do projeto)
+
+4) O Netlify dá-te um link tipo:  nomesite.netlify.app
+   Esse link é o teu site no ar.
+
+---
+Se o passo 1 der ERRO, copia a mensagem vermelha toda.
