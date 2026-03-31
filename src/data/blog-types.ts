@@ -1,12 +1,13 @@
-export type ArticleBlock = { type: 'h2' | 'h3' | 'p'; text: string };
-
 export type BlogArticle = {
   slug: string;
   title: string;
   excerpt: string;
+  /** Meta description SEO (~150–160 caracteres recomendado pelo Google) */
+  metaDescription?: string;
   tag: string;
   image: string;
   imageAlt: string;
   originalUrl: string;
-  blocks: ArticleBlock[];
+  /** Corpo longo em Markdown (## e ###, parágrafos curtos, listas). */
+  bodyMarkdown: string;
 };

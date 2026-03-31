@@ -7,9 +7,9 @@ const img = siteConfig.images;
 const pageUrl = `${baseUrl}/produtos/formatura/`;
 
 /** SEO: título 56 caracteres; meta 159 caracteres (recom. ~150–160 Google) */
-const title = 'Havaianas personalizadas formatura SP | Chinelos da Bela';
+const title = 'Havaianas personalizadas formatura | Chinelos da Bela';
 const metaDescription =
-  'Havaianas personalizadas para formatura em SP: turma, colação e festa, sola original e estampa no solado. Orçamento Chinelos da Bela pelo WhatsApp para turmas.';
+  'Havaianas personalizadas para formatura: turma, colação e festa, sola original e estampa no solado. Orçamento Chinelos da Bela pelo WhatsApp para turmas.';
 
 const jsonLdExtra: Record<string, unknown>[] = [
   {
@@ -41,7 +41,7 @@ const jsonLdExtra: Record<string, unknown>[] = [
     url: pageUrl,
     provider: { '@id': `${baseUrl}/#localbusiness` },
     serviceType: 'Personalização de chinelos Havaianas para formaturas e eventos acadêmicos',
-    areaServed: { '@type': 'AdministrativeArea', name: 'São Paulo' },
+    areaServed: { '@type': 'Country', name: 'Brasil' },
   },
 ];
 
@@ -59,11 +59,11 @@ const breadcrumbs = [
   ogImage={`${baseUrl}${img.destaqueHavaianas}`}
   ogImageAlt="Havaianas personalizadas para formatura — formando com estampa no solado, Chinelos da Bela"
   heroImage={img.prodFormatura}
-  heroImageAlt="Formanda com beca segurando Havaianas personalizadas com estampa, colação de formatura — Chinelos da Bela, São Paulo"
+  heroImageAlt="Formanda com beca segurando Havaianas personalizadas com estampa, colação de formatura — Chinelos da Bela"
   heroImageObjectFit="contain"
   productCardsCurrentHref="/produtos/formatura"
   ctaOrcamentoIntro="Comissão de formatura ou representante da turma: envie pelo WhatsApp data da colação e/ou festa, número de formandos, quantidade desejada e ideias de arte (curso, ano, instituição). A Chinelos da Bela orienta numeração, prazos e personalização em havaianas para formatura com sola Havaianas original."
-  intro="Formaturas reúnem família, amigos e fotos. As havaianas personalizadas unem o símbolo do curso a um brinde usado depois da cerimônia — Havaianas originais e estampa profissional no solado para turma e convidados. Ideal para quem busca “chinelos personalizados formatura” ou lembrancinhas acadêmicas em São Paulo com identidade da turma."
+  intro="Formaturas reúnem família, amigos e fotos. As havaianas personalizadas unem o símbolo do curso a um brinde usado depois da cerimônia — Havaianas originais e estampa profissional no solado para turma e convidados. Ideal para quem busca “chinelos personalizados formatura” ou lembrancinhas acadêmicas com identidade da turma."
   whatsappContext="havaianas personalizadas para formatura"
   breadcrumbs={breadcrumbs}
   jsonLdExtra={jsonLdExtra}

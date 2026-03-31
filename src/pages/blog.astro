@@ -7,7 +7,7 @@ const img = siteConfig.images;
 
 const baseUrl = siteConfig.url.replace(/\/$/, '');
 const metaDescription =
-  'Blog da Bela — artigos sobre havaianas personalizadas: casamento, formatura, festa de 15 anos, estampa no solado e brindes corporativos. Guias práticos e orçamento com a Chinelos da Bela.';
+  'Blog da Bela — guias longos (~3000 palavras) sobre havaianas personalizadas: casamento, formatura, 15 anos, estampa no solado e brindes corporativos. Conteúdo para Google e orçamento Chinelos da Bela.';
 
 const blogJsonLd: Record<string, unknown>[] = [
   {
@@ -27,7 +27,7 @@ const blogJsonLd: Record<string, unknown>[] = [
     blogPost: blogArticles.map((post) => ({
       '@type': 'BlogPosting',
       headline: post.title,
-      description: post.excerpt,
+      description: post.metaDescription ?? post.excerpt,
       image: postImageUrl(baseUrl, post.image),
       url: `${baseUrl}/blog/${post.slug}/`,
     })),

@@ -18,7 +18,7 @@ export const siteConfig = {
   name: 'Chinelos da Bela',
   legalName: 'Chinelos da Bela',
   description:
-    'Havaianas personalizadas em São Paulo (Jd. Celeste) — casamentos, formaturas, festa de 15 anos e brindes corporativos. Chinelos da Bela: Havaianas originais e estampa no solado.',
+    'Havaianas personalizadas para casamentos, formaturas, festa de 15 anos e brindes corporativos. Chinelos da Bela: Havaianas originais e estampa no solado.',
   url: 'https://havaianas-personalizadas.vercel.app',
   /** WhatsApp — só dígitos com DDI (55…), sem símbolos; não exibimos telefone fixo no site */
   whatsappPhone: '5511941623357',

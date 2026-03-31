@@ -7,11 +7,14 @@
     "build:vercel": "astro build",
     "preview": "astro preview",
     "download:bela": "node scripts/download-bela-assets.mjs",
+    "blog:gen": "node scripts/gen-blog-from-templates.mjs",
+    "blog:words": "node scripts/verify-blog-wordcount.mjs",
     "deploy:vercel": "vercel --prod"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.2.1",
-    "astro": "^4.16.0"
+    "astro": "^4.16.0",
+    "marked": "^17.0.5"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.0",
