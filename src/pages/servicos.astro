@@ -35,33 +35,33 @@ const blocks = [
   {
     id: 'casamento',
     title: 'Havaianas personalizadas para casamento',
-    img: img.prodCasamento,
-    alt: 'Noiva com Havaianas personalizadas nas mãos, vestido branco e véu, decoração de casamento ao fundo — Chinelos da Bela, São Paulo',
-    imgObjectFit: 'contain' as const,
+    img: img.prodCasamentoMesa,
+    alt: 'Mesa de lembrancinhas de casamento com expositor em níveis, caixas com Havaianas personalizadas e decoração — Chinelos da Bela',
+    imgObjectFit: 'cover' as const,
     body: `Personalize o grande dia com havaianas únicas e confortáveis. Os convidados agradecem ao trocar o salto pela pista — e levam uma lembrança afetiva da celebração. Cores, iniciais e data podem seguir a paleta do casamento.`,
   },
   {
     id: 'formatura',
     title: 'Havaianas personalizadas para formatura',
-    img: img.prodFormatura,
-    alt: 'Formanda com beca segurando Havaianas personalizadas com estampa, colação de formatura — Chinelos da Bela, São Paulo',
-    imgObjectFit: 'contain' as const,
+    img: img.prodFormaturaMesa,
+    alt: 'Mesa de lembrancinhas de formatura com Havaianas personalizadas em expositor, decoração e brindes — Chinelos da Bela',
+    imgObjectFit: 'cover' as const,
     body: `Celebre a conquista com estilo: personalização exclusiva para turma e convidados, com a mesma dedicação descrita no site da Chinelos da Bela para eventos memoráveis.`,
   },
   {
     id: '15-anos',
     title: 'Havaianas personalizadas para festa de 15 anos',
-    img: img.prodFesta15,
-    alt: 'Debutante com vestido rosa segurando Havaianas personalizadas rosa, mesa de lembrancinhas ao lado — Chinelos da Bela, São Paulo',
-    imgObjectFit: 'contain' as const,
+    img: img.prodFesta15Mesa,
+    alt: 'Mesa de lembrancinhas de festa de 15 anos com expositor rosa, Havaianas personalizadas em caixas e decoração — Chinelos da Bela',
+    imgObjectFit: 'cover' as const,
     body: `Desenhos elegantes e modelos confortáveis para a debutante e os convidados curtirem com estilo durante toda a festa.`,
   },
   {
     id: 'corporativo',
     title: 'Brindes corporativos com havaianas personalizadas',
-    img: img.prodCorporativo,
-    alt: 'Stand corporativo com Havaianas personalizadas, participante apresentando chinelos da marca em feira ou convenção — Chinelos da Bela, São Paulo',
-    imgObjectFit: 'contain' as const,
+    img: img.prodCorporativoMesa,
+    alt: 'Expositor de brindes corporativos com Havaianas personalizadas em evento, stand em níveis e lembranças — Chinelos da Bela',
+    imgObjectFit: 'cover' as const,
     body: `Ações, confraternizações e eventos de marca: combine estilo, conforto e visibilidade da empresa em um só brinde.`,
   },
 ];
@@ -77,7 +77,7 @@ const blocks = [
   <section class="bela-section bela-section-muted py-16 md:py-20" aria-labelledby="titulo-produtos">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <h1 id="titulo-produtos" class="text-3xl md:text-5xl font-bold text-white text-center mb-4">
-      Havaianas personalizadas — produtos em São Paulo
+      Havaianas personalizadas — produtos
     </h1>
     <p class="text-zinc-400 text-center max-w-2xl mx-auto mb-6 leading-relaxed">
       Na Chinelos da Bela você personaliza havaianas para cada tipo de evento: liberdade de criação para combinar com a decoração — do clássico ao despojado — com o
@@ -100,24 +100,24 @@ const blocks = [
       {
         blocks.map((b) => (
           <section id={b.id} class="scroll-mt-28 grid lg:grid-cols-2 gap-10 items-center">
-            <div class="bela-surface-card group order-2 overflow-hidden !rounded-2xl !p-0 shadow-bela lg:order-1">
-              <div class="relative aspect-[4/3] w-full overflow-hidden bg-zinc-950">
-                <img
-                  src={b.img}
-                  alt={b.alt}
-                  class:list={[
-                    'absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.03]',
-                    b.imgObjectFit === 'contain'
-                      ? 'object-contain object-center'
-                      : [
-                          'object-cover',
-                          b.imgObjectPosition === 'top' ? 'object-top' : 'object-center',
-                        ],
-                  ]}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+            <div
+              class="bela-surface-card group relative order-2 aspect-[4/3] w-full overflow-hidden !rounded-2xl !p-0 shadow-bela lg:order-1"
+            >
+              <img
+                src={b.img}
+                alt={b.alt}
+                class:list={[
+                  'absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.03]',
+                  b.imgObjectFit === 'contain'
+                    ? 'object-contain object-center'
+                    : [
+                        'object-cover',
+                        b.imgObjectPosition === 'top' ? 'object-top' : 'object-center',
+                      ],
+                ]}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="order-1 lg:order-2">
               <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">{b.title}</h2>

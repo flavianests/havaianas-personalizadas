@@ -6,9 +6,10 @@ const baseUrl = siteConfig.url.replace(/\/$/, '');
 const img = siteConfig.images;
 const pageUrl = `${baseUrl}/produtos/eventos-corporativos/`;
 
-const title = 'Havaianas personalizadas para eventos corporativos em São Paulo';
+/** SEO: título 58 caracteres; meta ~158 caracteres (recom. ~150–160 Google) */
+const title = 'Havaianas personalizadas corporativo SP | Chinelos da Bela';
 const metaDescription =
-  'Havaianas personalizadas para eventos corporativos: brindes com logo, convenções e confraternizações. Chinelos da Bela — Havaianas originais, estampa no solado. Orçamento para empresas pelo WhatsApp.';
+  'Brindes corporativos com havaianas personalizadas em SP: logo no solado, convenções e confraternizações. Chinelos da Bela — orçamento empresarial pelo WhatsApp.';
 
 const jsonLdExtra: Record<string, unknown>[] = [
   {
@@ -28,7 +29,7 @@ const jsonLdExtra: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: `${title} | ${siteConfig.name}`,
+    name: `${title}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',
@@ -49,12 +50,6 @@ const breadcrumbs = [
   { href: '/servicos', label: 'Produtos' },
   { href: '/produtos/eventos-corporativos', label: 'Eventos corporativos' },
 ];
-
-const related = [
-  { href: '/produtos/casamento', label: 'Casamento' },
-  { href: '/produtos/festa-15-anos', label: 'Festa de 15 anos' },
-  { href: '/produtos/formatura', label: 'Formatura' },
-];
 ---
 
 <ProdutoSeoPage
@@ -65,32 +60,36 @@ const related = [
   ogImageAlt="Havaianas personalizadas em stand corporativo e feira — Chinelos da Bela, São Paulo"
   heroImage={img.prodCorporativo}
   heroImageAlt="Stand corporativo com Havaianas personalizadas, participante apresentando chinelos da marca em feira ou convenção — Chinelos da Bela, São Paulo"
-  heroImageObjectFit="contain"
-  intro="Brindes corporativos precisam ser memoráveis e alinhados à marca. As havaianas personalizadas para eventos corporativos associam conforto e visibilidade da empresa em convenções, feiras, lançamentos e confraternizações. Na Chinelos da Bela, aplicamos sua identidade visual com qualidade na sola Havaianas original."
+  heroImageObjectFit="cover"
+  productCardsCurrentHref="/produtos/eventos-corporativos"
+  ctaOrcamentoIntro="Marketing e compras: envie pelo WhatsApp CNPJ ou nome da empresa, data do evento, volumes por numeração, manual da marca (cores e área do logo) e necessidade de nota fiscal. A Chinelos da Bela retorna com briefing de brindes corporativos em havaianas personalizadas, prazos e proposta alinhada à campanha."
+  intro="Brindes memoráveis e alinhados à marca: havaianas personalizadas para eventos corporativos com sola Havaianas original e identidade visual aplicada no solado — convenções, feiras e confraternizações. Solução para quem busca “brinde corporativo SP” ou ativação de marca com uso pós-evento."
   whatsappContext="havaianas personalizadas para eventos corporativos"
   breadcrumbs={breadcrumbs}
   jsonLdExtra={jsonLdExtra}
-  related={related}
   sections={[
     {
-      heading: 'Marca presente no dia a dia',
+      heading: 'Brindes corporativos que a equipe usa no dia a dia',
       paragraphs: [
-        'Diferente de itens que ficam na gaveta, um chinelo personalizado tende a ser usado em casa, na praia ou no lazer — mantendo logo e mensagem expostos por mais tempo.',
-        'A estampa no solado permite área criativa para slogan, hashtag de campanha ou elementos gráficos da identidade visual.',
+        'Diferente de mimos guardados na gaveta, o chinelo personalizado tende a ser usado em casa, praia ou lazer — logo e mensagem visíveis por mais tempo.',
+        'A estampa no solado aceita slogan, hashtag de campanha ou elementos da identidade visual.',
+        'Combine o brinde com hashtag oficial e materiais digitais da campanha — o calçado vira peça de lembrança fotografável para redes e relatórios de ativação.',
       ],
     },
     {
-      heading: 'Eventos que pedem conforto',
+      heading: 'Eventos corporativos que pedem conforto e marca',
       paragraphs: [
-        'Workshops em resort, festas de fim de ano, ações de verão e ativações ao ar livre combinam com entrega de havaianas como kit de boas-vindas ou prêmio.',
-        'Atendemos demandas com volumes variados; informe data do evento, local de entrega e manual da marca (cores Pantone, área de respiro do logo) para alinharmos a prova digital.',
+        'Workshops, festas de fim de ano, ações de verão e ativações ao ar livre combinam com kits de boas-vindas ou prêmios em havaianas.',
+        'Informe data, local de entrega, volumes e manual da marca (cores, área de respiro do logo) para prova digital e orçamento.',
+        'Feiras e convenções em São Paulo costumam exigir logística de estande — combine data de entrega com montagem e treinamento de equipe.',
       ],
     },
     {
-      heading: 'Processo e contato comercial',
+      heading: 'Contato comercial e prazos para empresas',
       paragraphs: [
-        'Envie briefing com quantidade por numeração, prazo e referência de arte. Retornamos com orientações e orçamento.',
-        'Também despachamos para outras regiões conforme combinado — fale pelo WhatsApp com prazo e local de entrega.',
+        'Envie briefing com quantidades por numeração, prazo e referência de arte. Retornamos com orientações e proposta.',
+        'Atendemos outras regiões conforme combinado — use o WhatsApp com prazo e endereço de entrega.',
+        'O bloco “Solicitar orçamento” abaixo centraliza o primeiro contato com botão direto para o WhatsApp corporativo.',
       ],
     },
   ]}

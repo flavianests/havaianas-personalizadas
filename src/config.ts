@@ -36,18 +36,26 @@ export const siteConfig = {
     heroBgGradient: '/images/bela/hero-bg-gradient.png',
     /** Casamento: noiva com Havaianas personalizadas (foto real) — prod-casamento.png */
     prodCasamento: '/images/bela/prod-casamento.png',
+    /** Casamento: mesa de lembrancinhas / display (foto real) */
+    prodCasamentoMesa: '/images/bela/prod-casamento-mesa.png',
     /** Formatura: formanda com Havaianas personalizadas na colação (foto real — prod-formatura.png) */
     prodFormatura: '/images/bela/prod-formatura.png',
+    /** Formatura: mesa de lembrancinhas / display (foto real) */
+    prodFormaturaMesa: '/images/bela/prod-formatura-mesa.png',
     /** Corporativo: stand em feira com Havaianas personalizadas (foto real — prod-corporativo.png) */
     prodCorporativo: '/images/bela/prod-corporativo.png',
+    /** Corporativo: expositor / lembranças em evento (foto real) */
+    prodCorporativoMesa: '/images/bela/prod-corporativo-mesa.png',
     /** Festa de 15 anos: debutante com Havaianas personalizadas (foto real — prod-festa15.png) */
     prodFesta15: '/images/bela/prod-festa15.png',
+    /** Festa de 15 anos: mesa / expositor com lembrancinhas (foto real) */
+    prodFesta15Mesa: '/images/bela/prod-festa15-mesa.png',
     destaqueHavaianas: '/images/bela/destaque-havaianas.webp',
     sobreEquipe: '/images/bela/sobre-equipe.webp',
-    cliente1: '/images/bela/cliente-1.png',
-    cliente2: '/images/bela/cliente-2.png',
-    cliente3: '/images/bela/cliente-3.png',
-    cliente4: '/images/bela/cliente-4.png',
+    cliente1: '/images/bela/depoimentos-pagina-1.png',
+    cliente2: '/images/bela/depoimentos-pagina-2.png',
+    cliente3: '/images/bela/depoimentos-pagina-3.png',
+    cliente4: '/images/bela/depoimentos-pagina-4.png',
     /** Seção Nossos clientes — coração 3D ao lado do depoimento (home oficial) */
     coracao3dChinelosBela: '/images/bela/coracao-3d-chinelos-bela.png',
     /** Hero home — colagem flutuante (fotos enviadas) */

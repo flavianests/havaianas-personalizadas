@@ -6,9 +6,10 @@ const baseUrl = siteConfig.url.replace(/\/$/, '');
 const img = siteConfig.images;
 const pageUrl = `${baseUrl}/produtos/festa-15-anos/`;
 
-const title = 'Havaianas personalizadas para festa de 15 anos em São Paulo';
+/** SEO: título 60 caracteres; meta 159 caracteres (recom. ~150–160 Google) */
+const title = 'Havaianas personalizadas festa 15 anos SP | Chinelos da Bela';
 const metaDescription =
-  'Havaianas personalizadas para festa de 15 anos: debutante e convidados com conforto e estilo. Chinelos da Bela — Havaianas originais, estampa no solado. Peça orçamento pelo WhatsApp.';
+  'Havaianas para festa de 15 anos em SP: debutante e convidados, sola original e estampa no solado. Chinelos da Bela — orçamento, prazos e entrega pelo WhatsApp.';
 
 const jsonLdExtra: Record<string, unknown>[] = [
   {
@@ -28,7 +29,7 @@ const jsonLdExtra: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: `${title} | ${siteConfig.name}`,
+    name: `${title}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',
@@ -49,12 +50,6 @@ const breadcrumbs = [
   { href: '/servicos', label: 'Produtos' },
   { href: '/produtos/festa-15-anos', label: 'Festa de 15 anos' },
 ];
-
-const related = [
-  { href: '/produtos/casamento', label: 'Casamento' },
-  { href: '/produtos/formatura', label: 'Formatura' },
-  { href: '/produtos/eventos-corporativos', label: 'Eventos corporativos' },
-];
 ---
 
 <ProdutoSeoPage
@@ -66,32 +61,36 @@ const related = [
   ogImageAlt="Debutante com vestido rosa e Havaianas personalizadas — festa de 15 anos, Chinelos da Bela, São Paulo"
   heroImage={img.prodFesta15}
   heroImageAlt="Debutante com vestido rosa segurando Havaianas personalizadas rosa, mesa de lembrancinhas ao lado — Chinelos da Bela, São Paulo"
-  heroImageObjectFit="contain"
-  intro="A festa de quinze anos merece detalhes que combinem glamour, diversão e conforto. As havaianas personalizadas para festa de 15 anos são lembrancinhas modernas para convidados e um toque especial na mesa de presentes ou na pista. Na Chinelos da Bela, você conta com Havaianas originais e personalização com estampa no solado."
+  heroImageObjectFit="cover"
+  productCardsCurrentHref="/produtos/festa-15-anos"
+  ctaOrcamentoIntro="Organizando o debut em São Paulo ou região? Envie pelo WhatsApp data da festa, local, número aproximado de convidados e referências de tema ou cores. A Chinelos da Bela orienta quantidades por numeração, prazos de produção e personalização em havaianas para festa de 15 anos com acabamento profissional no solado."
+  intro="Glamour e conforto para a debutante e os convidados: havaianas personalizadas para festa de 15 anos com sola Havaianas original e estampa no solado — lembrancinhas para mesa de presentes ou pista. Atendimento Chinelos da Bela para quem busca “lembrancinha 15 anos” ou chinelos temáticos alinhados à identidade visual da festa."
   whatsappContext="havaianas personalizadas para festa de 15 anos"
   breadcrumbs={breadcrumbs}
   jsonLdExtra={jsonLdExtra}
-  related={related}
   sections={[
     {
-      heading: 'Lembrancinha que combina com a debutante',
+      heading: 'Lembrancinhas de 15 anos alinhadas à identidade da festa',
       paragraphs: [
-        'Tons do vestido, coroa, tema da festa ou monograma podem inspirar a arte do solado, criando identidade visual única para o evento.',
-        'Além da debutante, os convidados levam para casa um item útil — diferente de apenas doces ou objetos decorativos que ficam guardados.',
+        'Cores do vestido, coroa, tema ou monograma podem inspirar a arte do solado para uma identidade visual única.',
+        'Convidados levam item útil — além de doces e lembranças que ficam só na gaveta.',
+        'Lembrancinhas de debutante em São Paulo ganham credibilidade com sola original e estampa legível no solado — foco da Chinelos da Bela em cada lote.',
       ],
     },
     {
-      heading: 'Conforto do início da festa ao último passo de dança',
+      heading: 'Conforto da abertura à última música',
       paragraphs: [
-        'Salões e pistas pedem calçados que aguentem horas de celebração. Entregar havaianas personalizadas na entrada ou em um momento da festa melhora a experiência de quem está de salto ou sapato fechado.',
-        'Produzimos com processos pensados para definição nítida da arte e acabamento alinhado ao padrão Chinelos da Bela.',
+        'Salão e pista pedem calçados que aguentem horas. Distribuir havaianas na entrada ou em um momento da festa melhora a experiência de quem está de salto.',
+        'Produção com arte nítida e acabamento Chinelos da Bela.',
+        'Pais e debutante podem combinar kits especiais (padrinhos, mesa) com o mesmo layout de arte em volumes diferentes.',
       ],
     },
     {
-      heading: 'Como solicitar orçamento',
+      heading: 'O que preparar antes de chamar no WhatsApp',
       paragraphs: [
-        'Envie pelo WhatsApp a data prevista, cidade de entrega, quantidade aproximada e referências (fotos de inspiração, paleta ou arquivo de logo).',
-        'Indique se precisa de numerações variadas (infantil, feminino, masculino) para dimensionarmos o pedido corretamente.',
+        'Tenha em mãos data prevista, cidade, quantidade aproximada e referências (paleta, logo ou fotos de inspiração).',
+        'Indique numerações (infantil, feminino, masculino) para dimensionar o pedido e evitar falta de tamanhos na hora da entrega.',
+        'O botão verde abaixo leva direto ao WhatsApp para solicitar orçamento com a mesma mensagem contextualizada desta linha.',
       ],
     },
   ]}

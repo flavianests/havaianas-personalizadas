@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NossosClientesCarousel from '../components/NossosClientesCarousel.astro';
+import ClientesQueAtendemos from '../components/ClientesQueAtendemos.astro';
 import { siteConfig, whatsappHref } from '../config';
 
 const img = siteConfig.images;
@@ -107,17 +108,16 @@ const homeJsonLd: Record<string, unknown>[] = [
           class="mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] xl:text-6xl font-bold leading-[1.08] tracking-tight"
         >
           <span class="bela-hero-h1-shine block">
-            <span class="block">Havaianas</span>
-            <span class="block">Personalizadas para</span>
-            <span class="block">Eventos</span>
-          </span>
-          <span class="mt-3 block text-base sm:text-lg md:text-xl font-semibold leading-snug text-white/90">
-            Brilho em cada momento
-          </span>
-          <span class="mt-4 block text-white text-xl sm:text-2xl md:text-[1.65rem] lg:text-[1.85rem] xl:text-[2rem] font-bold leading-snug tracking-tight">
-            Casamento, Festa de 15 anos, Formatura, Aniversários, Corporativos
+            <span class="block">Havaianas Personalizadas com</span>
+            <span class="block">Estampa de Alta Durabilidade</span>
           </span>
         </h1>
+        <h2
+          class="mt-4 max-w-3xl text-lg font-bold leading-snug text-white sm:text-xl md:text-2xl lg:text-[1.65rem] xl:text-[1.85rem] tracking-tight"
+        >
+          Casamentos, Festas de 15 anos, Formaturas, Aniversários e Eventos Corporativos - Atendemos São Paulo e todo o
+          Brasil
+        </h2>
         <p class="mt-6 text-base sm:text-lg text-white/75 leading-relaxed max-w-lg">
           Na Chinelos da Bela as suas Havaianas Personalizadas com estampa direto no solado — do casamento ao corporativo,
           passando por aniversários e festas.
@@ -157,7 +157,7 @@ const homeJsonLd: Record<string, unknown>[] = [
             />
             <img
               src={img.heroHomeSemParar}
-              alt="Havaianas Personalizadas projeto Sem Parar Empresas"
+              alt="Havaianas Personalizadas Terça da Serra — solado com identidade no relevo"
               class="bela-hero-collage-img h-11 w-11 rounded-full border-2 border-[#111116] object-cover object-center sm:h-12 sm:w-12"
               loading="lazy"
             />
@@ -257,8 +257,8 @@ const homeJsonLd: Record<string, unknown>[] = [
                 >
                   <img
                     src={img.heroHomeSemParar}
-                    alt="Havaianas Personalizadas projeto Sem Parar Empresas"
-                    class="bela-hero-collage-img bela-hero-float-media bela-hero-float-media--contain block h-full w-full max-w-none object-contain object-center p-2"
+                    alt="Havaianas Personalizadas Terça da Serra — par sobre pedra com serra ao fundo"
+                    class="bela-hero-collage-img bela-hero-float-media bela-hero-float-media--contain block h-full w-full max-w-none object-cover object-center"
                     loading="lazy"
                   />
                 </div>
@@ -284,7 +284,8 @@ const homeJsonLd: Record<string, unknown>[] = [
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-200 via-rose-400 to-rose-300">
           Havaianas Personalizadas
         </span>
-        <span class="text-zinc-100"> com as cores</span><br aria-hidden="true" /><span class="text-zinc-100"> do seu evento</span>
+        <span class="text-zinc-100"> com estampa de alta durabilidade</span><br aria-hidden="true" /><span
+          class="text-zinc-100"> com as cores do seu evento</span>
       </h2>
       <p class="text-zinc-400 text-center max-w-2xl mx-auto mb-14 text-base md:text-lg leading-relaxed">
         Casamento, formatura, 15 anos, aniversário ou brinde corporativo: suas{' '}
@@ -372,98 +373,130 @@ const homeJsonLd: Record<string, unknown>[] = [
         profissional, harmonizados com a identidade visual do seu evento — do altar à pista, da turma à marca.
       </p>
       <div class="mx-auto grid max-w-4xl gap-8 md:grid-cols-2 md:items-stretch">
-        <article class="bela-surface-card group flex h-full flex-col overflow-hidden rounded-xl !border-white/10 !p-0">
-          <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-950">
+        <a
+          href="/produtos/casamento"
+          class="bela-prod-home-card bela-prod-home-card--rose group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-zinc-900/35 shadow-lg no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111116]"
+        >
+          <div class="bela-prod-home-card__media aspect-[4/3] w-full shrink-0 bg-zinc-900/35">
             <img
               src={img.prodCasamento}
               alt="Noiva com Havaianas personalizadas nas mãos, vestido branco e véu, decoração de casamento ao fundo — Chinelos da Bela, São Paulo"
-              class="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+              class="bela-prod-home-card__img absolute inset-0 h-full w-full object-contain object-center"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div class="flex flex-1 flex-col p-5">
-            <h3 class="mb-1.5 text-lg font-bold text-white">Havaianas Personalizadas para casamento</h3>
-            <p class="mb-4 flex-1 text-sm leading-relaxed text-zinc-400">
+          <div class="relative z-[1] flex flex-1 flex-col p-5">
+            <h3 class="mb-1.5 text-lg font-bold text-white transition-colors duration-300 group-hover:text-rose-50">
+              Havaianas Personalizadas para casamento
+            </h3>
+            <p class="mb-4 flex-1 text-sm leading-relaxed text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
               Cores e arte alinhadas ao seu grande dia — conforto na pista e lembrança que combina com a identidade do evento.
             </p>
-            <a
-              href="/produtos/casamento"
-              class="inline-flex min-h-[44px] items-center text-sm font-medium text-rose-300 hover:text-rose-200"
+            <span
+              class="bela-prod-home-card__cta inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-rose-300 group-hover:text-rose-200"
             >
-              Ver Havaianas Personalizadas para casamento
-            </a>
+              Ver linha casamento
+              <i
+                class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              ></i>
+            </span>
           </div>
-        </article>
-        <article class="bela-surface-card group flex h-full flex-col overflow-hidden rounded-xl !border-white/10 !p-0">
-          <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-950">
+        </a>
+        <a
+          href="/produtos/formatura"
+          class="bela-prod-home-card bela-prod-home-card--indigo group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-zinc-900/35 shadow-lg no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111116]"
+        >
+          <div class="bela-prod-home-card__media aspect-[4/3] w-full shrink-0 bg-zinc-900/35">
             <img
               src={img.prodFormatura}
               alt="Formanda com beca segurando Havaianas personalizadas com estampa, colação de formatura — Chinelos da Bela, São Paulo"
-              class="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+              class="bela-prod-home-card__img absolute inset-0 h-full w-full object-contain object-center"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div class="flex flex-1 flex-col p-5">
-            <h3 class="mb-1.5 text-lg font-bold text-white">Havaianas Personalizadas para formatura</h3>
-            <p class="mb-4 flex-1 text-sm leading-relaxed text-zinc-400">
+          <div class="relative z-[1] flex flex-1 flex-col p-5">
+            <h3 class="mb-1.5 text-lg font-bold text-white transition-colors duration-300 group-hover:text-indigo-50">
+              Havaianas Personalizadas para formatura
+            </h3>
+            <p class="mb-4 flex-1 text-sm leading-relaxed text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
               Beca, confete e festa: lembrancinhas com as cores e o símbolo da turma — confortáveis da cerimônia à pista.
             </p>
-            <a
-              href="/produtos/formatura"
-              class="inline-flex min-h-[44px] items-center text-sm font-medium text-rose-300 hover:text-rose-200"
+            <span
+              class="bela-prod-home-card__cta inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-indigo-300 group-hover:text-indigo-200"
             >
-              Ver Havaianas Personalizadas para formatura
-            </a>
+              Ver linha formatura
+              <i
+                class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              ></i>
+            </span>
           </div>
-        </article>
-        <article class="bela-surface-card group flex h-full flex-col overflow-hidden rounded-xl !border-white/10 !p-0">
-          <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-950">
+        </a>
+        <a
+          href="/produtos/festa-15-anos"
+          class="bela-prod-home-card bela-prod-home-card--fuchsia group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-zinc-900/35 shadow-lg no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111116]"
+        >
+          <div class="bela-prod-home-card__media aspect-[4/3] w-full shrink-0 bg-zinc-900/35">
             <img
               src={img.prodFesta15}
               alt="Debutante com vestido rosa segurando Havaianas personalizadas rosa, mesa de lembrancinhas ao lado — Chinelos da Bela, São Paulo"
-              class="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+              class="bela-prod-home-card__img absolute inset-0 h-full w-full object-contain object-center"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div class="flex flex-1 flex-col p-5">
-            <h3 class="mb-1.5 text-lg font-bold text-white">Havaianas Personalizadas para festa de 15 anos</h3>
-            <p class="mb-4 flex-1 text-sm leading-relaxed text-zinc-400">
+          <div class="relative z-[1] flex flex-1 flex-col p-5">
+            <h3 class="mb-1.5 text-lg font-bold text-white transition-colors duration-300 group-hover:text-fuchsia-50">
+              Havaianas Personalizadas para festa de 15 anos
+            </h3>
+            <p class="mb-4 flex-1 text-sm leading-relaxed text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
               Do vestido de debutante à pista: estampas e cores da sua festa — conforto para curtir a noite inteira.
             </p>
-            <a
-              href="/produtos/festa-15-anos"
-              class="inline-flex min-h-[44px] items-center text-sm font-medium text-rose-300 hover:text-rose-200"
+            <span
+              class="bela-prod-home-card__cta inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-fuchsia-300 group-hover:text-fuchsia-200"
             >
-              Ver Havaianas Personalizadas para festa de 15 anos
-            </a>
+              Ver festa de 15 anos
+              <i
+                class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              ></i>
+            </span>
           </div>
-        </article>
-        <article class="bela-surface-card group flex h-full flex-col overflow-hidden rounded-xl !border-white/10 !p-0">
-          <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-950">
+        </a>
+        <a
+          href="/produtos/eventos-corporativos"
+          class="bela-prod-home-card bela-prod-home-card--emerald group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-zinc-900/35 shadow-lg no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111116]"
+        >
+          <div class="bela-prod-home-card__media aspect-[4/3] w-full shrink-0 bg-zinc-900/35">
             <img
               src={img.prodCorporativo}
               alt="Stand corporativo com Havaianas personalizadas, participante apresentando chinelos da marca em feira ou convenção — Chinelos da Bela, São Paulo"
-              class="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+              class="bela-prod-home-card__img absolute inset-0 h-full w-full object-contain object-center"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div class="flex flex-1 flex-col p-5">
-            <h3 class="mb-1.5 text-lg font-bold text-white">Evento corporativo</h3>
-            <p class="mb-4 flex-1 text-sm leading-relaxed text-zinc-400">
+          <div class="relative z-[1] flex flex-1 flex-col p-5">
+            <h3 class="mb-1.5 text-lg font-bold text-white transition-colors duration-300 group-hover:text-emerald-50">
+              Evento corporativo
+            </h3>
+            <p class="mb-4 flex-1 text-sm leading-relaxed text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
               Convenções, feiras e encontros em clima mais descontraído: brindes que unem estilo, conforto e lembrança da marca depois do evento.
             </p>
-            <a
-              href="/produtos/eventos-corporativos"
-              class="inline-flex min-h-[44px] items-center text-sm font-medium text-rose-300 hover:text-rose-200"
+            <span
+              class="bela-prod-home-card__cta inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-emerald-300 group-hover:text-emerald-200"
             >
-              Ver Havaianas Personalizadas para evento corporativo
-            </a>
+              Ver brindes corporativos
+              <i
+                class="fas fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              ></i>
+            </span>
           </div>
-        </article>
+        </a>
       </div>
     </div>
   </section>
@@ -512,30 +545,17 @@ const homeJsonLd: Record<string, unknown>[] = [
     aria-labelledby="clientes-parceiros"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="mb-10 flex flex-col gap-8 md:mb-14 md:flex-row md:items-end md:justify-between">
-        <div class="text-center md:text-left">
-          <p class="text-sm font-medium md:text-base">
-            <span class="text-[#ff3465]" aria-hidden="true">●</span>{' '}
-            <span class="text-zinc-300">Be event</span>
-          </p>
-          <h2
-            id="clientes-parceiros"
-            class="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl lg:text-4xl"
-          >
-            Nossos <span class="text-[#ff3465]">clientes</span>
-          </h2>
-        </div>
-        <div class="flex justify-center md:justify-end">
-          <a
-            href="/depoimentos"
-            class="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white transition-colors hover:border-[#ff3465]/70 hover:text-[#ff3465]"
-          >
-            Ver depoimentos
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
+      <div class="mb-10 text-center md:mb-14">
+        <h2
+          id="clientes-parceiros"
+          class="text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl"
+        >
+          <span class="text-white">Nossas</span>{' '}
+          <span class="text-[#ff3465]">Clientes</span>
+        </h2>
       </div>
       <NossosClientesCarousel />
+      <ClientesQueAtendemos />
     </div>
   </section>
 
@@ -546,7 +566,7 @@ const homeJsonLd: Record<string, unknown>[] = [
     <div class="max-w-3xl mx-auto px-4 text-center">
       <p class="text-rose-300/90 text-sm font-medium mb-2">Suas Havaianas Personalizadas com quem entende de eventos</p>
       <h2 id="contato-orcamento-titulo" class="text-2xl md:text-3xl font-bold text-white mb-6">
-        Orçamento de Havaianas Personalizadas — fale conosco
+        Orçamento de Havaianas personalizadas com estampa de alta durabilidade - Fale Conosco
       </h2>
       <p class="mb-8 text-zinc-400">
         Fale com a equipe pelo WhatsApp para orçamento de <strong class="font-semibold text-zinc-300">Havaianas Personalizadas</strong>.

@@ -1,0 +1,42 @@
+---
+import { marcasAtendidas } from '../data/marcas-atendidas';
+---
+
+<div
+  class="mt-14 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-10 md:mt-20 md:px-8 md:py-12"
+  role="region"
+  aria-labelledby="empresas-compram-bela-titulo"
+  id="empresas-compram-bela"
+>
+  <h2
+    id="empresas-compram-bela-titulo"
+    class="mb-8 text-balance text-center text-xl font-bold leading-snug tracking-tight text-white md:mb-10 md:text-2xl lg:text-3xl"
+  >
+    <span class="text-white">Empresas que compram da</span>{' '}
+    <span class="text-[#ff3465]">Chinelos da Bela</span>
+  </h2>
+  <ul
+    class="flex flex-wrap items-center justify-center gap-x-7 gap-y-11 sm:gap-x-9 sm:gap-y-12 md:gap-x-11 md:gap-y-14"
+    role="list"
+  >
+    {
+      marcasAtendidas.map((m) => (
+        <li class="flex shrink-0 items-center justify-center">
+          <div
+            class="flex min-h-[6.25rem] w-[11.5rem] items-center justify-center rounded-2xl bg-white px-4 py-3.5 shadow-md sm:min-h-[7.25rem] sm:w-[13.5rem] sm:px-5 sm:py-4 md:min-h-[8.25rem] md:w-[15rem] md:px-6 md:py-5"
+          >
+            <img
+              src={m.logo}
+              alt={m.alt}
+              class="h-auto max-h-[5rem] w-auto max-w-[95%] object-contain object-center sm:max-h-[6rem] md:max-h-[6.75rem]"
+              loading="lazy"
+              decoding="async"
+              width={240}
+              height={110}
+            />
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</div>

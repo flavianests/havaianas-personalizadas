@@ -6,9 +6,10 @@ const baseUrl = siteConfig.url.replace(/\/$/, '');
 const img = siteConfig.images;
 const pageUrl = `${baseUrl}/produtos/casamento/`;
 
-const title = 'Havaianas personalizadas para casamento em São Paulo';
+/** SEO: título 56 caracteres; meta 159 caracteres (recom. ~150–160 Google) */
+const title = 'Havaianas personalizadas casamento SP | Chinelos da Bela';
 const metaDescription =
-  'Havaianas personalizadas para casamento: lembrancinhas com sola original e estampa no solado. Chinelos da Bela — conforto para a pista e memória para os convidados. Peça orçamento.';
+  'Havaianas personalizadas para casamento em SP: lembrancinhas com sola original e estampa no solado. Chinelos da Bela — orçamento, prazos e entrega pelo WhatsApp.';
 
 const jsonLdExtra: Record<string, unknown>[] = [
   {
@@ -28,7 +29,7 @@ const jsonLdExtra: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: `${title} | ${siteConfig.name}`,
+    name: `${title}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',
@@ -49,12 +50,6 @@ const breadcrumbs = [
   { href: '/servicos', label: 'Produtos' },
   { href: '/produtos/casamento', label: 'Casamento' },
 ];
-
-const related = [
-  { href: '/produtos/festa-15-anos', label: 'Festa de 15 anos' },
-  { href: '/produtos/formatura', label: 'Formatura' },
-  { href: '/produtos/eventos-corporativos', label: 'Eventos corporativos' },
-];
 ---
 
 <ProdutoSeoPage
@@ -66,31 +61,35 @@ const related = [
   heroImage={img.prodCasamento}
   heroImageAlt="Noiva com Havaianas personalizadas nas mãos, vestido branco e véu, decoração de casamento ao fundo — Chinelos da Bela, São Paulo"
   heroImageObjectFit="contain"
-  intro="Surpreenda os convidados com lembrancinhas úteis e cheias de personalidade. Na Chinelos da Bela, produzimos havaianas personalizadas para casamento com sola Havaianas original e arte aplicada direto no solado — ideais para a festa, a pista e a praia no dia seguinte."
+  productCardsCurrentHref="/produtos/casamento"
+  ctaOrcamentoIntro="Planejando lembrancinhas para o grande dia? Envie pelo WhatsApp a data do casamento, quantidade aproximada de pares, faixas de numeração e referências visuais (paleta, monograma ou convite). A Chinelos da Bela retorna com orientação sobre havaianas personalizadas, prazos de produção e próximos passos."
+  intro="Lembrancinhas úteis e personalizadas: na Chinelos da Bela você tem Havaianas originais com estampa profissional no solado — ideais para recepção, pista e pós-festa. Atendemos noivos e assessorias em São Paulo (Jd. Celeste) com foco em acabamento nítido e cronograma alinhado ao seu casamento."
   whatsappContext="havaianas personalizadas para casamento"
   breadcrumbs={breadcrumbs}
   jsonLdExtra={jsonLdExtra}
-  related={related}
   sections={[
     {
-      heading: 'Por que oferecer havaianas no casamento?',
+      heading: 'Por que lembrancinhas de casamento com havaianas personalizadas?',
       paragraphs: [
-        'Após horas de cerimônia e salão, muitos convidados agradecem poder trocar o salto ou o sapato social por algo confortável sem sair do clima da festa. As havaianas personalizadas viram lembrança que as pessoas realmente usam — e associam ao seu grande dia.',
-        'Você pode alinhar cores, monogramas, data e elementos da identidade visual do casamento à estampa, mantendo harmonia com convites, decoração e papelaria.',
+        'Convidados agradecem ao trocar salto ou sapato social sem sair do clima da festa. As havaianas viram lembrança que se usa de verdade — associada ao seu grande dia.',
+        'Monogramas, data e cores da identidade visual do casamento podem ir na estampa, alinhados a convites e decoração.',
+        'Noivos e assessorias que buscam lembrancinha de casamento em São Paulo valorizam sola original e arte aplicada com cuidado no solado — padrão Chinelos da Bela.',
       ],
     },
     {
-      heading: 'Qualidade e personalização com a Chinelos da Bela',
+      heading: 'Chinelos da Bela: qualidade e personalização',
       paragraphs: [
-        'Trabalhamos com chinelos Havaianas originais e personalização profissional no solado, com atenção ao acabamento para que o resultado fique nítido e durável.',
-        'Atendemos noivos e assessorias e enviamos para outras localidades conforme combinação — fale pelo WhatsApp com data aproximada do evento, quantidade e referências visuais (cores, logo ou monograma) para receber orientação e orçamento.',
+        'Trabalhamos com sola Havaianas original e acabamento nítido no solado. Atendemos noivos e assessorias; envio para outras localidades conforme combinado.',
+        'Definimos revisões da arte e previsão de entrega já na proposta, para encaixar o pedido no cronograma do buffet, foto e cerimônia.',
+        'Use o bloco abaixo para solicitar orçamento pelo WhatsApp com data aproximada, quantidade e referências visuais (cores, logo ou monograma).',
       ],
     },
     {
-      heading: 'Boas práticas para planejar as lembrancinhas',
+      heading: 'Planejar quantidades e prazos do pedido',
       paragraphs: [
-        'Reserve um tempo na timeline do casamento para definir tamanhos (masculino/feminino/infantil) e quantidades com folga para convidados extras.',
-        'Se quiser usar as havaianas na própria recepção (cesta na entrada ou distribuição na pista), combinamos prazos de produção para tudo chegar com tranquilidade antes do evento.',
+        'Reserve tamanhos (masculino, feminino, infantil) e quantidade com folga para convidados extras.',
+        'Se for distribuir na entrada ou na pista, feche prazos de produção com antecedência para tudo chegar antes do evento.',
+        'Pedidos com muitos tamanhos ou embalagens especiais podem exigir mais tempo de montagem — informe isso cedo no contato.',
       ],
     },
   ]}

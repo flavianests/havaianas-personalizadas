@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageBreadcrumbs from './PageBreadcrumbs.astro';
 import type { BreadcrumbItem } from './PageBreadcrumbs.astro';
+import ProdutoCardsGrid from './ProdutoCardsGrid.astro';
 import { siteConfig, whatsappHref } from '../config';
 
 interface Section {
@@ -36,6 +37,10 @@ interface Props {
   heroImageObjectPosition?: 'center' | 'top';
   /** `contain` = foto inteira visível no quadro (sem cortar; pode haver faixas laterais) */
   heroImageObjectFit?: 'cover' | 'contain';
+  /** Grelha de produtos (home/servicos): destaca a linha atual */
+  productCardsCurrentHref?: string;
+  /** Texto do bloco “Solicitar orçamento” antes da grelha de cards (opcional) */
+  ctaOrcamentoIntro?: string;
 }
 
 const {
@@ -55,12 +60,18 @@ const {
   heroImageScale = 'default',
   heroImageObjectPosition = 'center',
   heroImageObjectFit = 'cover',
+  productCardsCurrentHref,
+  ctaOrcamentoIntro,
 } = Astro.props;
 
 const wa = whatsappHref(
   siteConfig.whatsappPhone,
   `Olá! Tenho interesse em ${whatsappContext}.`
 );
+
+const ctaBlurb =
+  ctaOrcamentoIntro ??
+  `Fale com a equipe pelo WhatsApp: envie data, quantidade aproximada e referências visuais para receber orientação e proposta sobre ${whatsappContext}.`;
 
 const imageColClass =
   heroImageScale === 'large'
@@ -79,27 +90,27 @@ const imageColClass =
       >
         <div class="grid items-center gap-10 lg:grid-cols-2">
           <div class:list={['order-2 lg:order-1', imageColClass]}>
-            <div class="bela-surface-card group overflow-hidden !rounded-2xl !p-0 shadow-bela">
-              <div class="relative aspect-[4/3] w-full overflow-hidden bg-zinc-950">
-                <img
-                  src={heroImage}
-                  alt={heroImageAlt}
-                  class:list={[
-                    'absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.03]',
-                    heroImageObjectFit === 'contain'
-                      ? 'object-contain object-center'
-                      : [
-                          'object-cover',
-                          heroImageObjectPosition === 'top' ? 'object-top' : 'object-center',
-                        ],
-                  ]}
-                  width="1200"
-                  height="900"
-                  loading="eager"
-                  decoding="async"
-                  fetchpriority="high"
-                />
-              </div>
+            <div
+              class="bela-surface-card group relative aspect-[4/3] w-full overflow-hidden !rounded-2xl !p-0 shadow-bela"
+            >
+              <img
+                src={heroImage}
+                alt={heroImageAlt}
+                class:list={[
+                  'absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.03]',
+                  heroImageObjectFit === 'contain'
+                    ? 'object-contain object-center'
+                    : [
+                        'object-cover',
+                        heroImageObjectPosition === 'top' ? 'object-top' : 'object-center',
+                      ],
+                ]}
+                width="1200"
+                height="900"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
             </div>
           </div>
           <div class="order-1 text-center lg:order-2 lg:text-left">
@@ -152,8 +163,41 @@ const imageColClass =
         }
       </div>
 
+      <section
+        class="bela-produto-cta-orcamento mt-12 rounded-2xl border border-white/10 bg-gradient-to-br from-rose-950/35 via-[#13131a] to-indigo-950/25 p-8 text-center shadow-lg shadow-black/20 md:p-10"
+        aria-labelledby="cta-orcamento-produto"
+      >
+        <h2 id="cta-orcamento-produto" class="mb-3 text-2xl font-bold text-white md:text-3xl">
+          Solicitar orçamento
+        </h2>
+        <p class="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-zinc-400">
+          {ctaBlurb}
+        </p>
+        <a
+          href={wa}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bela-cta-pulse-whatsapp inline-flex min-h-[52px] items-center gap-2.5 rounded-full bg-[#25D366] px-10 text-base font-semibold text-white shadow-lg shadow-emerald-900/30 transition-colors hover:bg-[#20bd5a]"
+          aria-label={`Solicitar orçamento de ${whatsappContext} pelo WhatsApp`}
+        >
+          <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+          WhatsApp — solicitar orçamento
+        </a>
+      </section>
+
       {
-        related.length > 0 && (
+        productCardsCurrentHref && (
+          <ProdutoCardsGrid
+            currentHref={productCardsCurrentHref}
+            id="linhas-havaianas-personalizadas"
+            heading="Havaianas personalizadas por tipo de evento"
+            intro="Escolha outra linha ou confira detalhes: o mesmo padrão Chinelos da Bela com Havaianas originais e estampa no solado."
+          />
+        )
+      }
+
+      {
+        related.length > 0 && !productCardsCurrentHref && (
           <nav
             class="mt-14 border-t border-white/[0.08] pt-10"
             aria-label="Outras linhas de produtos"

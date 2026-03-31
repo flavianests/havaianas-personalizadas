@@ -28,20 +28,41 @@ const {
     {
       productCards.map((c) => {
         const isCurrent = currentHref === c.href;
+        const v = 'visualVariant' in c ? c.visualVariant : 'rose';
+        const glow =
+          v === 'rose'
+            ? 'hover:shadow-[0_22px_48px_-14px_rgba(244,63,94,0.38)] hover:ring-rose-400/50'
+            : v === 'indigo'
+              ? 'hover:shadow-[0_22px_48px_-14px_rgba(99,102,241,0.38)] hover:ring-indigo-400/45'
+              : v === 'fuchsia'
+                ? 'hover:shadow-[0_22px_48px_-14px_rgba(217,70,239,0.35)] hover:ring-fuchsia-400/45'
+                : 'hover:shadow-[0_22px_48px_-14px_rgba(52,211,153,0.35)] hover:ring-emerald-400/45';
+        const linkTone =
+          v === 'rose'
+            ? 'text-rose-300 hover:text-rose-200'
+            : v === 'indigo'
+              ? 'text-indigo-300 hover:text-indigo-200'
+              : v === 'fuchsia'
+                ? 'text-fuchsia-300 hover:text-fuchsia-200'
+                : 'text-emerald-300 hover:text-emerald-200';
         return (
           <article
+            data-bela-card-variant={v}
             class:list={[
-              'bela-surface-card group flex h-full flex-col overflow-hidden rounded-xl !border-white/10 !p-0',
+              'bela-produto-card-fx bela-surface-card group relative flex h-full flex-col overflow-hidden rounded-xl !border-white/10 !p-0',
+              'ring-1 ring-transparent transition-all duration-300 ease-out will-change-transform',
+              'hover:-translate-y-2 hover:border-white/20',
+              glow,
               isCurrent && 'ring-2 ring-rose-500/50 ring-offset-2 ring-offset-[#111116]',
             ]}
             aria-current={isCurrent ? 'page' : undefined}
           >
-            <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-950">
+            <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden">
               <img
                 src={c.img}
                 alt={c.alt}
                 class:list={[
-                  'absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-[1.03]',
+                  'absolute inset-0 z-0 h-full w-full transition-all duration-500 ease-out group-hover:scale-[1.06] group-hover:brightness-110',
                   'imgObjectFit' in c && c.imgObjectFit === 'contain'
                     ? 'object-contain object-center'
                     : [
@@ -52,6 +73,21 @@ const {
                 loading="lazy"
                 decoding="async"
               />
+              <div
+                class:list={[
+                  'pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/55 via-transparent to-white/5 opacity-80 transition-opacity duration-300 group-hover:opacity-95',
+                  v === 'rose' && 'from-rose-950/30',
+                  v === 'indigo' && 'from-indigo-950/30',
+                  v === 'fuchsia' && 'from-fuchsia-950/25',
+                  v === 'emerald' && 'from-emerald-950/25',
+                ]}
+                aria-hidden="true"
+              ></div>
+              <div class="pointer-events-none absolute inset-0 z-[2] overflow-hidden" aria-hidden="true">
+                <div
+                  class="absolute top-0 h-full w-[55%] -translate-x-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/35 to-transparent opacity-0 transition duration-[750ms] ease-out group-hover:translate-x-[220%] group-hover:opacity-100"
+                ></div>
+              </div>
             </div>
             <div class="flex flex-1 flex-col p-5">
               <h3 class="mb-1.5 text-lg font-bold text-white">{c.title}</h3>
@@ -61,7 +97,7 @@ const {
               ) : (
                 <a
                   href={c.href}
-                  class="inline-flex min-h-[44px] items-center text-sm font-medium text-rose-300 hover:text-rose-200"
+                  class:list={['inline-flex min-h-[44px] items-center text-sm font-medium transition-colors', linkTone]}
                 >
                   {c.linkLabel}
                 </a>

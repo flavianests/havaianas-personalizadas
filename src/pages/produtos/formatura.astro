@@ -6,9 +6,10 @@ const baseUrl = siteConfig.url.replace(/\/$/, '');
 const img = siteConfig.images;
 const pageUrl = `${baseUrl}/produtos/formatura/`;
 
-const title = 'Havaianas personalizadas para formatura em São Paulo';
+/** SEO: título 56 caracteres; meta 159 caracteres (recom. ~150–160 Google) */
+const title = 'Havaianas personalizadas formatura SP | Chinelos da Bela';
 const metaDescription =
-  'Havaianas personalizadas para formatura: turma, colação e festa com sola Havaianas e estampa no solado. Chinelos da Bela — brindes memoráveis. Solicite orçamento pelo WhatsApp.';
+  'Havaianas personalizadas para formatura em SP: turma, colação e festa, sola original e estampa no solado. Orçamento Chinelos da Bela pelo WhatsApp para turmas.';
 
 const jsonLdExtra: Record<string, unknown>[] = [
   {
@@ -28,7 +29,7 @@ const jsonLdExtra: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: `${title} | ${siteConfig.name}`,
+    name: `${title}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',
@@ -49,12 +50,6 @@ const breadcrumbs = [
   { href: '/servicos', label: 'Produtos' },
   { href: '/produtos/formatura', label: 'Formatura' },
 ];
-
-const related = [
-  { href: '/produtos/casamento', label: 'Casamento' },
-  { href: '/produtos/festa-15-anos', label: 'Festa de 15 anos' },
-  { href: '/produtos/eventos-corporativos', label: 'Eventos corporativos' },
-];
 ---
 
 <ProdutoSeoPage
@@ -66,31 +61,35 @@ const related = [
   heroImage={img.prodFormatura}
   heroImageAlt="Formanda com beca segurando Havaianas personalizadas com estampa, colação de formatura — Chinelos da Bela, São Paulo"
   heroImageObjectFit="contain"
-  intro="Formaturas reúnem família, amigos e muita foto. As havaianas personalizadas para formatura unem o simbolismo do curso com um brinde que todos usam depois da cerimônia. A Chinelos da Bela personaliza Havaianas originais com estampa profissional no solado — para turmas, comissões e convidados."
+  productCardsCurrentHref="/produtos/formatura"
+  ctaOrcamentoIntro="Comissão de formatura ou representante da turma: envie pelo WhatsApp data da colação e/ou festa, número de formandos, quantidade desejada e ideias de arte (curso, ano, instituição). A Chinelos da Bela orienta numeração, prazos e personalização em havaianas para formatura com sola Havaianas original."
+  intro="Formaturas reúnem família, amigos e fotos. As havaianas personalizadas unem o símbolo do curso a um brinde usado depois da cerimônia — Havaianas originais e estampa profissional no solado para turma e convidados. Ideal para quem busca “chinelos personalizados formatura” ou lembrancinhas acadêmicas em São Paulo com identidade da turma."
   whatsappContext="havaianas personalizadas para formatura"
   breadcrumbs={breadcrumbs}
   jsonLdExtra={jsonLdExtra}
-  related={related}
   sections={[
     {
-      heading: 'Identidade da turma na sola',
+      heading: 'Havaianas personalizadas com identidade da turma',
       paragraphs: [
-        'Logo do curso, ano de conclusão, símbolo da instituição ou frase da turma podem compor a arte, reforçando pertencimento e memória coletiva.',
-        'É uma alternativa criativa a canecas e camisetas apenas — complementa o kit de formatura com item leve e prático.',
+        'Logo do curso, ano, instituição ou frase da turma podem compor a arte — reforço de pertencimento e memória coletiva.',
+        'Complementam kits de formatura com item leve e prático, além de canecas e camisetas.',
+        'A estampa no solado mantém legibilidade em fotos e vídeos da festa — importante para conteúdo em redes sociais e álbum.',
       ],
     },
     {
-      heading: 'Do ensaio à festa: versatilidade',
+      heading: 'Da colação à festa: onde usar o brinde',
       paragraphs: [
-        'Muitas turmas usam os chinelos em ensaios fotográficos, churrascos pré-formatura e na própria festa, quando o salto já cansou.',
-        'Combinamos prazos conforme data da colação ou evento; entre em contato com antecedência para garantir produção e revisão da arte.',
+        'Turmas usam os chinelos em ensaios, confraternizações e na festa quando o salto cansa. Combine prazos com a data da colação.',
+        'Entre em contato com antecedência para produção e revisão da arte.',
+        'Distribuir na entrada da festa ou em um momento da cerimônia evita filas na retirada — alinhe com o cerimonial.',
       ],
     },
     {
-      heading: 'Orçamento para turma ou comissão',
+      heading: 'Orçamento para turma ou comissão de formatura',
       paragraphs: [
-        'Informe quantidade total, faixas de tamanho e se há necessidade de embalagem individual ou kits.',
-        'Se já existir arquivo vetorial ou manual da identidade visual da turma, o processo de aprovação da arte costuma ser mais rápido.',
+        'Informe quantidade, faixas de tamanho e necessidade de embalagem individual ou kits.',
+        'Se houver manual de identidade visual da turma, a aprovação da arte costuma ser mais rápida.',
+        'Valores e prazos variam com volume e complexidade da arte — o primeiro contato pelo WhatsApp já deixa o escopo mais claro para todos.',
       ],
     },
   ]}

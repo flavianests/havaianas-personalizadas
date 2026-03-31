@@ -8,6 +8,8 @@ const im = siteConfig.images;
 export const productCards = [
   {
     href: '/produtos/casamento',
+    /** Borda brilho / hover — ProdutoCardsGrid */
+    visualVariant: 'rose' as const,
     title: 'Havaianas Personalizadas para casamento',
     blurb:
       'Cores e arte alinhadas ao seu grande dia — conforto na pista e lembrança que combina com a identidade do evento.',
@@ -18,6 +20,7 @@ export const productCards = [
   },
   {
     href: '/produtos/formatura',
+    visualVariant: 'indigo' as const,
     title: 'Havaianas Personalizadas para formatura',
     blurb:
       'Beca, confete e festa: lembrancinhas com as cores e o símbolo da turma — confortáveis da cerimônia à pista.',
@@ -28,6 +31,7 @@ export const productCards = [
   },
   {
     href: '/produtos/festa-15-anos',
+    visualVariant: 'fuchsia' as const,
     title: 'Havaianas Personalizadas para festa de 15 anos',
     blurb:
       'Do vestido de debutante à pista: estampas e cores da sua festa — conforto para curtir a noite inteira.',
@@ -38,6 +42,7 @@ export const productCards = [
   },
   {
     href: '/produtos/eventos-corporativos',
+    visualVariant: 'emerald' as const,
     title: 'Evento corporativo',
     blurb:
       'Convenções, feiras e encontros em clima mais descontraído: brindes que unem estilo, conforto e lembrança da marca depois do evento.',

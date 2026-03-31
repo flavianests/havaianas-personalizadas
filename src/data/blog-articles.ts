@@ -192,7 +192,7 @@ export const blogArticles: BlogArticle[] = [
     excerpt:
       'Defina paleta, contraste e fontes para havaianas personalizadas que funcionem no solado e nas fotos — do casamento ao corporativo.',
     tag: 'Design',
-    image: '/images/bela/cliente-3.png',
+    image: '/images/bela/depoimentos-pagina-3.png',
     imageAlt:
       'Cores, tipografia e identidade visual aplicadas a havaianas personalizadas — Chinelos da Bela',
     originalUrl: 'https://chinelosdabela.com.br/havaianas-personalizadas/',
@@ -228,7 +228,7 @@ export const blogArticles: BlogArticle[] = [
     excerpt:
       'Ideias para kits especiais com havaianas personalizadas: conteúdo, momento da entrega, numeração e orçamento à parte do lote geral.',
     tag: 'Casamento',
-    image: '/images/bela/cliente-1.png',
+    image: '/images/bela/depoimentos-pagina-1.png',
     imageAlt:
       'Kits de havaianas personalizadas para padrinhos e madrinhas — lembrança especial — Chinelos da Bela',
     originalUrl: 'https://chinelosdabela.com.br/chinelos-personalizados-para-casamento/',
@@ -264,7 +264,7 @@ export const blogArticles: BlogArticle[] = [
     excerpt:
       'Escala, comunicação e logística quando a lembrança inclui parentes e acompanhantes — além da turma.',
     tag: 'Formatura',
-    image: '/images/bela/cliente-2.png',
+    image: '/images/bela/depoimentos-pagina-2.png',
     imageAlt:
       'Formatura: formandos, famílias e convidados com havaianas personalizadas — Chinelos da Bela',
     originalUrl: 'https://chinelosdabela.com.br/chinelos-formatura/',
