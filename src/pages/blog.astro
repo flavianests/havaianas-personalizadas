@@ -28,7 +28,7 @@ const blogJsonLd: Record<string, unknown>[] = [
       '@type': 'BlogPosting',
       headline: post.title,
       description: post.metaDescription ?? post.excerpt,
-      image: postImageUrl(baseUrl, post.image),
+      image: postImageUrl(baseUrl, post.image ?? img.destaqueHavaianas),
       url: `${baseUrl}/blog/${post.slug}/`,
     })),
   },
@@ -54,14 +54,14 @@ const blogJsonLd: Record<string, unknown>[] = [
             <article class="flex flex-col overflow-hidden rounded-[10px] border border-white/[0.06] bg-[#1a1a1a] shadow-[0_12px_40px_-12px_rgba(0,0,0,0.65)] transition-[border-color,box-shadow] duration-300 hover:border-rose-500/25 hover:shadow-[0_16px_44px_-10px_rgba(225,29,72,0.12)]">
               <a
                 href={`/blog/${post.slug}/`}
-                class="aspect-[16/10] overflow-hidden block shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 focus-visible:ring-inset"
+                class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden block shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 focus-visible:ring-inset"
               >
                 <img
-                  src={postImageUrl(baseUrl, post.image)}
-                  alt={post.imageAlt}
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  width="960"
-                  height="600"
+                  src={post.image ?? img.destaqueHavaianas}
+                  alt={post.imageAlt ?? 'Artigo do blog — Chinelos da Bela'}
+                  class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+                  width="800"
+                  height="500"
                   loading="lazy"
                   decoding="async"
                   referrerpolicy="no-referrer"
@@ -86,10 +86,10 @@ const blogJsonLd: Record<string, unknown>[] = [
                     href={whatsappHref(siteConfig.whatsappPhone, `Olá! Vi "${post.title}" no blog e quero um orçamento.`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-zinc-300 text-sm font-medium min-h-[44px] hover:text-white"
-                    aria-label={`Pedir orçamento no WhatsApp: ${post.title}`}
+                    class="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#e11d48] px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-rose-950/35 transition-colors hover:bg-[#be123c] focus-visible:outline focus-visible:ring-2 focus-visible:ring-rose-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111116]"
+                    aria-label={`Solicitar orçamento no WhatsApp: ${post.title}`}
                   >
-                    Quero orçamento <i class="fab fa-whatsapp text-rose-300" aria-hidden="true" />
+                    Solicitar orçamento
                   </a>
                 </div>
               </div>

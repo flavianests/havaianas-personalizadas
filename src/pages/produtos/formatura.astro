@@ -6,10 +6,9 @@ const baseUrl = siteConfig.url.replace(/\/$/, '');
 const img = siteConfig.images;
 const pageUrl = `${baseUrl}/produtos/formatura/`;
 
-/** SEO: título 56 caracteres; meta 159 caracteres (recom. ~150–160 Google) */
-const title = 'Havaianas personalizadas formatura | Chinelos da Bela';
+const title = 'Havaianas Personalizadas para Formatura | Brindes Personalizados';
 const metaDescription =
-  'Havaianas personalizadas para formatura: turma, colação e festa, sola original e estampa no solado. Orçamento Chinelos da Bela pelo WhatsApp para turmas.';
+  'Havaianas personalizadas para formatura com alta qualidade e durabilidade. Ideal para marcar esse momento especial com estilo e exclusividade.';
 
 const jsonLdExtra: Record<string, unknown>[] = [
   {
@@ -29,7 +28,7 @@ const jsonLdExtra: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: `${title}`,
+    name: `${title} | ${siteConfig.name}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',

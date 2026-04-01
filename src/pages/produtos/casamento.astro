@@ -6,10 +6,9 @@ const baseUrl = siteConfig.url.replace(/\/$/, '');
 const img = siteConfig.images;
 const pageUrl = `${baseUrl}/produtos/casamento/`;
 
-/** SEO: título 56 caracteres; meta 159 caracteres (recom. ~150–160 Google) */
-const title = 'Havaianas personalizadas casamento | Chinelos da Bela';
+const title = 'Havaianas Personalizadas para Casamento | Lembrancinhas Exclusivas';
 const metaDescription =
-  'Havaianas personalizadas para casamento: lembrancinhas com sola original e estampa no solado. Chinelos da Bela — orçamento, prazos e entrega pelo WhatsApp.';
+  'Havaianas personalizadas para casamento com alta durabilidade e design exclusivo. Perfeitas como lembrancinhas elegantes para seus convidados.';
 
 const jsonLdExtra: Record<string, unknown>[] = [
   {
@@ -29,7 +28,7 @@ const jsonLdExtra: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: `${title}`,
+    name: `${title} | ${siteConfig.name}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',

@@ -74,14 +74,14 @@ export const siteConfig = {
   produtosNavChildren,
   nav: [
     { href: '/', label: 'Início' },
-    { href: '/sobre', label: 'Sobre' },
+    { href: '/sobre', label: 'Quem Somos' },
     { label: 'Produtos', children: produtosNavChildren },
     { href: '/blog', label: 'Blog' },
     { href: '/contato', label: 'Contato' },
   ],
   footerNav: [
     { href: '/', label: 'Início' },
-    { href: '/sobre', label: 'Sobre' },
+    { href: '/sobre', label: 'Quem Somos' },
     { href: '/servicos', label: 'Produtos' },
     { href: '/produtos/casamento', label: 'Casamento' },
     { href: '/produtos/festa-15-anos', label: 'Festa de 15 anos' },

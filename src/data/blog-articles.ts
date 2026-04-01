@@ -32,8 +32,9 @@ const articlesBase: Omit<BlogArticle, 'bodyMarkdown'>[] = [
     metaDescription:
       'Quanto custam havaianas personalizadas? Veja o que entra no preço, como comparar orçamentos, FAQ e checklists para casamento e eventos. Chinelos da Bela.',
     tag: 'Guia',
-    image: '/images/bela/real-havaianas.jpg',
-    imageAlt: 'Havaianas personalizadas em detalhe — custo, orçamento e qualidade Chinelos da Bela',
+    image: '/images/bela/quanto-custa-card-havaianas-gcb.png',
+    imageAlt:
+      'Havaianas personalizadas Festival GCB 35 Anos Capoeira Brasil em expositor de madeira — Chinelos da Bela',
     originalUrl: 'https://chinelosdabela.com.br/havaianas-personalizadas/',
   },
   {

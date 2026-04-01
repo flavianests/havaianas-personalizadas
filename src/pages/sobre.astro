@@ -4,20 +4,21 @@ import { siteConfig, whatsappHref } from '../config';
 
 const baseUrl = siteConfig.url.replace(/\/$/, '');
 const metaDescription =
-  'Conheça a Chinelos da Bela: Havaianas Personalizadas para casamento, formatura, 15 anos e corporativo. Havaianas originais e estampa no solado.';
+  'Conheça nossa história e experiência na produção de Havaianas personalizadas com alta durabilidade. Qualidade, técnica exclusiva e acabamento profissional.';
+const pageTitle = 'Quem Somos | Especialistas em Havaianas Personalizadas';
 const sobreJsonLd: Record<string, unknown>[] = [
   {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
-      { '@type': 'ListItem', position: 2, name: 'Sobre a Chinelos da Bela', item: `${baseUrl}/sobre/` },
+      { '@type': 'ListItem', position: 2, name: 'Quem Somos', item: `${baseUrl}/sobre/` },
     ],
   },
   {
     '@type': 'AboutPage',
     '@id': `${baseUrl}/sobre/#webpage`,
     url: `${baseUrl}/sobre/`,
-    name: 'Sobre a Chinelos da Bela — Havaianas Personalizadas',
+    name: `${pageTitle} | ${siteConfig.name}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',
@@ -26,7 +27,7 @@ const sobreJsonLd: Record<string, unknown>[] = [
 ---
 
 <BaseLayout
-  title="Sobre a Chinelos da Bela — Havaianas Personalizadas"
+  title={pageTitle}
   description={metaDescription}
   jsonLdExtra={sobreJsonLd}
 >

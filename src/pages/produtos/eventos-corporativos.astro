@@ -6,10 +6,9 @@ const baseUrl = siteConfig.url.replace(/\/$/, '');
 const img = siteConfig.images;
 const pageUrl = `${baseUrl}/produtos/eventos-corporativos/`;
 
-/** SEO: título 58 caracteres; meta ~158 caracteres (recom. ~150–160 Google) */
-const title = 'Havaianas personalizadas corporativo | Chinelos da Bela';
+const title = 'Havaianas Personalizadas para Empresas | Brindes Corporativos';
 const metaDescription =
-  'Brindes corporativos com havaianas personalizadas: logo no solado, convenções e confraternizações. Chinelos da Bela — orçamento empresarial pelo WhatsApp.';
+  'Havaianas personalizadas para empresas com sua marca. Brindes corporativos criativos, duráveis e com excelente custo-benefício.';
 
 const jsonLdExtra: Record<string, unknown>[] = [
   {
@@ -29,7 +28,7 @@ const jsonLdExtra: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: `${title}`,
+    name: `${title} | ${siteConfig.name}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',

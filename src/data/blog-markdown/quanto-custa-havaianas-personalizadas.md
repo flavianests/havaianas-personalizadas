@@ -6,7 +6,7 @@ O valor depende de produto, processo e prazo. **Havaianas personalizadas** com *
 
 A **Chinelos da Bela** trabalha com **sola Havaianas original** e orientação de arte. Assim, o orçamento reflete qualidade perceptível pelos convidados.
 
-![Quanto custa havaianas personalizadas — detalhe Chinelos da Bela](/images/bela/real-havaianas.jpg)
+![Havaianas personalizadas para casamento — iniciais, nomes e data no solado Chinelos da Bela](/images/bela/quanto-custa-casamento.png)
 
 ## O que compõe o preço das havaianas personalizadas (além do anúncio)
 
@@ -36,7 +36,7 @@ Arte simples não significa arte ruim. Muitas vezes, menos traço bem resolvido 
 
 Prova digital inclusa reduz erro. Pergunte quantas rodadas de ajuste estão no pacote. Alterações após aprovação podem gerar taxa.
 
-![Arte no solado — havaianas personalizadas Chinelos da Bela](/images/bela/destaque-havaianas.webp)
+![Par de havaianas personalizadas na caixa — estampa completa no solado Chinelos da Bela](/images/bela/quanto-custa-caixa-presente.png)
 
 ## Prazo, urgência e sazonalidade
 
@@ -80,7 +80,7 @@ Turmas e debutantes repetem a lógica de escala. **Havaianas personalizadas para
 
 **Brindes corporativos** avaliam custo por contato. Um par usado por meses expõe marca de forma contínua.
 
-![Orçamento e evento — Chinelos da Bela](/images/bela/hero-cliente-evento.png)
+![Caixa com chinelos personalizados em lote — brinde corporativo com logo Chinelos da Bela](/images/bela/quanto-custa-lote-corporativo.png)
 
 ## Perguntas frequentes sobre preço
 

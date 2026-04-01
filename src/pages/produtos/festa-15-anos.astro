@@ -6,10 +6,9 @@ const baseUrl = siteConfig.url.replace(/\/$/, '');
 const img = siteConfig.images;
 const pageUrl = `${baseUrl}/produtos/festa-15-anos/`;
 
-/** SEO: título 60 caracteres; meta 159 caracteres (recom. ~150–160 Google) */
-const title = 'Havaianas personalizadas festa 15 anos | Chinelos da Bela';
+const title = 'Havaianas Personalizadas para Festa de 15 Anos | Estilo e Conforto';
 const metaDescription =
-  'Havaianas para festa de 15 anos: debutante e convidados, sola original e estampa no solado. Chinelos da Bela — orçamento, prazos e entrega pelo WhatsApp.';
+  'Havaianas personalizadas para festa de 15 anos com estampas modernas e alta durabilidade. Surpreenda seus convidados com um brinde único.';
 
 const jsonLdExtra: Record<string, unknown>[] = [
   {
@@ -29,7 +28,7 @@ const jsonLdExtra: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: `${title}`,
+    name: `${title} | ${siteConfig.name}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',

@@ -7,7 +7,8 @@ import { siteConfig, whatsappHref } from '../config';
 const img = siteConfig.images;
 const baseUrl = siteConfig.url.replace(/\/$/, '');
 const metaDescription =
-  'Havaianas Personalizadas para eventos: casamento, festa de 15 anos, formatura, aniversários e corporativos. Chinelos da Bela: Havaianas originais, estampa no solado e orçamento pelo WhatsApp.';
+  'Havaianas personalizadas com estampa de alta durabilidade direto na borracha. Ideal para eventos, casamentos e brindes. Entrega rápida em todo o Brasil.';
+const pageTitle = 'Havaianas Personalizadas com Alta Durabilidade | Direto na Borracha';
 const heroShareUrl = `${baseUrl}${img.heroHomeRio}`;
 
 const homeJsonLd: Record<string, unknown>[] = [
@@ -15,7 +16,7 @@ const homeJsonLd: Record<string, unknown>[] = [
     '@type': 'WebPage',
     '@id': `${baseUrl}/#webpage`,
     url: `${baseUrl}/`,
-    name: 'Havaianas Personalizadas para Eventos — Chinelos da Bela',
+    name: `${pageTitle} | ${siteConfig.name}`,
     description: metaDescription,
     isPartOf: { '@id': `${baseUrl}/#website` },
     inLanguage: 'pt-BR',
@@ -83,7 +84,7 @@ const homeJsonLd: Record<string, unknown>[] = [
 ---
 
 <BaseLayout
-  title="Havaianas Personalizadas para Eventos — Chinelos da Bela"
+  title={pageTitle}
   description={metaDescription}
   image={heroShareUrl}
   ogImageAlt="Havaianas Personalizadas em evento — cliente Chinelos da Bela"
