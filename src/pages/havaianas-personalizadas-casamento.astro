@@ -1,0 +1,246 @@
+---
+import ProdutoSeoPage from '../components/ProdutoSeoPage.astro';
+import { siteConfig } from '../config';
+
+const baseUrl = siteConfig.url.replace(/\/$/, '');
+const img = siteConfig.images;
+const pageUrl = `${baseUrl}/havaianas-personalizadas-casamento/`;
+
+const title = 'Havaianas Personalizadas para Casamento | Lembrancinhas Exclusivas';
+const metaDescription =
+  'Havaianas personalizadas para casamento em São Paulo e em todo o Brasil: lembrancinhas úteis, estampa na borracha, durabilidade e ótimo custo-benefício — Chinelos da Bela.';
+
+const jsonLdExtra: Record<string, unknown>[] = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Produtos', item: `${baseUrl}/havaianas-personalizadas-produtos/` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Havaianas personalizadas para casamento',
+        item: pageUrl,
+      },
+    ],
+  },
+  {
+    '@type': 'WebPage',
+    '@id': `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: `${title} | ${siteConfig.name}`,
+    description: metaDescription,
+    isPartOf: { '@id': `${baseUrl}/#website` },
+    inLanguage: 'pt-BR',
+  },
+  {
+    '@type': 'Service',
+    name: 'Havaianas personalizadas para casamento',
+    description: metaDescription,
+    url: pageUrl,
+    provider: { '@id': `${baseUrl}/#localbusiness` },
+    serviceType: 'Personalização de chinelos Havaianas para casamentos e recepções',
+    areaServed: { '@type': 'Country', name: 'Brasil' },
+  },
+];
+
+const breadcrumbs = [
+  { href: '/', label: 'Início' },
+  { href: '/havaianas-personalizadas-produtos', label: 'Produtos' },
+  { href: '/havaianas-personalizadas-casamento', label: 'Casamento' },
+];
+---
+
+<ProdutoSeoPage
+  title={title}
+  description={metaDescription}
+  h1="Havaianas Personalizadas para Casamento"
+  ogImage={`${baseUrl}${img.destaqueHavaianas}`}
+  ogImageAlt="Havaianas personalizadas para casamento — estampa no solado, Chinelos da Bela"
+  heroImage={img.prodCasamento}
+  heroImageAlt="Noiva com Havaianas personalizadas nas mãos, vestido branco e véu, decoração de casamento ao fundo — Chinelos da Bela"
+  heroImageObjectFit="contain"
+  productCardsCurrentHref="/havaianas-personalizadas-casamento"
+  intro="As havaianas personalizadas para casamento são uma das lembrancinhas mais escolhidas por noivos que desejam unir estilo, conforto e utilidade em um único item. Diferente de brindes tradicionais que muitas vezes acabam esquecidos, os chinelos personalizados para casamento são realmente utilizados pelos convidados, tanto durante o evento quanto depois dele."
+  beforeSectionsParagraphs={[
+    'Além de funcionais, ajudam a criar uma experiência mais agradável na festa. Após horas usando sapatos formais, oferecer chinelos personalizados faz com que os convidados aproveitem melhor a pista de dança e se sintam mais à vontade. Isso transforma o clima do evento e contribui diretamente para o sucesso da celebração.',
+    'Outro ponto importante é o valor emocional. As havaianas personalizadas não são apenas um produto, mas uma recordação do casamento. Quando bem feitas, com design bonito e acabamento de qualidade, elas se tornam uma lembrancinha de casamento personalizada que marca esse momento especial.',
+  ]}
+  whatsappContext="havaianas personalizadas para casamento"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={jsonLdExtra}
+  sections={[
+    {
+      heading: 'Chinelos Personalizados para Casamento: Conforto e Estilo',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'Os chinelos personalizados para casamento são ideais para diferentes momentos da festa, especialmente na recepção e na pista de dança. Eles oferecem conforto imediato para os convidados, evitando desconfortos causados por sapatos apertados ou salto alto.',
+        },
+        {
+          type: 'p',
+          text: 'Além do conforto, o estilo também é um grande diferencial. As havaianas personalizadas podem ser criadas de acordo com a identidade visual do casamento, combinando com as cores, decoração e até mesmo com o convite. Isso traz mais harmonia para o evento e mostra cuidado nos detalhes.',
+        },
+        {
+          type: 'p',
+          text: 'Outro benefício é a versatilidade. Os chinelos podem ser distribuídos de várias formas:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Em um espaço específico na festa (cantinho dos chinelos)',
+            'Entregues durante a pista de dança',
+            'Oferecidos como lembrancinha ao final do evento',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Independentemente da forma escolhida, eles sempre geram uma reação positiva dos convidados, tornando o momento ainda mais especial.',
+        },
+      ],
+    },
+    {
+      heading: 'Ideias de Havaianas Personalizadas para Casamento',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'Existem diversas opções de design para havaianas personalizadas para casamento, e escolher o modelo certo faz toda a diferença no resultado final.',
+        },
+        { type: 'p', text: 'Algumas ideias que fazem muito sucesso incluem:' },
+        {
+          type: 'ul',
+          items: [
+            'Nome dos noivos ou logo do casal',
+            'Data do casamento',
+            'Iniciais personalizadas',
+            'Estampas florais ou minimalistas',
+            'Frases de agradecimento',
+            'Elementos presentes no convite ou na decoração',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Você também pode adaptar o estilo das havaianas ao tipo de casamento:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Casamentos clássicos → designs elegantes, cores neutras',
+            'Casamentos na praia → estampas tropicais e cores vibrantes',
+            'Casamentos rústicos → tons terrosos e elementos naturais',
+            'Casamentos modernos → designs minimalistas e sofisticados',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Quanto mais alinhado o design estiver com o evento, maior será o impacto visual e emocional. Isso faz com que os chinelos personalizados se destaquem como brindes para casamento únicos e inesquecíveis.',
+        },
+      ],
+    },
+    {
+      heading: 'Quanto custa Havaianas Personalizadas para Casamento?',
+      bodyBlocks: [
+        { type: 'p', text: 'Essa é uma das dúvidas mais comuns de quem está organizando um casamento.' },
+        {
+          type: 'p',
+          text: 'O preço das havaianas personalizadas para casamento pode variar conforme alguns fatores importantes:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Quantidade de pares solicitados',
+            'Tipo de estampa utilizada',
+            'Complexidade do design',
+            'Prazo de produção',
+            'Tipo de embalagem ou personalização extra',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Em geral, pedidos em maior quantidade tendem a ter um custo por unidade mais baixo, o que melhora o custo-benefício.',
+        },
+        {
+          type: 'p',
+          text: 'Aqui na Chinelos da Bela trabalhamos com excelente custo-benefício: você pode escolher a estampa livremente sem alteração no valor. Nosso objetivo é oferecer havaianas personalizadas com preço acessível, mantendo sempre alta qualidade e durabilidade.',
+        },
+        {
+          type: 'p',
+          text: 'Investir nesse tipo de lembrancinha vale muito a pena, pois você está oferecendo algo útil, bonito e que será realmente aproveitado pelos convidados.',
+        },
+      ],
+    },
+    {
+      heading: 'Por que escolher nossas Havaianas Personalizadas?',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'Escolher um bom fornecedor faz toda a diferença no resultado final. A qualidade da estampa, o acabamento e o conforto são pontos essenciais.',
+        },
+        { type: 'p', text: 'Confira nossos diferenciais:' },
+        {
+          type: 'ul',
+          items: [
+            'Estampa direto na borracha (não desbota com o uso)',
+            'Alta durabilidade, mesmo após várias utilizações',
+            'Conforto original Havaianas',
+            'Produção profissional com acabamento impecável',
+            'Personalização completa conforme seu evento',
+            'Entrega rápida e segura',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Nosso processo de produção é focado em qualidade. Utilizamos técnicas que garantem maior fixação da estampa, evitando desgaste e mantendo o visual bonito por muito mais tempo.',
+        },
+        {
+          type: 'p',
+          text: 'Além disso, acompanhamos cada etapa do pedido para garantir que tudo saia exatamente como planejado.',
+        },
+      ],
+    },
+    {
+      heading: 'Havaianas Personalizadas para Casamento em São Paulo e Todo o Brasil',
+      paragraphs: [
+        'Se você está procurando havaianas personalizadas para casamento em São Paulo ou em qualquer região do Brasil, podemos te atender com eficiência e qualidade.',
+        'Atendemos diferentes estilos de casamento, desde os mais simples até os mais sofisticados. Nosso compromisso é entregar um produto que atenda às expectativas e contribua para o sucesso do evento.',
+        'Com logística organizada, conseguimos enviar para todo o Brasil com segurança, garantindo que seus chinelos personalizados cheguem dentro do prazo.',
+      ],
+    },
+    {
+      heading: 'Vale a pena investir em Havaianas Personalizadas?',
+      bodyBlocks: [
+        { type: 'p', text: 'Sim, e muito!' },
+        {
+          type: 'p',
+          text: 'As havaianas personalizadas para casamento são uma das opções com melhor custo-benefício quando falamos de lembrancinhas. Elas combinam:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Utilidade no evento',
+            'Conforto para os convidados',
+            'Personalização exclusiva',
+            'Valor emocional duradouro',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Diferente de outros brindes que podem ser descartados ou esquecidos, os chinelos personalizados continuam sendo usados no dia a dia. Isso faz com que seu casamento permaneça na memória dos convidados por muito mais tempo.',
+        },
+        {
+          type: 'p',
+          text: 'Além disso, eles contribuem diretamente para a experiência da festa, tornando o ambiente mais descontraído e agradável.',
+        },
+      ],
+    },
+    {
+      heading: 'Solicite seu Orçamento',
+      paragraphs: [
+        'Se você está buscando havaianas personalizadas para casamento com alta durabilidade, qualidade profissional e excelente custo-benefício, fale com a gente.',
+        'Produzimos chinelos personalizados para casamento feitos sob medida, respeitando o estilo e a identidade do seu evento.',
+        'Solicite agora seu orçamento e surpreenda seus convidados com uma lembrancinha exclusiva, útil e inesquecível.',
+      ],
+      showRoseOrcamentoButton: true,
+    },
+  ]}
+/>

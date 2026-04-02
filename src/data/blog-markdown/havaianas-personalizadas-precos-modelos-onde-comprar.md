@@ -76,9 +76,9 @@ Transparência reduz atrito e aumenta confiança — sinal útil para visitantes
 
 ## Contato oficial: falar com a Chinelos da Bela com segurança
 
-Explore a página [contato](/contato/) para ver linha de produto, linguagem visual e próximos passos. Links internos ajudam navegação e contexto.
+Explore a página [contato](/havaianas-personalizadas-contato/) para ver linha de produto, linguagem visual e próximos passos. Links internos ajudam navegação e contexto.
 
-Volte ao [Blog da Bela](/blog/) para outros guias.
+Volte ao [Blog da Bela](/havaianas-personalizadas-blog/) para outros guias.
 
 ![Chinelos personalizados para formatura Chinelos da Bela](/images/bela/prod-formatura-mesa.png)
 
@@ -282,7 +282,7 @@ UX forte pode indiretamente apoiar **SEO**.
 
 ## Onde continuar lendo no site da Chinelos da Bela
 
-Além de [contato](/contato/), use [serviços](/servicos/) para visão geral de produtos. [Contato](/contato/) reúne canais oficiais.
+Além de [contato](/havaianas-personalizadas-contato/), use [serviços](/havaianas-personalizadas-produtos/) para visão geral de produtos. [Contato](/havaianas-personalizadas-contato/) reúne canais oficiais.
 
 Navegação clara ajuda conversão.
 
@@ -632,11 +632,11 @@ Agora é com você: transforme leitura em orçamento concreto com a **Chinelos d
 
 Ranqueamento no **Google** ajuda a ser encontrado. Página de produto ajuda a converter. Blog educa no meio do funil.
 
-Use cada formato no lugar certo. preços, modelos e onde comprar havaianas personalizadas ganha contexto aqui; detalhes comerciais ficam em [contato](/contato/).
+Use cada formato no lugar certo. preços, modelos e onde comprar havaianas personalizadas ganha contexto aqui; detalhes comerciais ficam em [contato](/havaianas-personalizadas-contato/).
 
 ## Outras páginas úteis: sobre, serviços e contato
 
-Além deste guia, visite [sobre](/sobre/) para contexto da **Chinelos da Bela**. Use [contato](/contato/) para dados oficiais.
+Além deste guia, visite [sobre](/quem-somos/) para contexto da **Chinelos da Bela**. Use [contato](/havaianas-personalizadas-contato/) para dados oficiais.
 
 Navegação entre páginas relevantes reforça **SEO** interno e ajuda o visitante.
 

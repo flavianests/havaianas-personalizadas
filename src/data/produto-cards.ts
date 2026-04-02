@@ -1,5 +1,5 @@
 /**
- * Cards de produtos — mesma vitrine em home e páginas /produtos/*
+ * Cards de produtos — mesma vitrine em home e páginas de linha (havaianas-personalizadas-*)
  */
 import { siteConfig } from '../config';
 
@@ -7,7 +7,7 @@ const im = siteConfig.images;
 
 export const productCards = [
   {
-    href: '/produtos/casamento',
+    href: '/havaianas-personalizadas-casamento',
     /** Borda brilho / hover — ProdutoCardsGrid */
     visualVariant: 'rose' as const,
     title: 'Havaianas Personalizadas para casamento',
@@ -19,7 +19,7 @@ export const productCards = [
     imgObjectFit: 'contain' as const,
   },
   {
-    href: '/produtos/formatura',
+    href: '/havaianas-personalizadas-formatura',
     visualVariant: 'indigo' as const,
     title: 'Havaianas Personalizadas para formatura',
     blurb:
@@ -30,7 +30,7 @@ export const productCards = [
     imgObjectFit: 'contain' as const,
   },
   {
-    href: '/produtos/festa-15-anos',
+    href: '/havaianas-personalizadas-15-anos',
     visualVariant: 'fuchsia' as const,
     title: 'Havaianas Personalizadas para festa de 15 anos',
     blurb:
@@ -41,7 +41,7 @@ export const productCards = [
     imgObjectFit: 'contain' as const,
   },
   {
-    href: '/produtos/eventos-corporativos',
+    href: '/havaianas-personalizadas-eventos-corporativos',
     visualVariant: 'emerald' as const,
     title: 'Evento corporativo',
     blurb:

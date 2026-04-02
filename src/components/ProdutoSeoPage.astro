@@ -5,9 +5,21 @@ import type { BreadcrumbItem } from './PageBreadcrumbs.astro';
 import ProdutoCardsGrid from './ProdutoCardsGrid.astro';
 import { siteConfig, whatsappHref } from '../config';
 
+type SectionBodyItem =
+  | { type: 'p'; text: string }
+  | { type: 'ul'; items: string[] };
+
 interface Section {
   heading: string;
-  paragraphs: string[];
+  /** Corpo rico em ordem (parágrafos e listas); se definido, ignora paragraphs/bulletList/paragraphsAfterList */
+  bodyBlocks?: SectionBodyItem[];
+  paragraphs?: string[];
+  /** Itens de lista após os parágrafos iniciais (ex.: ideias de design) */
+  bulletList?: string[];
+  /** Parágrafos após a lista, ainda dentro da mesma seção */
+  paragraphsAfterList?: string[];
+  /** Botão rosa “Solicitar orçamento” (WhatsApp) ao final desta seção */
+  showRoseOrcamentoButton?: boolean;
 }
 
 interface RelatedLink {
@@ -24,7 +36,7 @@ interface Props {
   /** Mesma foto do card desse produto em /servicos e home */
   heroImage: string;
   heroImageAlt: string;
-  intro: string;
+  intro: string | string[];
   sections: Section[];
   whatsappContext: string;
   breadcrumbs: BreadcrumbItem[];
@@ -39,8 +51,10 @@ interface Props {
   heroImageObjectFit?: 'cover' | 'contain';
   /** Grelha de produtos (home/servicos): destaca a linha atual */
   productCardsCurrentHref?: string;
-  /** Texto do bloco “Solicitar orçamento” antes da grelha de cards (opcional) */
-  ctaOrcamentoIntro?: string;
+  /** Parágrafos antes da primeira seção (H2) do artigo (opcional) */
+  beforeSectionsParagraphs?: string[];
+  /** Legado: mesmo efeito que beforeSectionsParagraphs (evita erro se ainda for passado) */
+  footerParagraphs?: string[];
 }
 
 const {
@@ -61,17 +75,19 @@ const {
   heroImageObjectPosition = 'center',
   heroImageObjectFit = 'cover',
   productCardsCurrentHref,
-  ctaOrcamentoIntro,
+  beforeSectionsParagraphs: beforeSectionsParagraphsProp,
+  footerParagraphs: footerParagraphsProp,
 } = Astro.props;
+
+const beforeSectionsParagraphs =
+  beforeSectionsParagraphsProp ?? footerParagraphsProp ?? [];
+/** Alias para compatibilidade com builds/cache que ainda referenciam o nome antigo */
+const footerParagraphs = beforeSectionsParagraphs;
 
 const wa = whatsappHref(
   siteConfig.whatsappPhone,
   `Olá! Tenho interesse em ${whatsappContext}.`
 );
-
-const ctaBlurb =
-  ctaOrcamentoIntro ??
-  `Fale com a equipe pelo WhatsApp: envie data, quantidade aproximada e referências visuais para receber orientação e proposta sobre ${whatsappContext}.`;
 
 const imageColClass =
   heroImageScale === 'large'
@@ -127,9 +143,15 @@ const imageColClass =
               class="mx-auto mt-5 block h-1 w-14 max-w-full rounded-full bg-gradient-to-r from-rose-500 via-rose-400 to-indigo-400 lg:mx-0"
               aria-hidden="true"
             ></span>
-            <p class="mt-6 text-base leading-relaxed text-zinc-400 sm:text-lg">
-              {intro}
-            </p>
+            <div class="mt-6 space-y-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
+              {
+                Array.isArray(intro) ? (
+                  intro.map((t) => <p>{t}</p>)
+                ) : (
+                  <p>{intro}</p>
+                )
+              }
+            </div>
             <p class="mt-6">
               <a
                 href={wa}
@@ -148,42 +170,73 @@ const imageColClass =
 
       <div class="prose prose-invert prose-zinc max-w-none space-y-12">
         {
+          beforeSectionsParagraphs.length > 0 && (
+            <div
+              class="mx-auto max-w-3xl space-y-4 text-base leading-relaxed text-zinc-400"
+              role="region"
+              aria-label="Introdução ao conteúdo"
+            >
+              {beforeSectionsParagraphs.map((t) => (
+                <p>{t}</p>
+              ))}
+            </div>
+          )
+        }
+        {
           sections.map((s, idx) => (
             <section class="border-t border-white/[0.08] pt-10 first:border-0 first:pt-0" aria-labelledby={`sec-${idx}`}>
               <h2 id={`sec-${idx}`} class="mb-4 text-2xl font-bold text-white md:text-3xl">
                 {s.heading}
               </h2>
               <div class="space-y-4 text-zinc-400 leading-relaxed">
-                {s.paragraphs.map((p) => (
-                  <p>{p}</p>
-                ))}
+                {s.bodyBlocks && s.bodyBlocks.length > 0 ? (
+                  s.bodyBlocks.map((b) =>
+                    b.type === 'p' ? (
+                      <p>{b.text}</p>
+                    ) : (
+                      <ul class="list-disc space-y-2 pl-5 marker:text-rose-400/90">
+                        {b.items.map((item) => (
+                          <li>{item}</li>
+                        ))}
+                      </ul>
+                    )
+                  )
+                ) : (
+                  <>
+                    {(s.paragraphs ?? []).map((p) => (
+                      <p>{p}</p>
+                    ))}
+                    {s.bulletList && s.bulletList.length > 0 && (
+                      <ul class="list-disc space-y-2 pl-5 marker:text-rose-400/90">
+                        {s.bulletList.map((item) => (
+                          <li>{item}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {(s.paragraphsAfterList ?? []).map((p) => (
+                      <p>{p}</p>
+                    ))}
+                  </>
+                )}
+                {s.showRoseOrcamentoButton && (
+                  <p class="!mt-8 flex justify-center">
+                    <a
+                      href={wa}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="bela-cta-pulse-rose inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-rose-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-rose-900/40 transition hover:bg-rose-500"
+                      aria-label={`Solicitar orçamento de ${whatsappContext} pelo WhatsApp`}
+                    >
+                      <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i>
+                      Solicitar orçamento
+                    </a>
+                  </p>
+                )}
               </div>
             </section>
           ))
         }
       </div>
-
-      <section
-        class="bela-produto-cta-orcamento mt-12 rounded-2xl border border-white/10 bg-gradient-to-br from-rose-950/35 via-[#13131a] to-indigo-950/25 p-8 text-center shadow-lg shadow-black/20 md:p-10"
-        aria-labelledby="cta-orcamento-produto"
-      >
-        <h2 id="cta-orcamento-produto" class="mb-3 text-2xl font-bold text-white md:text-3xl">
-          Solicitar orçamento
-        </h2>
-        <p class="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-zinc-400">
-          {ctaBlurb}
-        </p>
-        <a
-          href={wa}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bela-cta-pulse-whatsapp inline-flex min-h-[52px] items-center gap-2.5 rounded-full bg-[#25D366] px-10 text-base font-semibold text-white shadow-lg shadow-emerald-900/30 transition-colors hover:bg-[#20bd5a]"
-          aria-label={`Solicitar orçamento de ${whatsappContext} pelo WhatsApp`}
-        >
-          <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
-          WhatsApp — solicitar orçamento
-        </a>
-      </section>
 
       {
         productCardsCurrentHref && (

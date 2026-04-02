@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig, whatsappHref } from '../config';
+
+const baseUrl = siteConfig.url.replace(/\/$/, '');
+const metaDescription =
+  'Conheça nossa história e experiência na produção de Havaianas personalizadas com alta durabilidade. Qualidade, técnica exclusiva e acabamento profissional.';
+const pageTitle = 'Quem Somos | Especialistas em Havaianas Personalizadas';
+const sobreJsonLd: Record<string, unknown>[] = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Quem Somos', item: `${baseUrl}/quem-somos/` },
+    ],
+  },
+  {
+    '@type': 'AboutPage',
+    '@id': `${baseUrl}/quem-somos/#webpage`,
+    url: `${baseUrl}/quem-somos/`,
+    name: `${pageTitle} | ${siteConfig.name}`,
+    description: metaDescription,
+    isPartOf: { '@id': `${baseUrl}/#website` },
+    inLanguage: 'pt-BR',
+  },
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={metaDescription}
+  jsonLdExtra={sobreJsonLd}
+>
+  <section
+    class="bela-section relative overflow-hidden bg-[#111116] py-16 md:py-24"
+    aria-labelledby="titulo-sobre-hero"
+  >
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-rose-300/90 text-sm font-medium mb-3">● Conheça a Chinelos da Bela</p>
+      <h1 id="titulo-sobre-hero" class="text-3xl md:text-5xl font-bold text-white">Quem somos — Chinelos da Bela</h1>
+      <p class="mt-6 text-xl text-zinc-300 leading-relaxed">
+        Tornando seu evento especial ainda mais único e memorável — com <strong class="text-white">Havaianas Personalizadas para Eventos</strong>.
+      </p>
+    </div>
+  </section>
+
+  <article class="bela-section bela-section-deep bela-prose mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <h2 class="text-2xl font-bold text-white mb-6">Conforto e estilo para seus eventos especiais</h2>
+    <p class="text-zinc-400 leading-relaxed mb-6">
+      Somos uma empresa dedicada a levar conforto e estilo aos seus eventos especiais, como casamentos, festas de debutante, formaturas e outros. Sabemos que cada
+      detalhe importa para tornar o seu evento inesquecível — por isso oferecemos <strong class="text-zinc-200">Havaianas Personalizadas</strong> para os
+      convidados dançarem a noite toda com conforto.
+    </p>
+    <p class="text-zinc-400 leading-relaxed mb-6">
+      Nossa equipe trabalha para oferecer produtos de alta qualidade a preços acessíveis: kits com desenhos exclusivos e materiais selecionados, ideais para
+      presentear convidados e marcar o seu evento. Nossa missão é atender às necessidades dos clientes com as novidades do mercado, com respeito ao consumidor,
+      responsabilidade social, fiscal e ambiental, valorizando colaboradores e cumprindo a legislação.
+    </p>
+    <p class="text-zinc-400 leading-relaxed mb-12">
+      Nossa visão é superar expectativas em qualidade, agilidade e atendimento — para que você relaxe e aproveite ao máximo. Explore o site e descubra o que
+      podemos fazer pelo seu evento; estamos prontos para tornar seus planos realidade.
+    </p>
+
+    <h2 class="text-2xl font-bold text-white mb-8">É muito fácil fazer o seu pedido na Chinelos da Bela</h2>
+    <ol class="space-y-10">
+      <li class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 rounded-full bg-rose-500/30 text-rose-200 font-bold flex items-center justify-center">1</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Peça seu orçamento</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Entre em contato informando a quantidade e preferências de design. Enviamos um orçamento personalizado para as suas Havaianas Personalizadas.
+          </p>
+        </div>
+      </li>
+      <li class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 rounded-full bg-rose-500/30 text-rose-200 font-bold flex items-center justify-center">2</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Receba sua proposta</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Você recebe preço, design e prazo de entrega. Revise e aprove antes de seguirmos com o seu pedido.
+          </p>
+        </div>
+      </li>
+      <li class="flex gap-4">
+        <span class="flex-shrink-0 w-10 h-10 rounded-full bg-rose-500/30 text-rose-200 font-bold flex items-center justify-center">3</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Preparamos seu pedido</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Após a aprovação, cuidamos da personalização com acabamento caprichado. Seu pedido fica pronto para o grande dia.
+          </p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="mt-14 text-center">
+      <p class="text-rose-300/90 text-sm font-medium mb-2">Suas Havaianas Personalizadas com quem entende de eventos</p>
+      <a
+        href={whatsappHref(siteConfig.whatsappPhone)}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bela-cta-pulse-whatsapp inline-flex items-center gap-2 min-h-[48px] px-8 rounded-full bg-[#25D366] text-white font-semibold hover:bg-[#20bd5a] transition-colors"
+        aria-label="Solicitar orçamento de Havaianas Personalizadas com a Chinelos da Bela pelo WhatsApp"
+      >
+        <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i>
+        Solicitar orçamento
+      </a>
+    </div>
+  </article>
+</BaseLayout>

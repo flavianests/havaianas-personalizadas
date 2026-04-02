@@ -1,95 +1,23 @@
 ---
-import ProdutoSeoPage from '../../components/ProdutoSeoPage.astro';
 import { siteConfig } from '../../config';
 
-const baseUrl = siteConfig.url.replace(/\/$/, '');
-const img = siteConfig.images;
-const pageUrl = `${baseUrl}/produtos/casamento/`;
-
-const title = 'Havaianas Personalizadas para Casamento | Lembrancinhas Exclusivas';
-const metaDescription =
-  'Havaianas personalizadas para casamento com alta durabilidade e design exclusivo. Perfeitas como lembrancinhas elegantes para seus convidados.';
-
-const jsonLdExtra: Record<string, unknown>[] = [
-  {
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
-      { '@type': 'ListItem', position: 2, name: 'Produtos', item: `${baseUrl}/servicos/` },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Havaianas personalizadas para casamento',
-        item: pageUrl,
-      },
-    ],
-  },
-  {
-    '@type': 'WebPage',
-    '@id': `${pageUrl}#webpage`,
-    url: pageUrl,
-    name: `${title} | ${siteConfig.name}`,
-    description: metaDescription,
-    isPartOf: { '@id': `${baseUrl}/#website` },
-    inLanguage: 'pt-BR',
-  },
-  {
-    '@type': 'Service',
-    name: 'Havaianas personalizadas para casamento',
-    description: metaDescription,
-    url: pageUrl,
-    provider: { '@id': `${baseUrl}/#localbusiness` },
-    serviceType: 'Personalização de chinelos Havaianas para casamentos e recepções',
-    areaServed: { '@type': 'Country', name: 'Brasil' },
-  },
-];
-
-const breadcrumbs = [
-  { href: '/', label: 'Início' },
-  { href: '/servicos', label: 'Produtos' },
-  { href: '/produtos/casamento', label: 'Casamento' },
-];
+const targetPath = '/havaianas-personalizadas-casamento';
+const base = siteConfig.url.replace(/\/$/, '');
+const canonical = `${base}${targetPath}`;
 ---
-
-<ProdutoSeoPage
-  title={title}
-  description={metaDescription}
-  h1="Havaianas personalizadas para casamento"
-  ogImage={`${baseUrl}${img.destaqueHavaianas}`}
-  ogImageAlt="Havaianas personalizadas para casamento — estampa no solado, Chinelos da Bela"
-  heroImage={img.prodCasamento}
-  heroImageAlt="Noiva com Havaianas personalizadas nas mãos, vestido branco e véu, decoração de casamento ao fundo — Chinelos da Bela"
-  heroImageObjectFit="contain"
-  productCardsCurrentHref="/produtos/casamento"
-  ctaOrcamentoIntro="Planejando lembrancinhas para o grande dia? Envie pelo WhatsApp a data do casamento, quantidade aproximada de pares, faixas de numeração e referências visuais (paleta, monograma ou convite). A Chinelos da Bela retorna com orientação sobre havaianas personalizadas, prazos de produção e próximos passos."
-  intro="Lembrancinhas úteis e personalizadas: na Chinelos da Bela você tem Havaianas originais com estampa profissional no solado — ideais para recepção, pista e pós-festa. Atendemos noivos e assessorias com foco em acabamento nítido e cronograma alinhado ao seu casamento."
-  whatsappContext="havaianas personalizadas para casamento"
-  breadcrumbs={breadcrumbs}
-  jsonLdExtra={jsonLdExtra}
-  sections={[
-    {
-      heading: 'Por que lembrancinhas de casamento com havaianas personalizadas?',
-      paragraphs: [
-        'Convidados agradecem ao trocar salto ou sapato social sem sair do clima da festa. As havaianas viram lembrança que se usa de verdade — associada ao seu grande dia.',
-        'Monogramas, data e cores da identidade visual do casamento podem ir na estampa, alinhados a convites e decoração.',
-        'Noivos e assessorias que buscam lembrancinha de casamento valorizam sola original e arte aplicada com cuidado no solado — padrão Chinelos da Bela.',
-      ],
-    },
-    {
-      heading: 'Chinelos da Bela: qualidade e personalização',
-      paragraphs: [
-        'Trabalhamos com sola Havaianas original e acabamento nítido no solado. Atendemos noivos e assessorias; envio para outras localidades conforme combinado.',
-        'Definimos revisões da arte e previsão de entrega já na proposta, para encaixar o pedido no cronograma do buffet, foto e cerimônia.',
-        'Use o bloco abaixo para solicitar orçamento pelo WhatsApp com data aproximada, quantidade e referências visuais (cores, logo ou monograma).',
-      ],
-    },
-    {
-      heading: 'Planejar quantidades e prazos do pedido',
-      paragraphs: [
-        'Reserve tamanhos (masculino, feminino, infantil) e quantidade com folga para convidados extras.',
-        'Se for distribuir na entrada ou na pista, feche prazos de produção com antecedência para tudo chegar antes do evento.',
-        'Pedidos com muitos tamanhos ou embalagens especiais podem exigir mais tempo de montagem — informe isso cedo no contato.',
-      ],
-    },
-  ]}
-/>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Redirecionando…</title>
+    <link rel="canonical" href={canonical} />
+    <meta http-equiv="refresh" content={`0;url=${targetPath}`} />
+  </head>
+  <body>
+    <p><a href={targetPath}>Continuar para Havaianas personalizadas — casamento</a></p>
+    <script is:inline>
+      location.replace('/havaianas-personalizadas-casamento');
+    </script>
+  </body>
+</html>

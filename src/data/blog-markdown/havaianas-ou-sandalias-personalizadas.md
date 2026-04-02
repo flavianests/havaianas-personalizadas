@@ -76,9 +76,9 @@ Transparência reduz atrito e aumenta confiança — sinal útil para visitantes
 
 ## Ver linhas para festa e 15 anos: comparar no site
 
-Explore a página [festa de 15 anos](/produtos/festa-15-anos/) para ver linha de produto, linguagem visual e próximos passos. Links internos ajudam navegação e contexto.
+Explore a página [festa de 15 anos](/havaianas-personalizadas-15-anos/) para ver linha de produto, linguagem visual e próximos passos. Links internos ajudam navegação e contexto.
 
-Volte ao [Blog da Bela](/blog/) para outros guias.
+Volte ao [Blog da Bela](/havaianas-personalizadas-blog/) para outros guias.
 
 ![Lembranças em mesa festa Chinelos da Bela](/images/bela/prod-festa15-mesa.png)
 
@@ -282,7 +282,7 @@ UX forte pode indiretamente apoiar **SEO**.
 
 ## Onde continuar lendo no site da Chinelos da Bela
 
-Além de [festa de 15 anos](/produtos/festa-15-anos/), use [serviços](/servicos/) para visão geral de produtos. [Contato](/contato/) reúne canais oficiais.
+Além de [festa de 15 anos](/havaianas-personalizadas-15-anos/), use [serviços](/havaianas-personalizadas-produtos/) para visão geral de produtos. [Contato](/havaianas-personalizadas-contato/) reúne canais oficiais.
 
 Navegação clara ajuda conversão.
 
@@ -632,11 +632,11 @@ Agora é com você: transforme leitura em orçamento concreto com a **Chinelos d
 
 Ranqueamento no **Google** ajuda a ser encontrado. Página de produto ajuda a converter. Blog educa no meio do funil.
 
-Use cada formato no lugar certo. havaianas ou sandálias personalizadas ganha contexto aqui; detalhes comerciais ficam em [festa de 15 anos](/produtos/festa-15-anos/).
+Use cada formato no lugar certo. havaianas ou sandálias personalizadas ganha contexto aqui; detalhes comerciais ficam em [festa de 15 anos](/havaianas-personalizadas-15-anos/).
 
 ## Outras páginas úteis: sobre, serviços e contato
 
-Além deste guia, visite [sobre](/sobre/) para contexto da **Chinelos da Bela**. Use [contato](/contato/) para dados oficiais.
+Além deste guia, visite [sobre](/quem-somos/) para contexto da **Chinelos da Bela**. Use [contato](/havaianas-personalizadas-contato/) para dados oficiais.
 
 Navegação entre páginas relevantes reforça **SEO** interno e ajuda o visitante.
 

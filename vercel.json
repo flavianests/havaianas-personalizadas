@@ -3,5 +3,57 @@
   "framework": "astro",
   "buildCommand": "npm run build:vercel",
   "outputDirectory": "dist",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "redirects": [
+    {
+      "source": "/produtos/casamento",
+      "destination": "/havaianas-personalizadas-casamento",
+      "permanent": true
+    },
+    {
+      "source": "/produtos/festa-15-anos",
+      "destination": "/havaianas-personalizadas-15-anos",
+      "permanent": true
+    },
+    {
+      "source": "/produtos/formatura",
+      "destination": "/havaianas-personalizadas-formatura",
+      "permanent": true
+    },
+    {
+      "source": "/produtos/eventos-corporativos",
+      "destination": "/havaianas-personalizadas-eventos-corporativos",
+      "permanent": true
+    },
+    {
+      "source": "/servicos",
+      "destination": "/havaianas-personalizadas-produtos",
+      "permanent": true
+    },
+    {
+      "source": "/sobre",
+      "destination": "/quem-somos",
+      "permanent": true
+    },
+    {
+      "source": "/havaianas-personalizadas-quem-somos",
+      "destination": "/quem-somos",
+      "permanent": true
+    },
+    {
+      "source": "/contato",
+      "destination": "/havaianas-personalizadas-contato",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/havaianas-personalizadas-blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/havaianas-personalizadas-blog/:path*",
+      "permanent": true
+    }
+  ]
 }

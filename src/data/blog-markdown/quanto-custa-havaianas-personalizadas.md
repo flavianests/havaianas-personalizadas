@@ -144,9 +144,9 @@ Quem explica logística, erros comuns e checklist costuma ter processo maduro. R
 
 ## Conteúdo relacionado na Chinelos da Bela
 
-Se você planeja **casamento**, veja também a linha de [havaianas personalizadas para casamento](/produtos/casamento/). Para **festa de 15 anos**, há página dedicada em [festa de 15 anos](/produtos/festa-15-anos/).
+Se você planeja **casamento**, veja também a linha de [havaianas personalizadas para casamento](/havaianas-personalizadas-casamento/). Para **festa de 15 anos**, há página dedicada em [festa de 15 anos](/havaianas-personalizadas-15-anos/).
 
-**Formatura** e [eventos corporativos](/produtos/eventos-corporativos/) têm páginas com foco em briefing e volumes.
+**Formatura** e [eventos corporativos](/havaianas-personalizadas-eventos-corporativos/) têm páginas com foco em briefing e volumes.
 
 ## Checklist final antes de assinar o pedido
 
@@ -480,6 +480,6 @@ Simplificar arte não significa simplificar evento. Menos linhas no solado podem
 
 Quanto mais claro o pedido, mais justo o número na proposta. **Havaianas personalizadas** bem planejadas evitam custo de improviso.
 
-Retome o [Blog da Bela](/blog/) para outros guias. Avance para [contato](/contato/) se precisar de endereço e canais oficiais.
+Retome o [Blog da Bela](/havaianas-personalizadas-blog/) para outros guias. Avance para [contato](/havaianas-personalizadas-contato/) se precisar de endereço e canais oficiais.
 
 O investimento certo combina previsibilidade, qualidade e data cumprida — pilares que a **Chinelos da Bela** leva a sério em cada **orçamento**.

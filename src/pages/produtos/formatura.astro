@@ -1,95 +1,23 @@
 ---
-import ProdutoSeoPage from '../../components/ProdutoSeoPage.astro';
 import { siteConfig } from '../../config';
 
-const baseUrl = siteConfig.url.replace(/\/$/, '');
-const img = siteConfig.images;
-const pageUrl = `${baseUrl}/produtos/formatura/`;
-
-const title = 'Havaianas Personalizadas para Formatura | Brindes Personalizados';
-const metaDescription =
-  'Havaianas personalizadas para formatura com alta qualidade e durabilidade. Ideal para marcar esse momento especial com estilo e exclusividade.';
-
-const jsonLdExtra: Record<string, unknown>[] = [
-  {
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
-      { '@type': 'ListItem', position: 2, name: 'Produtos', item: `${baseUrl}/servicos/` },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Havaianas personalizadas para formatura',
-        item: pageUrl,
-      },
-    ],
-  },
-  {
-    '@type': 'WebPage',
-    '@id': `${pageUrl}#webpage`,
-    url: pageUrl,
-    name: `${title} | ${siteConfig.name}`,
-    description: metaDescription,
-    isPartOf: { '@id': `${baseUrl}/#website` },
-    inLanguage: 'pt-BR',
-  },
-  {
-    '@type': 'Service',
-    name: 'Havaianas personalizadas para formatura',
-    description: metaDescription,
-    url: pageUrl,
-    provider: { '@id': `${baseUrl}/#localbusiness` },
-    serviceType: 'Personalização de chinelos Havaianas para formaturas e eventos acadêmicos',
-    areaServed: { '@type': 'Country', name: 'Brasil' },
-  },
-];
-
-const breadcrumbs = [
-  { href: '/', label: 'Início' },
-  { href: '/servicos', label: 'Produtos' },
-  { href: '/produtos/formatura', label: 'Formatura' },
-];
+const targetPath = '/havaianas-personalizadas-formatura';
+const base = siteConfig.url.replace(/\/$/, '');
+const canonical = `${base}${targetPath}`;
 ---
-
-<ProdutoSeoPage
-  title={title}
-  description={metaDescription}
-  h1="Havaianas personalizadas para formatura"
-  ogImage={`${baseUrl}${img.destaqueHavaianas}`}
-  ogImageAlt="Havaianas personalizadas para formatura — formando com estampa no solado, Chinelos da Bela"
-  heroImage={img.prodFormatura}
-  heroImageAlt="Formanda com beca segurando Havaianas personalizadas com estampa, colação de formatura — Chinelos da Bela"
-  heroImageObjectFit="contain"
-  productCardsCurrentHref="/produtos/formatura"
-  ctaOrcamentoIntro="Comissão de formatura ou representante da turma: envie pelo WhatsApp data da colação e/ou festa, número de formandos, quantidade desejada e ideias de arte (curso, ano, instituição). A Chinelos da Bela orienta numeração, prazos e personalização em havaianas para formatura com sola Havaianas original."
-  intro="Formaturas reúnem família, amigos e fotos. As havaianas personalizadas unem o símbolo do curso a um brinde usado depois da cerimônia — Havaianas originais e estampa profissional no solado para turma e convidados. Ideal para quem busca “chinelos personalizados formatura” ou lembrancinhas acadêmicas com identidade da turma."
-  whatsappContext="havaianas personalizadas para formatura"
-  breadcrumbs={breadcrumbs}
-  jsonLdExtra={jsonLdExtra}
-  sections={[
-    {
-      heading: 'Havaianas personalizadas com identidade da turma',
-      paragraphs: [
-        'Logo do curso, ano, instituição ou frase da turma podem compor a arte — reforço de pertencimento e memória coletiva.',
-        'Complementam kits de formatura com item leve e prático, além de canecas e camisetas.',
-        'A estampa no solado mantém legibilidade em fotos e vídeos da festa — importante para conteúdo em redes sociais e álbum.',
-      ],
-    },
-    {
-      heading: 'Da colação à festa: onde usar o brinde',
-      paragraphs: [
-        'Turmas usam os chinelos em ensaios, confraternizações e na festa quando o salto cansa. Combine prazos com a data da colação.',
-        'Entre em contato com antecedência para produção e revisão da arte.',
-        'Distribuir na entrada da festa ou em um momento da cerimônia evita filas na retirada — alinhe com o cerimonial.',
-      ],
-    },
-    {
-      heading: 'Orçamento para turma ou comissão de formatura',
-      paragraphs: [
-        'Informe quantidade, faixas de tamanho e necessidade de embalagem individual ou kits.',
-        'Se houver manual de identidade visual da turma, a aprovação da arte costuma ser mais rápida.',
-        'Valores e prazos variam com volume e complexidade da arte — o primeiro contato pelo WhatsApp já deixa o escopo mais claro para todos.',
-      ],
-    },
-  ]}
-/>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Redirecionando…</title>
+    <link rel="canonical" href={canonical} />
+    <meta http-equiv="refresh" content={`0;url=${targetPath}`} />
+  </head>
+  <body>
+    <p><a href={targetPath}>Continuar para Havaianas personalizadas — formatura</a></p>
+    <script is:inline>
+      location.replace('/havaianas-personalizadas-formatura');
+    </script>
+  </body>
+</html>

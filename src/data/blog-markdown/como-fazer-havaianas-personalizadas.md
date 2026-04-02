@@ -165,9 +165,9 @@ Você pode iniciar pelo **WhatsApp** do site com data, quantidade e referências
 
 ## Links úteis no site
 
-- Linha geral de produtos: [serviços](/servicos/)
-- Casamento: [havaianas para casamento](/produtos/casamento/)
-- Contato oficial: [contato](/contato/)
+- Linha geral de produtos: [serviços](/havaianas-personalizadas-produtos/)
+- Casamento: [havaianas para casamento](/havaianas-personalizadas-casamento/)
+- Contato oficial: [contato](/havaianas-personalizadas-contato/)
 
 ## Linha do tempo exemplo (não é promessa contratual)
 

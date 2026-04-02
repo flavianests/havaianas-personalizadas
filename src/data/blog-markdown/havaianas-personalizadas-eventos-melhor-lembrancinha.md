@@ -76,9 +76,9 @@ Transparência reduz atrito e aumenta confiança — sinal útil para visitantes
 
 ## Ver produtos para eventos: inspiração no site
 
-Explore a página [serviços](/servicos/) para ver linha de produto, linguagem visual e próximos passos. Links internos ajudam navegação e contexto.
+Explore a página [serviços](/havaianas-personalizadas-produtos/) para ver linha de produto, linguagem visual e próximos passos. Links internos ajudam navegação e contexto.
 
-Volte ao [Blog da Bela](/blog/) para outros guias.
+Volte ao [Blog da Bela](/havaianas-personalizadas-blog/) para outros guias.
 
 ![Brindes e experiência em evento Chinelos da Bela](/images/bela/real-brindes.png)
 
@@ -282,7 +282,7 @@ UX forte pode indiretamente apoiar **SEO**.
 
 ## Onde continuar lendo no site da Chinelos da Bela
 
-Além de [serviços](/servicos/), use [serviços](/servicos/) para visão geral de produtos. [Contato](/contato/) reúne canais oficiais.
+Além de [serviços](/havaianas-personalizadas-produtos/), use [serviços](/havaianas-personalizadas-produtos/) para visão geral de produtos. [Contato](/havaianas-personalizadas-contato/) reúne canais oficiais.
 
 Navegação clara ajuda conversão.
 
@@ -632,11 +632,11 @@ Agora é com você: transforme leitura em orçamento concreto com a **Chinelos d
 
 Ranqueamento no **Google** ajuda a ser encontrado. Página de produto ajuda a converter. Blog educa no meio do funil.
 
-Use cada formato no lugar certo. havaianas personalizadas para eventos ganha contexto aqui; detalhes comerciais ficam em [serviços](/servicos/).
+Use cada formato no lugar certo. havaianas personalizadas para eventos ganha contexto aqui; detalhes comerciais ficam em [serviços](/havaianas-personalizadas-produtos/).
 
 ## Outras páginas úteis: sobre, serviços e contato
 
-Além deste guia, visite [sobre](/sobre/) para contexto da **Chinelos da Bela**. Use [contato](/contato/) para dados oficiais.
+Além deste guia, visite [sobre](/quem-somos/) para contexto da **Chinelos da Bela**. Use [contato](/havaianas-personalizadas-contato/) para dados oficiais.
 
 Navegação entre páginas relevantes reforça **SEO** interno e ajuda o visitante.
 

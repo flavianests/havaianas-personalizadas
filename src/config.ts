@@ -7,11 +7,11 @@ const waMsgOrcamento =
 
 /** Submenu de Produtos (header + mobile); primeiro item = página geral */
 const produtosNavChildren = [
-  { href: '/servicos', label: 'Ver todos os produtos' },
-  { href: '/produtos/casamento', label: 'Casamento' },
-  { href: '/produtos/festa-15-anos', label: 'Festa de 15 anos' },
-  { href: '/produtos/formatura', label: 'Formatura' },
-  { href: '/produtos/eventos-corporativos', label: 'Eventos corporativos' },
+  { href: '/havaianas-personalizadas-produtos', label: 'Ver todos os produtos' },
+  { href: '/havaianas-personalizadas-casamento', label: 'Casamento' },
+  { href: '/havaianas-personalizadas-15-anos', label: 'Festa de 15 anos' },
+  { href: '/havaianas-personalizadas-formatura', label: 'Formatura' },
+  { href: '/havaianas-personalizadas-eventos-corporativos', label: 'Eventos corporativos' },
 ] as const;
 
 export const siteConfig = {
@@ -74,21 +74,21 @@ export const siteConfig = {
   produtosNavChildren,
   nav: [
     { href: '/', label: 'Início' },
-    { href: '/sobre', label: 'Quem Somos' },
+    { href: '/quem-somos', label: 'Quem Somos' },
     { label: 'Produtos', children: produtosNavChildren },
-    { href: '/blog', label: 'Blog' },
-    { href: '/contato', label: 'Contato' },
+    { href: '/havaianas-personalizadas-blog', label: 'Blog' },
+    { href: '/havaianas-personalizadas-contato', label: 'Contato' },
   ],
   footerNav: [
     { href: '/', label: 'Início' },
-    { href: '/sobre', label: 'Quem Somos' },
-    { href: '/servicos', label: 'Produtos' },
-    { href: '/produtos/casamento', label: 'Casamento' },
-    { href: '/produtos/festa-15-anos', label: 'Festa de 15 anos' },
-    { href: '/produtos/formatura', label: 'Formatura' },
-    { href: '/produtos/eventos-corporativos', label: 'Eventos corporativos' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/contato', label: 'Contato' },
+    { href: '/quem-somos', label: 'Quem Somos' },
+    { href: '/havaianas-personalizadas-produtos', label: 'Produtos' },
+    { href: '/havaianas-personalizadas-casamento', label: 'Casamento' },
+    { href: '/havaianas-personalizadas-15-anos', label: 'Festa de 15 anos' },
+    { href: '/havaianas-personalizadas-formatura', label: 'Formatura' },
+    { href: '/havaianas-personalizadas-eventos-corporativos', label: 'Eventos corporativos' },
+    { href: '/havaianas-personalizadas-blog', label: 'Blog' },
+    { href: '/havaianas-personalizadas-contato', label: 'Contato' },
   ],
   social: {
     instagram: 'https://www.instagram.com/chinelosdabela/',

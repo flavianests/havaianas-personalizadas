@@ -1,0 +1,203 @@
+---
+import ProdutoSeoPage from '../components/ProdutoSeoPage.astro';
+import { siteConfig } from '../config';
+
+const baseUrl = siteConfig.url.replace(/\/$/, '');
+const img = siteConfig.images;
+const pageUrl = `${baseUrl}/havaianas-personalizadas-15-anos/`;
+
+const title = 'Havaianas Personalizadas para Festa de 15 Anos | Estilo e Conforto';
+const metaDescription =
+  'Havaianas personalizadas para festa de 15 anos: lembrancinha que faz parte da festa, conforto na pista e chinelos alinhados à identidade da debutante — Chinelos da Bela.';
+
+const jsonLdExtra: Record<string, unknown>[] = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Produtos', item: `${baseUrl}/havaianas-personalizadas-produtos/` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Havaianas personalizadas para festa de 15 anos',
+        item: pageUrl,
+      },
+    ],
+  },
+  {
+    '@type': 'WebPage',
+    '@id': `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: `${title} | ${siteConfig.name}`,
+    description: metaDescription,
+    isPartOf: { '@id': `${baseUrl}/#website` },
+    inLanguage: 'pt-BR',
+  },
+  {
+    '@type': 'Service',
+    name: 'Havaianas personalizadas para festa de 15 anos',
+    description: metaDescription,
+    url: pageUrl,
+    provider: { '@id': `${baseUrl}/#localbusiness` },
+    serviceType: 'Personalização de chinelos Havaianas para debutantes e festas de quinze anos',
+    areaServed: { '@type': 'Country', name: 'Brasil' },
+  },
+];
+
+const breadcrumbs = [
+  { href: '/', label: 'Início' },
+  { href: '/havaianas-personalizadas-produtos', label: 'Produtos' },
+  { href: '/havaianas-personalizadas-15-anos', label: 'Festa de 15 anos' },
+];
+---
+
+<ProdutoSeoPage
+  heroImageScale="large"
+  title={title}
+  description={metaDescription}
+  h1="Havaianas Personalizadas para Festa de 15 Anos"
+  ogImage={`${baseUrl}${img.prodFesta15}`}
+  ogImageAlt="Debutante com vestido rosa e Havaianas personalizadas — festa de 15 anos, Chinelos da Bela"
+  heroImage={img.prodFesta15}
+  heroImageAlt="Debutante com vestido rosa segurando Havaianas personalizadas rosa, mesa de lembrancinhas ao lado — Chinelos da Bela"
+  heroImageObjectFit="contain"
+  productCardsCurrentHref="/havaianas-personalizadas-15-anos"
+  intro="As havaianas personalizadas para festa de 15 anos são um dos itens mais desejados por debutantes que querem criar uma experiência única para seus convidados. Mais do que uma lembrancinha, elas fazem parte da festa e ajudam a transformar o ambiente em algo ainda mais especial e divertido."
+  beforeSectionsParagraphs={[
+    'Durante uma festa de 15 anos, cada detalhe importa: decoração, música, iluminação e, claro, o conforto dos convidados. É justamente nesse momento que os chinelos personalizados entram como um diferencial. Eles permitem que todos aproveitem a pista de dança com liberdade, sem se preocupar com o desconforto dos sapatos.',
+    'Além disso, são lembrancinhas que continuam sendo usadas depois da festa, tornando-se uma recordação duradoura desse momento tão importante.',
+  ]}
+  whatsappContext="havaianas personalizadas para festa de 15 anos"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={jsonLdExtra}
+  sections={[
+    {
+      heading: 'Chinelos Personalizados para Debutante: Muito Além de uma Lembrancinha',
+      paragraphs: [
+        'Os chinelos personalizados para festa de 15 anos não são apenas um brinde, mas parte da experiência do evento. Eles ajudam a criar um clima mais descontraído e acolhedor, incentivando os convidados a curtirem cada momento da celebração.',
+        'Ao disponibilizar havaianas personalizadas durante a festa, você mostra cuidado com os detalhes e com o bem-estar dos seus convidados. Isso faz toda a diferença na percepção do evento.',
+        'Outro ponto importante é o impacto visual. Quando os chinelos seguem o mesmo padrão da festa, eles complementam a decoração e deixam tudo mais harmonioso.',
+      ],
+    },
+    {
+      heading: 'Tendências de Havaianas Personalizadas para Festa de 15 Anos',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'As tendências de havaianas personalizadas para festa de 15 anos estão cada vez mais criativas e sofisticadas. Hoje, é possível desenvolver modelos únicos que refletem totalmente a personalidade da debutante.',
+        },
+        { type: 'p', text: 'Algumas ideias que estão em alta:' },
+        {
+          type: 'ul',
+          items: [
+            'Design com nome da debutante em destaque',
+            'Uso de cores metálicas como dourado e rose gold',
+            'Estampas delicadas com flores ou brilho',
+            'Layouts minimalistas com toque elegante',
+            'Elementos do tema da festa incorporados ao design',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Outra tendência forte é criar modelos diferentes para homens e mulheres, deixando a experiência ainda mais personalizada.',
+        },
+        {
+          type: 'p',
+          text: 'Escolher um design moderno e alinhado com o evento faz com que os chinelos deixem de ser apenas lembrancinhas e passem a ser parte do estilo da festa.',
+        },
+      ],
+    },
+    {
+      heading: 'Havaianas Personalizadas para 15 anos: Vale o Investimento?',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'Uma dúvida comum é se realmente vale a pena investir em havaianas personalizadas para festa de 15 anos. E a resposta é: sim, principalmente pelo retorno em experiência e satisfação dos convidados.',
+        },
+        { type: 'p', text: 'O custo pode variar de acordo com:' },
+        {
+          type: 'ul',
+          items: [
+            'Quantidade solicitada',
+            'Tipo de personalização',
+            'Complexidade do design',
+            'Prazo de produção',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Mesmo assim, o investimento costuma ter um excelente custo-benefício, já que você está oferecendo um produto útil, bonito e que será utilizado por muito tempo.',
+        },
+        {
+          type: 'p',
+          text: 'Aqui na Chinelos da Bela, você pode personalizar do seu jeito sem alterar o valor, garantindo liberdade criativa e controle do orçamento.',
+        },
+      ],
+    },
+    {
+      heading: 'Diferencial das Nossas Havaianas Personalizadas',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'A qualidade é essencial quando se trata de chinelos personalizados para festa de 15 anos. Um produto bem feito faz toda a diferença no resultado final.',
+        },
+        { type: 'p', text: 'Confira nossos principais diferenciais:' },
+        {
+          type: 'ul',
+          items: [
+            'Estampa direto na borracha (não desbota com o tempo)',
+            'Alta durabilidade mesmo com uso frequente',
+            'Conforto original Havaianas',
+            'Acabamento profissional',
+            'Personalização completa',
+            'Produção ágil e organizada',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Nosso objetivo é garantir que cada par entregue represente exatamente o que você imaginou para sua festa.',
+        },
+      ],
+    },
+    {
+      heading: 'Por que Havaianas Personalizadas fazem sucesso em festas de 15 anos?',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'O sucesso das havaianas personalizadas em festas de 15 anos acontece porque elas resolvem vários pontos importantes ao mesmo tempo:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Garantem conforto para os convidados',
+            'Melhoram a experiência na pista de dança',
+            'Funcionam como lembrancinha útil',
+            'Complementam a decoração do evento',
+            'Criam uma recordação duradoura',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Além disso, são um dos poucos brindes que realmente continuam sendo usados após a festa, o que aumenta ainda mais o valor percebido.',
+        },
+      ],
+    },
+    {
+      heading: 'Atendimento em São Paulo e Todo o Brasil',
+      paragraphs: [
+        'Se você está procurando havaianas personalizadas para festa de 15 anos em São Paulo ou em qualquer lugar do Brasil, nós podemos te atender com rapidez e qualidade.',
+        'Trabalhamos com envio seguro e prazos bem definidos, garantindo que seus chinelos personalizados cheguem a tempo para o evento, sem imprevistos.',
+        'Atendemos desde festas menores até grandes eventos, sempre com o mesmo padrão de qualidade.',
+      ],
+    },
+    {
+      heading: 'Faça seu orçamento agora',
+      paragraphs: [
+        'Se você quer tornar sua festa ainda mais especial com havaianas personalizadas para 15 anos, entre em contato com a gente.',
+        'Produzimos chinelos personalizados com alta durabilidade, acabamento profissional e totalmente adaptados ao estilo do seu evento.',
+        'Solicite seu orçamento agora e surpreenda seus convidados com uma lembrancinha moderna, confortável e inesquecível!',
+      ],
+      showRoseOrcamentoButton: true,
+    },
+  ]}
+/>

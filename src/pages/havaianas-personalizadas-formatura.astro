@@ -1,0 +1,211 @@
+---
+import ProdutoSeoPage from '../components/ProdutoSeoPage.astro';
+import { siteConfig } from '../config';
+
+const baseUrl = siteConfig.url.replace(/\/$/, '');
+const img = siteConfig.images;
+const pageUrl = `${baseUrl}/havaianas-personalizadas-formatura/`;
+
+const title = 'Havaianas Personalizadas para Formatura | Brindes Personalizados';
+const metaDescription =
+  'Havaianas personalizadas para formatura em São Paulo e em todo o Brasil: conforto na festa, lembrancinha útil, estampa na borracha e ótimo custo-benefício — Chinelos da Bela.';
+
+const jsonLdExtra: Record<string, unknown>[] = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: `${baseUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Produtos', item: `${baseUrl}/havaianas-personalizadas-produtos/` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Havaianas personalizadas para formatura',
+        item: pageUrl,
+      },
+    ],
+  },
+  {
+    '@type': 'WebPage',
+    '@id': `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: `${title} | ${siteConfig.name}`,
+    description: metaDescription,
+    isPartOf: { '@id': `${baseUrl}/#website` },
+    inLanguage: 'pt-BR',
+  },
+  {
+    '@type': 'Service',
+    name: 'Havaianas personalizadas para formatura',
+    description: metaDescription,
+    url: pageUrl,
+    provider: { '@id': `${baseUrl}/#localbusiness` },
+    serviceType: 'Personalização de chinelos Havaianas para formaturas e eventos acadêmicos',
+    areaServed: { '@type': 'Country', name: 'Brasil' },
+  },
+];
+
+const breadcrumbs = [
+  { href: '/', label: 'Início' },
+  { href: '/havaianas-personalizadas-produtos', label: 'Produtos' },
+  { href: '/havaianas-personalizadas-formatura', label: 'Formatura' },
+];
+---
+
+<ProdutoSeoPage
+  title={title}
+  description={metaDescription}
+  h1="Havaianas Personalizadas para Formatura"
+  ogImage={`${baseUrl}${img.destaqueHavaianas}`}
+  ogImageAlt="Havaianas personalizadas para formatura — formando com estampa no solado, Chinelos da Bela"
+  heroImage={img.prodFormatura}
+  heroImageAlt="Formanda com beca segurando Havaianas personalizadas com estampa, colação de formatura — Chinelos da Bela"
+  heroImageObjectFit="contain"
+  productCardsCurrentHref="/havaianas-personalizadas-formatura"
+  intro="As havaianas personalizadas para formatura são uma das melhores escolhas para quem quer marcar esse momento tão importante com estilo e praticidade. A formatura representa o fim de uma etapa e o início de novas conquistas, e nada melhor do que oferecer uma lembrança que realmente será utilizada pelos convidados."
+  beforeSectionsParagraphs={[
+    'Durante a festa de formatura, é comum que as pessoas fiquem horas em pé, dançando e celebrando. Nesse cenário, os chinelos personalizados fazem toda a diferença, proporcionando conforto e permitindo que todos aproveitem ao máximo cada momento.',
+    'As havaianas personalizadas se tornam uma recordação duradoura desse dia especial, mantendo viva a memória da conquista por muito tempo.',
+  ]}
+  whatsappContext="havaianas personalizadas para formatura"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={jsonLdExtra}
+  sections={[
+    {
+      heading: 'Chinelos Personalizados para Formatura: Mais conforto na celebração',
+      paragraphs: [
+        'Os chinelos personalizados para formatura são ideais para tornar a festa mais leve e agradável. Depois da colação de grau e da recepção, os convidados querem curtir a festa sem se preocupar com o desconforto dos sapatos.',
+        'Ao oferecer havaianas personalizadas, você melhora a experiência do evento e garante que todos aproveitem a pista de dança com mais liberdade.',
+        'Outro ponto importante é que os chinelos podem ser distribuídos estrategicamente durante a festa, criando momentos interativos e surpreendendo os convidados.',
+      ],
+    },
+    {
+      heading: 'Ideias de Havaianas Personalizadas para Formatura',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'As havaianas personalizadas para formatura permitem diversas possibilidades criativas. O design pode refletir o curso, a turma e o estilo da celebração.',
+        },
+        { type: 'p', text: 'Algumas ideias incluem:' },
+        {
+          type: 'ul',
+          items: [
+            'Nome da turma ou curso',
+            'Ano da formatura',
+            'Nome da instituição',
+            'Símbolos da profissão',
+            'Frases de conquista ou superação',
+            'Cores relacionadas ao curso',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Também é possível criar modelos diferentes para homens e mulheres, ou até personalizações exclusivas para grupos específicos dentro da turma.',
+        },
+        {
+          type: 'p',
+          text: 'Quanto mais personalizado for o design, maior será o valor da lembrança para quem recebe.',
+        },
+      ],
+    },
+    {
+      heading: 'Quanto custa Havaianas Personalizadas para Formatura?',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'O preço das havaianas personalizadas para formatura pode variar conforme alguns fatores:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Quantidade de pares',
+            'Tipo de personalização',
+            'Complexidade do design',
+            'Prazo de entrega',
+            'Tipo de embalagem',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Normalmente, pedidos em maior quantidade têm melhor custo-benefício, o que é ideal para turmas de formatura.',
+        },
+        {
+          type: 'p',
+          text: 'Aqui na Chinelos da Bela, você pode personalizar suas havaianas livremente sem alteração no valor, garantindo um produto exclusivo com preço acessível.',
+        },
+        {
+          type: 'p',
+          text: 'Investir em chinelos personalizados para formatura é uma escolha inteligente, pois você oferece algo útil, bonito e que será lembrado por muito tempo.',
+        },
+      ],
+    },
+    {
+      heading: 'Por que escolher nossas Havaianas Personalizadas?',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'A qualidade dos chinelos é essencial para garantir uma boa experiência no evento. Por isso, trabalhamos com um padrão elevado de produção.',
+        },
+        { type: 'p', text: 'Confira nossos diferenciais:' },
+        {
+          type: 'ul',
+          items: [
+            'Estampa direto na borracha (não desbota)',
+            'Alta durabilidade',
+            'Conforto original Havaianas',
+            'Acabamento profissional',
+            'Personalização completa',
+            'Entrega rápida',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Nosso processo é pensado para garantir que cada par tenha qualidade e resistência, mesmo após o uso contínuo.',
+        },
+      ],
+    },
+    {
+      heading: 'Havaianas Personalizadas para Formatura em São Paulo e Todo o Brasil',
+      paragraphs: [
+        'Se você está procurando havaianas personalizadas para formatura em São Paulo ou em qualquer lugar do Brasil, podemos te atender com rapidez e segurança.',
+        'Atendemos desde pequenas turmas até grandes eventos, sempre garantindo qualidade e cumprimento de prazos.',
+        'Nossa logística permite envio para todo o país, garantindo que seus chinelos personalizados cheguem no tempo certo para sua festa.',
+      ],
+    },
+    {
+      heading: 'Vale a pena investir em Havaianas Personalizadas na Formatura?',
+      bodyBlocks: [
+        {
+          type: 'p',
+          text: 'Sim! As havaianas personalizadas para formatura oferecem um excelente custo-benefício e são uma das lembrancinhas mais úteis para esse tipo de evento.',
+        },
+        { type: 'p', text: 'Elas proporcionam:' },
+        {
+          type: 'ul',
+          items: [
+            'Conforto durante a festa',
+            'Melhor experiência para os convidados',
+            'Lembrança duradoura',
+            'Personalização exclusiva',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Diferente de outros brindes, os chinelos continuam sendo usados após o evento, mantendo viva a lembrança da formatura.',
+        },
+        {
+          type: 'p',
+          text: 'Além disso, ajudam a deixar a festa mais animada e descontraída.',
+        },
+      ],
+    },
+    {
+      heading: 'Solicite seu Orçamento',
+      paragraphs: [
+        'Se você está buscando havaianas personalizadas para formatura com alta durabilidade, qualidade profissional e excelente custo-benefício, entre em contato com a gente.',
+        'Produzimos chinelos personalizados sob medida para sua turma, garantindo um produto exclusivo e alinhado com seu evento.',
+        'Solicite agora seu orçamento e celebre sua conquista com uma lembrancinha útil, moderna e inesquecível!',
+      ],
+      showRoseOrcamentoButton: true,
+    },
+  ]}
+/>

@@ -52,7 +52,7 @@ const T = [
   (c) =>
     `## Transparência de escopo na proposta\n\nPeça detalhamento: modelo, quantidade, tipo de personalização, revisões, prazo, frete, nota fiscal.\n\nTransparência reduz atrito e aumenta confiança antes do sinal.`,
   (c) =>
-    `## ${c.linkPhrase}\n\nExplore a página ${c.path} para ver linha de produto, linguagem visual e próximos passos. Links internos ajudam navegação e contexto.\n\nVolte ao [Blog da Bela](/blog/) para outros guias.`,
+    `## ${c.linkPhrase}\n\nExplore a página ${c.path} para ver linha de produto, linguagem visual e próximos passos. Links internos ajudam navegação e contexto.\n\nVolte ao [Blog da Bela](/havaianas-personalizadas-blog/) para outros guias.`,
   (c) =>
     `## FAQ: primeira leva de dúvidas\n\n**Dá para personalizar com foto?** Depende do fornecedor e da área útil. Pergunte viabilidade e durabilidade.\n\n**Quanto tempo leva?** Varia por lote e temporada. Peça cronograma após aprovação.`,
   (c) =>
@@ -118,7 +118,7 @@ const T = [
   (c) =>
     `## Fotografia e horário de luz\n\nLuz muda ao longo do dia. Posicione mesa para registros oficiais.\n\nBoa luz valoriza **estampa no solado**.`,
   (c) =>
-    `## Conteúdo complementar no site\n\nAlém de ${c.path}, use [serviços](/servicos/) para visão geral de produtos. [Contato](/contato/) reúne canais oficiais.\n\nNavegação clara ajuda conversão.`,
+    `## Conteúdo complementar no site\n\nAlém de ${c.path}, use [serviços](/havaianas-personalizadas-produtos/) para visão geral de produtos. [Contato](/havaianas-personalizadas-contato/) reúne canais oficiais.\n\nNavegação clara ajuda conversão.`,
   (c) =>
     `## Síntese: ${c.focus} exige método\n\nMétodo reduz erro. **Havaianas personalizadas** são produto técnico e emocional ao mesmo tempo.\n\nCombine planejamento, arte e prazo.`,
   (c) =>
@@ -247,9 +247,9 @@ const T4 = [
 
 const T5 = [
   (c) =>
-    `## Síntese: conteúdo útil e próximo passo no site\n\nEste artigo contextualiza ${c.focus}. Para detalhes comerciais e linhas, use ${c.path} e a página de [serviços](/servicos/).\n\nBlog e página de produto se complementam: um explica, outro concentra oferta.`,
+    `## Síntese: conteúdo útil e próximo passo no site\n\nEste artigo contextualiza ${c.focus}. Para detalhes comerciais e linhas, use ${c.path} e a página de [serviços](/havaianas-personalizadas-produtos/).\n\nBlog e página de produto se complementam: um explica, outro concentra oferta.`,
   (c) =>
-    `## Mais páginas úteis\n\nVisite [sobre](/sobre/) para conhecer a **${c.brand}** e [contato](/contato/) para canais oficiais.\n\nBoa navegação interna ajuda a achar o que falta após a leitura.`,
+    `## Mais páginas úteis\n\nVisite [sobre](/quem-somos/) para conhecer a **${c.brand}** e [contato](/havaianas-personalizadas-contato/) para canais oficiais.\n\nBoa navegação interna ajuda a achar o que falta após a leitura.`,
   (c) =>
     `## Encerramento\n\n**Havaianas personalizadas** bem planejadas reduzem imprevisto e valorizam ${c.occasion}.\n\nFale com a **${c.brand}** pelo WhatsApp do site com data, quantidade e referências visuais.`,
 ];
@@ -270,7 +270,7 @@ const articles = [
     audience: 'quem cuida da identidade visual',
     occasion: 'o projeto gráfico',
     linkPhrase: 'Combine estampa com linha de produtos',
-    path: '[serviços](/servicos/)',
+    path: '[serviços](/havaianas-personalizadas-produtos/)',
   },
   {
     slug: 'havaianas-personalizadas-vs-chinelos-comuns',
@@ -279,7 +279,7 @@ const articles = [
     audience: 'compradores que comparam qualidade',
     occasion: 'a escolha do calçado base',
     linkPhrase: 'Conheça opções com sola original',
-    path: '[havaianas personalizadas no portfólio](/servicos/)',
+    path: '[havaianas personalizadas no portfólio](/havaianas-personalizadas-produtos/)',
   },
   {
     slug: 'havaianas-ou-sandalias-personalizadas',
@@ -288,7 +288,7 @@ const articles = [
     audience: 'organizadores de eventos',
     occasion: 'a decisão entre modelos',
     linkPhrase: 'Veja linhas para festas e debut',
-    path: '[festa de 15 anos](/produtos/festa-15-anos/)',
+    path: '[festa de 15 anos](/havaianas-personalizadas-15-anos/)',
   },
   {
     slug: 'havaianas-personalizadas-casamento-ideias-precos-dicas',
@@ -297,7 +297,7 @@ const articles = [
     audience: 'noivos',
     occasion: 'o grande dia',
     linkPhrase: 'Página dedicada ao casamento',
-    path: '[casamento](/produtos/casamento/)',
+    path: '[casamento](/havaianas-personalizadas-casamento/)',
   },
   {
     slug: 'havaianas-personalizadas-festa-15-anos-ideias-precos-dicas',
@@ -306,7 +306,7 @@ const articles = [
     audience: 'famílias e debutantes',
     occasion: 'a festa de 15 anos',
     linkPhrase: 'Linha festa de 15 anos',
-    path: '[15 anos](/produtos/festa-15-anos/)',
+    path: '[15 anos](/havaianas-personalizadas-15-anos/)',
   },
   {
     slug: 'havaianas-personalizadas-empresas-brinde-criativo-barato',
@@ -315,7 +315,7 @@ const articles = [
     audience: 'marketing e compras B2B',
     occasion: 'campanhas e eventos corporativos',
     linkPhrase: 'Soluções corporativas',
-    path: '[eventos corporativos](/produtos/eventos-corporativos/)',
+    path: '[eventos corporativos](/havaianas-personalizadas-eventos-corporativos/)',
   },
   {
     slug: 'havaianas-personalizadas-eventos-melhor-lembrancinha',
@@ -324,7 +324,7 @@ const articles = [
     audience: 'produtores e anfitriões',
     occasion: 'diversos formatos de evento',
     linkPhrase: 'Explore produtos para eventos',
-    path: '[serviços](/servicos/)',
+    path: '[serviços](/havaianas-personalizadas-produtos/)',
   },
   {
     slug: 'havaianas-personalizadas-guia-completo-casamento-eventos',
@@ -333,7 +333,7 @@ const articles = [
     audience: 'noivos e produtores',
     occasion: 'casamento e outros eventos',
     linkPhrase: 'Casamento e formatura',
-    path: '[casamento](/produtos/casamento/) e [formatura](/produtos/formatura/)',
+    path: '[casamento](/havaianas-personalizadas-casamento/) e [formatura](/havaianas-personalizadas-formatura/)',
   },
   {
     slug: 'havaianas-personalizadas-tudo-o-que-precisa-saber',
@@ -342,7 +342,7 @@ const articles = [
     audience: 'iniciantes e curiosos',
     occasion: 'sua primeira compra',
     linkPhrase: 'Aprofunde por linha',
-    path: '[serviços](/servicos/)',
+    path: '[serviços](/havaianas-personalizadas-produtos/)',
   },
 ];
 
