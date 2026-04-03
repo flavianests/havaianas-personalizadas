@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config';
+
+const pageTitle = 'Política de Privacidade';
+const metaDescription =
+  'Política de privacidade e uso de cookies em conformidade com a LGPD — Chinelos da Bela. Saiba como tratamos dados e suas escolhas.';
+---
+
+<BaseLayout title={pageTitle} description={metaDescription}>
+  <article class="bela-section bela-section-deep bela-prose mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <h1 class="text-3xl font-bold text-white md:text-4xl">Política de Privacidade</h1>
+    <p class="mt-2 text-sm text-zinc-500">Última atualização conforme práticas do site {siteConfig.name}.</p>
+
+    <p class="mt-8 text-zinc-400 leading-relaxed">
+      Esta página descreve, de forma clara, como o site <strong class="text-zinc-200">{siteConfig.name}</strong> trata dados
+      pessoais e o uso de cookies, em linha com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).
+    </p>
+
+    <h2 class="mt-10 text-xl font-semibold text-white">Dados que podemos coletar</h2>
+    <p class="mt-3 text-zinc-400 leading-relaxed">
+      Podemos coletar dados fornecidos voluntariamente por você (por exemplo, ao entrar em contato por WhatsApp ou e-mail),
+      dados técnicos de navegação (como tipo de dispositivo e páginas acessadas) e informações obtidas por meio de cookies e
+      tecnologias similares, quando aplicável.
+    </p>
+
+    <h2 class="mt-10 text-xl font-semibold text-white">Cookies</h2>
+    <p class="mt-3 text-zinc-400 leading-relaxed">
+      Utilizamos cookies para melhorar a experiência de navegação, lembrar preferências e entender como o site é utilizado.
+      Ao clicar em <strong class="text-zinc-200">Aceitar</strong> no aviso de cookies, você registra seu consentimento. Você
+      pode limpar os dados do navegador ou revogar o consentimento apagando o armazenamento local do site a qualquer momento.
+    </p>
+
+    <h2 class="mt-10 text-xl font-semibold text-white">Finalidade e base legal</h2>
+    <p class="mt-3 text-zinc-400 leading-relaxed">
+      Tratamos dados para atendimento, orçamentos, melhoria do site, segurança e cumprimento de obrigações legais, conforme
+      bases legais previstas na LGPD (incluindo execução de contrato, legítimo interesse e consentimento, quando exigido).
+    </p>
+
+    <h2 class="mt-10 text-xl font-semibold text-white">Seus direitos</h2>
+    <p class="mt-3 text-zinc-400 leading-relaxed">
+      Você pode solicitar confirmação de tratamento, acesso, correção, anonimização, portabilidade, eliminação de dados
+      desnecessários ou informações sobre compartilhamentos, nos termos da LGPD. Para exercer seus direitos, entre em contato
+      pelos canais indicados no site.
+    </p>
+
+    <h2 class="mt-10 text-xl font-semibold text-white">Contato</h2>
+    <p class="mt-3 text-zinc-400 leading-relaxed">
+      E-mail: <a class="text-rose-300 hover:underline" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+    </p>
+
+    <p class="mt-10 text-sm text-zinc-500 leading-relaxed">
+      Este texto é um modelo informativo. Ajuste com assessoria jurídica para refletir exatamente as ferramentas (analytics,
+      pixels, formulários) que você utiliza em produção.
+    </p>
+  </article>
+</BaseLayout>

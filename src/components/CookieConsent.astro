@@ -1,0 +1,110 @@
+---
+/**
+ * Banner LGPD — consentimento de cookies (localStorage, sem libs).
+ */
+const STORAGE_KEY = 'cookieConsent';
+---
+
+<div
+  id="cookie-consent-root"
+  class="cookie-consent-root fixed inset-x-0 bottom-0 z-[200] px-4 pb-4 pt-2 sm:px-6 sm:pb-6"
+  style={`padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));`}
+  role="region"
+  aria-label="Aviso sobre cookies"
+  hidden
+>
+  <div
+    class="cookie-consent-panel mx-auto max-w-3xl rounded-2xl border border-white/[0.08] bg-[#16161c]/95 px-4 py-4 shadow-2xl shadow-black/50 backdrop-blur-md sm:px-6 sm:py-5"
+  >
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+      <p class="text-sm leading-relaxed text-zinc-300 sm:text-[0.9375rem]">
+        Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa
+        <a
+          href="/politica-de-privacidade"
+          class="font-medium text-rose-300 underline decoration-rose-300/40 underline-offset-2 transition-colors hover:text-rose-200 hover:decoration-rose-200"
+        >
+          Política de Privacidade
+        </a>
+        .
+      </p>
+      <button
+        type="button"
+        id="cookie-consent-accept"
+        class="min-h-[48px] w-full shrink-0 rounded-xl bg-rose-500 px-6 text-sm font-semibold text-white shadow-lg shadow-rose-900/30 transition-transform hover:bg-rose-400 active:scale-[0.98] sm:w-auto sm:min-w-[140px]"
+      >
+        Aceitar
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-consent-root {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(1rem);
+    transition:
+      opacity 0.35s ease-out,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .cookie-consent-root.cookie-consent--open {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cookie-consent-root[hidden] {
+    display: none;
+  }
+
+  .cookie-consent-root:not([hidden]).cookie-consent--preparing {
+    display: block;
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+</style>
+
+<script is:inline define:vars={{ STORAGE_KEY }}>
+  (function () {
+    var root = document.getElementById('cookie-consent-root');
+    var btn = document.getElementById('cookie-consent-accept');
+    if (!root || !btn) return;
+
+    var accepted = false;
+    try {
+      accepted = localStorage.getItem(STORAGE_KEY) === 'true';
+    } catch (e) {
+      accepted = true;
+    }
+    if (accepted) return;
+
+    root.hidden = false;
+    root.classList.add('cookie-consent--preparing');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        root.classList.remove('cookie-consent--preparing');
+        root.classList.add('cookie-consent--open');
+      });
+    });
+
+    btn.addEventListener('click', function () {
+      try {
+        localStorage.setItem(STORAGE_KEY, 'true');
+      } catch (e) {
+        /* ignore */
+      }
+      root.classList.remove('cookie-consent--open');
+      function finish() {
+        root.setAttribute('hidden', '');
+        root.style.display = 'none';
+      }
+      root.addEventListener('transitionend', function onEnd(ev) {
+        if (ev.propertyName !== 'opacity') return;
+        root.removeEventListener('transitionend', onEnd);
+        finish();
+      });
+      setTimeout(finish, 400);
+    });
+  })();
+</script>

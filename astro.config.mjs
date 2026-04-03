@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://havaianas-personalizadas.vercel.app',
+  site: 'https://chinelosdabela.com.br',
   integrations: [tailwind({ applyBaseStyles: false }), sitemap()],
 });
